@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Blog ACEDA</title>
+</head>
+
+<body class="outfit fundo-da-tela">
+    <section>
+        <div class="container mt-5 pt-5">
+            <div class="row">
+                <div class="col-12 col-sm-8 col-md-6 m-auto mb-5">
+                    <div class="card shadow-custom mb-5">
+                        <div class="card-body">
+                            <img src="assets/brand-tagline-original.png" class="d-flex m-auto">
+                            <form id="resend-form" action="">
+                                <p>Seu link de redefinição de senha foi enviado para o seu e-mail com sucesso! &#10004;
+                                </p>
+                                <p>Caso não tenha recebido, verifique sua caixa de spam ou insira novamente seu e-mail
+                                    abaixo e clique no botão <strong>Reenviar Link.</strong></p>
+                                <input type="email" name="email_adm" id="email_adm_blog" class="form-control my-4 py-2"
+                                    placeholder="Insira seu email novamente">
+                                <div id="alert-popup" class="custom-alert">
+                                    Seu link foi reenviado, verifique sua caixa de entrada.
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button type="submit" class="btn btn-primary">REENVIAR LINK</button>
+                                </div>
+                                <a href="1.adm_blog_login.html" class="nav-link text-center" target="_blank">Voltar a
+                                    página de Login</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="2.link_enviado.js"></script>
+
+</html>

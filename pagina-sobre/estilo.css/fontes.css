@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Aleo";
+  src: url("fonts/aceda-webfonts/Aleo-Regular.woff") format("woff2");
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/aceda-webfonts/Outfit-Regular.woff") format("woff2");
+}
