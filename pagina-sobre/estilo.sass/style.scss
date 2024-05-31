@@ -1,43 +1,43 @@
 .shadow-custom-text {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.308);
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.308);
 }
 
 .custom-yellow {
-  color: #ffe32d;
+	color: #fff456;
 }
 
 .shadow-custom {
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para a direita */
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para a direita */
 }
 
 // Define estilos para telas de celular
 @media (max-width: 576px) {
-  .row.align-items-center {
-    min-height: 100vh; // Faz com que a altura da linha seja igual à altura da tela
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+	.row.align-items-center {
+		min-height: 100vh; // Faz com que a altura da linha seja igual à altura da tela
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 }
 
 .cookie-popup {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
 }
 
 .cookie-popup .btn-close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
 }
 
 .cookie-popup .btn {
-  margin-right: 10px;
+	margin-right: 10px;
 }
