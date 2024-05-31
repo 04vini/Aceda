@@ -8,8 +8,8 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="estilo.css/fontes.css">
-    <link rel="stylesheet" href="estilo.css/style.css">
+    <link rel="stylesheet" href="../pagina-sobre/estilo.css/fontes.css">
+    <link rel="stylesheet" href="../pagina-sobre/estilo.css/style.css">
     <script src="script_popup_cookies.js"></script>
     <title>ACEDA - Quem somos nós?</title>
 </head>
@@ -30,7 +30,7 @@
             </p>
         </div>
         <div class="d-flex justify-content-center align-items-center">
-            <img class="img-fluid custom-shadow" src="img/logo-aceda-amarelo.png" alt="logotipo da aceda em amarelo">
+            <img class="img-fluid" src="img/logo-aceda-amarelo.png" alt="logotipo da aceda em amarelo">
         </div>
     </section>
 
@@ -66,32 +66,31 @@
         <div class="container mt-5 pb-5 pt-5">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col text-center">
-                    <div class="card border-0 rounded bg-white">
-                        <div class="card-body">
-                            <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="img/card-missao.png" alt="">
+                    <div class="card border-0 rounded bg-white custom-shadow">
+                        <div class="card-body shadow-custom">
+                            <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="img/card-missao.png">
                             <h2 class="card-title">Missão</h2>
-                            <p class="card-text">Organizar, integrar e mobilizar a comunidade empresarial e
-                                comercial em seus interesses comuns, de forma igualitária, sustentável e oportuna para
-                                ambos
-                                os portes e comunidade em seu entorno.</p>
+                            <p class="card-text">Organizar, integrar e mobilizar a comunidade empresarial e comercial em
+                                seus interesses comuns, de forma igualitária, sustentável e oportuna para ambos os
+                                portes e comunidade em seu entorno.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col text-center">
                     <div class="card border-0 rounded bg-white">
-                        <div class="card-body">
-                            <img class="card-img h-50 w-50 mb-2 mx-auto" src="img/card-visao.png" alt="">
+                        <div class="card-body shadow-custom">
+                            <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="img/card-visao.png"
+                                alt="">
                             <h2 class="card-title">Visão</h2>
                             <p class="card-text pb-4">Atuação na defesa dos interesses previdenciários dos segurados do
-                                INSS ou
-                                instituto previdência própria, em busca de benefícios previdenciários.</p>
+                                INSS ou instituto previdência própria, em busca de benefícios previdenciários.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col text-center">
                     <div class="card border-0">
-                        <div class="card-body">
-                            <img class="card-img h-50 w-50 mb-2 mx-auto" src="img/card-valores.png">
+                        <div class="card-body shadow-custom">
+                            <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="img/card-valores.png">
                             <h2 class="card-title">Valores</h2>
                             <div class="d-flex justify-content-center align-items-center">
                                 <ul class="list-group text-start">
@@ -106,7 +105,6 @@
             </div>
         </div>
     </div>
-
     <!-- TRANSPARÊNCIA -->
 
     <h1 style="color: #2C4D97;" class="text-center fw-bold custom-shadow mt-5">transparência</h1>
@@ -119,20 +117,25 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Ações que se transformam</h5>
                         <p class="card-text">Plano de ação 2024.</p>
-                        <a href="docs_aceda/ACEDA Plano de ação.pdf" class="mx-auto d-block" target="_blank">VEJA
-                            AQUI</a>
+                        <button class="btn btn-primary">
+                            <a href="docs_aceda/ACEDA Plano de ação.pdf"
+                                class="mx-auto d-block text-decoration-none text-white" target="_blank">VEJA
+                                AQUI</a>
+                        </button>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 mb-3">
                 <div class="card shadow-custom">
-                    <img src="img/imagem-02.jpg" class="card-img-top" alt="...">
+                    <img src="img/imagem-02.jpg" class="card-img-top">
                     <div class="card-body text-center">
                         <h5 class="card-title">DRE - ACEDA</h5>
                         <p class="card-text">Demonstração do Resultado do Exercício.</p>
-                        <a href="https://drive.google.com/drive/folders/1SQA2HhNh88g-lPmHSuKsDw_J38Tssn4W"
-                            class="mx-auto d-block" target="_blank">VEJA AQUI</a>
+                        <button class="btn btn-primary">
+                            <a href="https://drive.google.com/drive/folders/1SQA2HhNh88g-lPmHSuKsDw_J38Tssn4W"
+                                class="mx-auto d-block text-decoration-none text-white" target="_blank">VEJA AQUI</a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -144,7 +147,7 @@
     <div style="background-color: #BED63A;">
         <div class="container mt-5 mb-5 pt-4 pb-5">
             <div class="container col-lg-10">
-                <p class="ml-4 text-white">
+                <p class="ml-4 text-white shadow-custom-text">
                     Telefone: (11) 2688-9235 <br>
                     WhatsApp: (11) 95877-1996 <br>
                     E-mail: contato@aceda.sampa.br <br>
@@ -169,8 +172,12 @@
         <div class="container">
             <p>Este site utiliza cookies para melhorar sua experiência de navegação. Ao continuar navegando, você
                 concorda com o uso de cookies.</p>
-            <button type="button" class="btn btn-primary" onclick="aceitarCookies()">Aceito</button>
-            <button type="button" class="btn btn-secondary" onclick="rejeitarCookies()">Não Aceito</button>
+
+            <button type="button" class="btn btn-primary" onclick="aceitarCookies()">Entendido</button>
+
+            <button type="button" class="btn btn-primary" onclick="privacidade()"><a
+                    href="../politica-de-privacidade/politica-de-privacidade.html"
+                    class="text-decoration-none text-white" target="_blank">Política de privacidade</a></button>
         </div>
     </div>
 
