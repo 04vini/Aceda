@@ -1,3 +1,19 @@
+<?php
+	include "conexao.php";
+
+
+	//Query imagem home
+    $query = "SELECT * FROM tb_home_img ORDER BY id DESC LIMIT 1";              
+    $dados = mysqli_query($conn, $query);               
+    $linha = mysqli_fetch_assoc ($dados);
+
+	//Query texto da home
+    $res = "SELECT * FROM tb_text_home ORDER BY id DESC LIMIT 1";              
+    $dados_text = mysqli_query($conn, $res);               
+    $linha_text= mysqli_fetch_assoc ($dados_text);
+?>
+
+
 <!doctype html>
 <html lang="pt-BR">
 
@@ -5,18 +21,18 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php include_once "template/head.php" ?>
+	<?php include_once "../template/head.php" ?>
 	<style>
 	</style>
 	<!-- Bootstrap CSS -->
-	<link href="assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
+	<link href="../assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 
 	<title>ACEDA | Associação Comercial Distrito Anhanguera</title>
 </head>
 
 <body>
 	<!-- NavBar -->
-	<?php include_once "template/navbar.php" ?>
+	<?php include_once "../template/navbar.php" ?>
 	<!-- NavBar -->
 	<!-- Hero -->
 	<section class="hero pb-0">
@@ -24,13 +40,13 @@
 			<div class="row">
 				<div class="col m-5 text-center">
 					<img src="../_oldprojeto/img/brand-original.png" alt="">
-					<p class="lead text-justify"><strong> ipsum dolor sit amet consectetur, adipisicing elit. Modi, saepe facere? Corrupti, modi natus maxime nisi accusamus enim consequatur omnis expedita dolorem, illo deleniti quibusdam soluta libero magnam necessitatibus eos?</strong></p>																		
+					<p class="lead text-justify"><strong><?php echo $linha_text["text"];?></strong></p>																		
 					<button type="button" class="btn btn-outline-primary rounded-pill">Entre em contato</button>
 				</div>
 			</div>
 
 			<div class="col">
-				<img src="./img/peoples.jpg" class="img-fluid img-thumbnail" alt="Peoples">
+				<img src="<?php echo $linha["imagem"];?>" class="img-fluid img-thumbnail" alt="Peoples">
 			</div>
 		</div>
 	</section>
@@ -40,26 +56,33 @@
 	<section>
 		<div class="container">
 			<h2 class="text-center pb-10">Serviços Aceda</h2>
+			
 			<div class="row">
-				<div class="col-4 text-center">
-					<img src="https://picsum.photos/200/200" class="img-fluid rounded-circle pb-5" alt="">
-					<h3>Nome do Serviço</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita reprehenderit totam eos officiis aperiam, a dolor odio, laudantium nostrum, corporis excepturi id? Porro quam incidunt corrupti quibusdam temporibus! Perspiciatis, quaerat?</p>
-					<a class="btn btn-outline-primary rounded-pill">Saiba mais</a>
-				</div>
-				<div class="col-4 text-center">
-					<img src="https://picsum.photos/200/200" class="img-fluid rounded-circle pb-5" alt="">
-					<h3>Nome do Serviço</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita reprehenderit totam eos officiis aperiam, a dolor odio, laudantium nostrum, corporis excepturi id? Porro quam incidunt corrupti quibusdam temporibus! Perspiciatis, quaerat?</p>
-					<a class="btn btn-outline-primary rounded-pill">Saiba mais</a>
-				</div>
-				<div class="col-4 text-center">
-					<img src="https://picsum.photos/200/200" class="img-fluid rounded-circle pb-5" alt="">
-					<h3>Nome do Serviço</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita reprehenderit totam eos officiis aperiam, a dolor odio, laudantium nostrum, corporis excepturi id? Porro quam incidunt corrupti quibusdam temporibus! Perspiciatis, quaerat?</p>
-					<a class="btn btn-outline-primary rounded-pill">Saiba mais</a>
-				</div>
+			<?php
+                                        
+				$query = "SELECT * FROM tb_servico_home
+				ORDER BY id DESC LIMIT 3";
+				$dados = mysqli_query($conn, $query);
+				if ($dados) 
+				{
+					while ($linha = mysqli_fetch_assoc ($dados)) 
+					{   
+			?>
+				
+					<div class="col-4 text-center">
+						<img src="<?php echo $linha["imagem_servico"];?>" class="img-fluid rounded-circle pb-5" alt="" width="240" height="180">
+						<h3 class="m-1"><?php echo $linha["nome"];?></h3>
+						<p><?php echo $linha["descricao"];?></p>
+						<a class="btn btn-outline-primary rounded-pill">Saiba mais</a>
+					</div>
+				
+						<?php
+					};
+				};
+			?>
 			</div>
+			
+			
 		</div>
 	</section>
 	<!-- /Serviços -->
