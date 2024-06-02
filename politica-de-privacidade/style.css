@@ -1,4 +1,11 @@
 @font-face {
   font-family: "Outfit";
   src: url("Outfit/static/Outfit-Regular.ttf") format("woff2");
+}
+.text-justify {
+  text-align: justify;
+}
+
+.font-strong {
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
