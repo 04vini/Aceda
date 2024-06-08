@@ -1,9 +1,9 @@
 <?php
 
-    $host = "localhost";
-    $username = "root";
-    $password = "Ronaldodasilva@1";
-    $dbname = "db_aceda";
+    $host = "162.241.61.20";
+    $username = "farias54_wp767";
+    $password = ")8Wg0.3SpZ";
+    $dbname = "farias54_wp_aceda";
 
     $conn = mysqli_connect($host, $username, $password) or die ("Não foi possível conectar");
 
