@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos</title>
-    <link href="assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
+    <link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
+    <!-- NavBar -->
+	<?php include_once "./template/navbar.php" ?>
+	<!-- NavBar -->
     <!--Hero-->
     <section class="container">
         <div class="row">
@@ -91,5 +94,8 @@
             </div>
         </div>
     </section>
+<!-- Footer -->
+<?php include_once "./template/footer.php" ?>
+<!-- Footer -->  
 </body>
 </html>

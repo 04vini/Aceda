@@ -14,13 +14,15 @@
     </style>
 </head>
 <body>
-
+    <!-- NavBar -->
+	<?php include_once "./template/navbar.php" ?>
+	<!-- NavBar -->    
     <a href=""></a>
     <!--hero-->
     <section class="container bg-primary rounded-bottom-5 text-white mb-0">
         <div class=" float-left p-10 5">
             <div class="clearfix float-end">
-                <img class="img-fluid" src="../_oldprojeto/img/logotipo-aceda-pequeno.png" alt="logoAceda">
+                <img class="img-fluid" src="./assets/img/logotipo-aceda-pequeno.png" alt="logoAceda">
             </div>
             <p>A ACEDA é uma empresa que <br> buscando profissionais <br> apaixonados por seus sonhos <br> 
             venha fazer parte do nosso time! <br>Preencha o formulário abaixo <br>
@@ -69,6 +71,8 @@
             
         </div>
     </section>
-
+<!-- Footer -->
+<?php include_once "./template/footer.php" ?>
+<!-- Footer -->  
 </body>
 </html>

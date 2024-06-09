@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Config Pagina Inicial</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="../assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">  
+    <link href="./assets/css/main.min.css" rel="stylesheet" crossorigin="anonymous">  
     <script>
         document.addEventListener("DOMContentLoaded", function() {
         const alertBox = document.getElementById("alertBox");
@@ -36,7 +36,7 @@
 </head>
 <body>
 <!-- NavBar -->
-	<?php include_once "../template/navbar-adm.php"?>
+	<?php include_once "./template/navbar-adm.php"?>
 <!-- NavBar -->
     
 <!--Mensagens recebidas via GET após ações CRUD -->

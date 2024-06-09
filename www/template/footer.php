@@ -5,7 +5,6 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php include_once "../template/head.php" ?>
 	<style>
 	</style>
 	<!-- Bootstrap CSS -->
@@ -16,13 +15,13 @@
 <body>
 
 
-<div class="container">
+
   <!-- Footer -->
   <footer class="text-center text-white" style="background-color: #3f51b5">
     <!-- Grid container -->
     <div class="container">
       <!-- Section: Links -->
-      <section class="mt-5">
+      <div class="mt-5 p-3">
         <!-- Grid row-->
         <div class="row text-center d-flex justify-content-center pt-5">
           <!-- Grid column -->
@@ -66,13 +65,13 @@
           <!-- Grid column -->
         </div>
         <!-- Grid row-->
-      </section>
+</div>
       <!-- Section: Links -->
 
       <hr/>
 
       <!-- Section: Text -->
-      <section>
+      <div class="p-3">
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
             <p>
@@ -87,16 +86,16 @@
             </p>
           </div>
         </div>
-      </section>
+      </div>
       <!-- Section: Text -->
 
       <!-- Section: Social -->
-      <section class="text-center"> 
+      <div class="text-center p-3"> 
         <i class="bi bi-facebook me-5" style ="font-size: 2rem;"></i>
         <i class="bi bi-twitter-x me-5" style ="font-size: 2rem;"></i>
         <i class="bi bi-instagram me-5" style ="font-size: 2rem;"></i>
         <i class="bi bi-linkedin me-5" style ="font-size: 2rem;"></i>
-      </section>
+      </div>
       <!-- Section: Social -->
     </div>
     <!-- Grid container -->

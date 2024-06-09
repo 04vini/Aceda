@@ -16,6 +16,10 @@
 
 <body style="font-family: Outfit;">
 
+<!-- Navbar -->
+<?php include_once "./template/navbar.php" ?>
+<!-- /Navbar -->
+
     <!-- 1º SESSÃO -->
 
     <section class="p-5" style="background-color:#2C4D97;">
@@ -184,7 +188,9 @@
         </div>
     </div>
 
-
+<!-- Footer -->
+<?php include_once "./template/footer.php" ?>
+<!-- /Footer -->
 </body>
 
 

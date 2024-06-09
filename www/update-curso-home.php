@@ -12,7 +12,7 @@
         //Validação e tratamento da imagem para inserção no banco
         if (isset($_FILES['imagem-curso']) && !empty ($_FILES['imagem-curso'])) 
         {
-            $imagemCurso = "../img/".$_FILES["imagem-curso"]["name"];
+            $imagemCurso = "./assets/img/".$_FILES["imagem-curso"]["name"];
             move_uploaded_file($_FILES["imagem-curso"]["tmp_name"], $imagemCurso);
         };
 

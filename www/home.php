@@ -33,18 +33,17 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php include_once "../template/head.php"?>
 	<style>
 	</style>
 	<!-- Bootstrap CSS -->
-	<link href="../assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
+	<link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<title>ACEDA | Associação Comercial Distrito Anhanguera</title>
 </head>
 
 <body>
 <!-- NavBar -->
-	<?php include_once "../template/navbar.php" ?>
+	<?php include_once "./template/navbar.php" ?>
 <!-- NavBar -->
 <!-- Hero -->
 	<section class="hero pb-0" style="margin: 0; padding: 0; border: 0;">
@@ -105,7 +104,7 @@
 								<img src="<?php echo $rows["imagem_servico"];?>" class="img-fluid rounded-circle p-5 w-50" alt="">
 								<h3><?php echo $rows["nome"];?></h3>
 								<p><?php echo $rows["descricao"];?></p>
-								<a class="btn btn-outline-success rounded-pill">Saiba mais</a>
+								<a class="btn btn-outline-success rounded-pill" href="./servicos.php">Saiba mais</a>
 							</div>
 							<?php
 							}
@@ -136,7 +135,7 @@
 								<div class="card-body">
 									<h5 class="card-title"><?php echo $linhaCurso["nome_curso"];?></h5>
 									<p class="card-text text-muted"><?php echo $linhaCurso["descricao_curso"];?></p>
-									<a href="#" class="btn btn-primary rounded-pill text-white">Ver Curso</a>
+									<a href="./cursos.php" class="btn btn-primary rounded-pill text-white">Ver Curso</a>
 								</div>
 							</div>
 						</div>
@@ -162,7 +161,7 @@
 	<!-- Blog -->
 	<section>
 		<div class="row mb-2">
-		<?PHP	
+		<?php
 			if ($dadosblog) 
 			{
 				while ($linhablog = mysqli_fetch_assoc ($dadosblog)) 
@@ -173,7 +172,7 @@
 							<div class="col p-4 d-flex flex-column position-static">
 							<strong class="d-inline-block mb-2 text-primary"><?php echo $linhablog["titulo"];?></strong>
 							<p class="card-text mb-auto" maxlenght=20 ><?php echo $linhablog["descricao"];?></p>
-							<a href="#" class="stretched-link">Ler mais...</a>
+							<a href="./page-blog.php" class="stretched-link">Ler mais...</a>
 							</div>
 							<div class="col-auto d-none d-lg-block">
 							<img src="<?php echo $linhablog["imagem"];?>" width="200" height="200" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img>
@@ -190,10 +189,11 @@
 <!-- Ultimas notícias do blog -->
 		
 <!-- Footer -->
+<?php include_once "./template/footer.php" ?>
 <!-- /Footer -->
 
 <!-- Scripts -->
-	<script src="assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
+	<script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
 <!-- Scripts -->
 
 </body>

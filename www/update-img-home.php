@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         // Validação e tratamento da imagem para inserção no banco
         if (isset($_FILES['imagem']) && !empty($_FILES['imagem']['tmp_name'])) 
         {
-            $imagem = "../img/" . basename($_FILES["imagem"]["name"]);
+            $imagem = "./assets/img/" . basename($_FILES["imagem"]["name"]);
             if (move_uploaded_file($_FILES["imagem"]["tmp_name"], $imagem)) 
             {
                 // Query de atualização dos dados no banco

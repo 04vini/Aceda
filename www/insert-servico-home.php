@@ -9,7 +9,7 @@
     //Validação e tratamento da imagem para inserção no banco
     if (isset($_FILES['imagem-servico']) && !empty ($_FILES['imagem-servico'])) 
     {
-        $imagemServico = "../img/".$_FILES["imagem-servico"]["name"];
+        $imagemServico = "./assets/img/".$_FILES["imagem-servico"]["name"];
         move_uploaded_file($_FILES["imagem-servico"]["tmp_name"], $imagemServico);
     };
 
