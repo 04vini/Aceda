@@ -1,7 +1,7 @@
 <?php
 session_start();
 ob_start();
-include_once 'conexao_login.php';
+include_once 'conexao.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ include_once 'conexao_login.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Login - Blog ACEDA</title>
 </head>
 
@@ -40,7 +40,7 @@ include_once 'conexao_login.php';
                             if (!empty($dados['SendLogin'])) {
                                 //var_dump($dados);
                                 $query_usuario = "SELECT id, nome, usuario, senha_usuario 
-                                                FROM usuarios 
+                                                FROM tb_usuarios 
                                                 WHERE usuario =:usuario  
                                                 LIMIT 1";
                                 $result_usuario = $conn->prepare($query_usuario);
@@ -71,7 +71,7 @@ include_once 'conexao_login.php';
                             ?>
                             
                             <h1 class="text-center">Administrador Blog</h1>
-                            <img src="assets/brand-tagline-original.png" class="d-flex m-auto">
+                            <img src="./assets/img/brand-tagline-original.png" class="d-flex m-auto">
 
                             <form method="POST" action="">
                                 <input type="text" name="usuario" class="form-control my-4 py-2" placeholder="Login" value="<?php if(isset($dados['usuario'])){ echo $dados['usuario']; } ?>">

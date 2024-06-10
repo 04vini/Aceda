@@ -1,5 +1,15 @@
 <?php
 
+    /*session_start();
+    ob_start();
+    include_once 'conexao_login.php';
+    
+    if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
+        $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Necessário realizar o login para acessar a página!</p>";
+        header("Location: Login.php");
+    }*/
+
+
     include "conexao.php";
 
     $nomeServico = isset($_POST['nome-servico']) ? $_POST['nome-servico'] : NULL ;

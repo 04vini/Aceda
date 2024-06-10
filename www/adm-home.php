@@ -1,6 +1,15 @@
 <?php
     include "conexao.php";
 
+    /*session_start();
+    ob_start();
+    include_once 'conexao_login.php';
+    
+    if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
+        $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Necessário realizar o login para acessar a página!</p>";
+        header("Location: Login.php");
+    }*/
+    
     //Query das 2 imagens da home carousel
     $query = "SELECT * FROM tb_home_img ORDER BY id DESC LIMIT 2";              
     $dados = mysqli_query($conn, $query);               
@@ -10,6 +19,7 @@
     $res = mysqli_query($conn, $consulta);  
     $row = mysqli_fetch_assoc($res)
 
+    
 
 ?>
 

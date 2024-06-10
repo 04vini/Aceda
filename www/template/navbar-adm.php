@@ -15,7 +15,7 @@
 					<a class="nav-link" href="./adm-home.php">Config Página inicial</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./usuarios.php">Config usuários</a>
+					<a class="nav-link" href="./adm-usuarios.php">Config usuários</a>
 			</ul>
 		</div>
 	</div>

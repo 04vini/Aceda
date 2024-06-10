@@ -16,7 +16,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Config Blog - Aceda </title>
+<title> Config Usuários - Aceda </title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link href="./assets/css/main.min.css" rel="stylesheet" crossorigin="anonymous">
 <script>
@@ -55,40 +55,43 @@
             <div class="border border-dark bg-white">
                     <div class="m-5">
                         <div>
-                            <h3 class="text-center m-3 "><strong>Posts da Página Blog</strong></h3>
+                            <h3 class="text-center m-3 "><strong>Usuários</strong></h3>
                         </div>
 
             <!-- Botão com a função de modal - novo Post -->
                         <button type="button" class="btn btn-success text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#myModal">
-                            Novo Post
+                            Novo Usuário
                         </button>
                 <!-- Modal com form - novo Post-->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title text-center" id="myModalLabel">Insira o novo Serviço</h4>
+                                    <h4 class="modal-title text-center" id="myModalLabel">Novo Usuário</h4>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body p-1 m-1">
-                                    <form class="" method="post" action="insert-blog.php" enctype="multipart/form-data" />
+                                    <form class="" method="post" action="insert-user.php" enctype="multipart/form-data" />
                                         <div class="mb-3">
-                                            <label class="form-label m-2" for="title-post">Título do Post</label>
-                                            <input type="text" name="title-post" id="title-post" required class="form-control" />
+                                            <label class="form-label m-2" for="nomeUser">Nome do Usuário</label>
+                                            <input type="text" name="nomeUser" id="nomeUser" required class="form-control" />
 
                                             <div data-mdb-input-init class="form-outline">
-                                                <label class="form-label m-2" for="text-post">Descrição do Post</label>
-                                                <textarea rows="4" class="form-control" type="text" name="text-post" id="text-post" required></textarea>
+                                                <label class="form-label m-2" for="emailUser">Email</label>
+                                                <input type="email" name="emailUser" id="emailUser" class="form-control">
                                             </div>                    
 
-                                            <label class="form-label m-2" >Selecione a Imagem</label>
-                                            <input type="file" name="imagem" accept="image/*" class="form-control form-control-sm" />
-
+                                            <div data-mdb-input-init class="form-outline">
+                                            <label class="form-label m-2" for="senhaUser" >Senha</label>
+                                            <input type="text" name="senhaUser" id="senhaUser" class="form-control">
+                                            </div> 
+                                            <br>
                                             <button type="button" class="btn btn-default" data-bs-dismiss="modal">Fechar</button>
-                                            <button type="submit" class="btn btn-primary text-white">Postar</button>
+                                            <button type="submit" class="btn btn-primary text-white">Criar</button>
                                         </div>
                                     </form>
                                     </div>
+                                    
                                 </div>
                             </div>
                             </div>
@@ -99,17 +102,16 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>TÍTULO DO POST</th>
-                        <th>CONTEÚDO DO POST</th>
-                        <th>IMAGEM</th>
-                        <th>AÇÕES</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                         
-                        $query = "SELECT * FROM tb_blog
-                        ORDER BY id DESC";
+                        $query = "SELECT * FROM tb_usuarios
+                        ORDER BY id ASC";
                         $dados = mysqli_query($conn, $query);
                         if ($dados) 
                         {
@@ -118,15 +120,12 @@
                     ?>
                                 <tr>
                                     <td><?php echo $linha["id"];?></td>
-                                    <td><?php echo $linha["titulo"];?></td>
-                                    <td><?php echo $linha["descricao"];?></td>
+                                    <td><?php echo $linha["nome"];?></td>
+                                    <td><?php echo $linha["usuario"];?></td>
                                     <td>
-                                        <img src="<?php echo $linha["imagem"];?>" width="120" height="120" />
-                                    </td>
-                                    <td>
-                                        <a class = "btn btn-primary p-1 m-1 rounded-pill text-white" href="./update-blog.php?id=<?php echo $linha["id"];?>">Editar</a>
+                                        <a class = "btn btn-primary p-1 m-1 rounded-pill text-white" href="./update-user.php?id=<?php echo $linha["id"];?>">Editar</a>
                                         
-                                        <a class = "btn btn-danger p-1 m-1 rounded-pill text-white" href="./delete-blog.php?id=<?php echo $linha["id"];?>">Excluir</a>
+                                        <a class = "btn btn-danger p-1 m-1 rounded-pill text-white" href="./delete-user.php?id=<?php echo $linha["id"];?>">Excluir</a>
 
                                         
                                     </td>
