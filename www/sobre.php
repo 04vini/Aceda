@@ -4,13 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../pagina-sobre/estilo.css/fontes.css">
-    <link rel="stylesheet" href="../pagina-sobre/estilo.css/style.css">
-    <script src="scrip-sobre.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
+    <link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
+    <script src="../www/assets/js/scrip-sobre.js"></script>
     <title>ACEDA - Quem somos nós?</title>
 </head>
 
@@ -37,7 +35,7 @@
             </p>
         </div>
         <div class="d-flex justify-content-center align-items-center    ">
-            <img class="img-fluid" src="img/logo-aceda-amarelo.png" alt="logotipo da aceda em amarelo">
+            <img class="img-fluid w-25" src="assets/img/logo-aceda-amarelo.png" alt="logotipo da aceda em amarelo">
         </div>
     </section>
 
@@ -46,7 +44,7 @@
     <section class="container mt-5">
         <div class="row">
             <div class="col-12 col-md-5 order-md-first">
-                <img src="img/imagem-01.jpg" class="img-fluid mt-3 rounded-2 shadow-custom">
+                <img src="../www/assets/img/imagem-01.jpg" class="img-fluid mt-3 rounded-2 shadow-custom">
             </div>
             <div class="col-12 col-md-7 order-md-last">
                 <div class="text-end p-4">
@@ -75,7 +73,7 @@
                 <div class="col text-center">
                     <div class="card border-0 rounded bg-white custom-shadow">
                         <div class="card-body shadow-custom">
-                            <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="img/card-missao.png">
+                            <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="../www/assets/img/card-missao.png">
                             <h2 class="card-title">Missão</h2>
                             <p class="card-text">Organizar, integrar e mobilizar a comunidade empresarial e comercial em
                                 seus interesses comuns, de forma igualitária, sustentável e oportuna para ambos os
@@ -86,7 +84,7 @@
                 <div class="col text-center">
                     <div class="card border-0 rounded bg-white">
                         <div class="card-body shadow-custom">
-                            <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="img/card-visao.png" alt="">
+                            <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="../www/assets/img/card-visao.png" alt="">
                             <h2 class="card-title">Visão</h2>
                             <p class="card-text pb-4">Atuação na defesa dos interesses previdenciários dos segurados do
                                 INSS ou instituto previdência própria, em busca de benefícios previdenciários.</p>
@@ -96,7 +94,7 @@
                 <div class="col text-center">
                     <div class="card border-0">
                         <div class="card-body shadow-custom">
-                            <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="img/card-valores.png">
+                            <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="../www/assets/img/card-valores.png">
                             <h2 class="card-title">Valores</h2>
                             <div class="d-flex justify-content-center align-items-center">
                                 <ul class="list-group text-start">
@@ -120,7 +118,7 @@
         <div class="row justify-content-center">
             <div class="col-md-4 mb-3">
                 <div class="card shadow-custom">
-                    <img src="img/imagem-03.jpg" class="card-img-top" alt="...">
+                    <img src="../www/assets/img/imagem-03.jpg" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title">Ações que se transformam</h5>
                         <p class="card-text">Plano de ação 2024.</p>
@@ -135,7 +133,7 @@
 
             <div class="col-md-4 mb-3">
                 <div class="card shadow-custom">
-                    <img src="img/imagem-02.jpg" class="card-img-top">
+                    <img src="../www/assets/img/imagem-02.jpg" class="card-img-top">
                     <div class="card-body text-center">
                         <h5 class="card-title">DRE - ACEDA</h5>
                         <p class="card-text">Demonstração do Resultado do Exercício.</p>

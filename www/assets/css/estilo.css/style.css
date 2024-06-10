@@ -7,7 +7,8 @@
 }
 
 .shadow-custom {
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para a direita */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  /* Sombra para a direita */
 }
 
 @media (max-width: 576px) {
@@ -18,6 +19,7 @@
     justify-content: center;
   }
 }
+
 .cookie-popup {
   position: fixed;
   bottom: 0;
@@ -38,4 +40,12 @@
 
 .cookie-popup .btn {
   margin-right: 10px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.img-square {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  /* Ajuste o tamanho máximo conforme necessário */
+  object-fit: cover;
+}

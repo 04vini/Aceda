@@ -7,7 +7,7 @@
 }
 
 .shadow-custom {
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para a direita */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 576px) {
