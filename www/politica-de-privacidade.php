@@ -7,10 +7,14 @@
     <title>Política de Privacidade ACEDA</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
+    <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
 </head>
 
 <body style="font-family: Outfit;">
 
+<?php
+    include "./template/navbar.php"
+?>
     <!-- INTRODUÇÃO -->
 
 
@@ -186,7 +190,14 @@
     </div>
     <br>
 
-
+    <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996"> 
+        <div class="rwb-tooltip">Fale com a ACEDA</div> 
+        <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
+    </a>
+    
+<?php
+    include "./template/footer.php"
+?>
 </body>
 
 </html>

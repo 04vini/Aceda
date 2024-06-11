@@ -27,7 +27,7 @@
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Sobre</a>
+              <a href="./sobre.php" class="text-white">Sobre</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -35,7 +35,7 @@
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Cursos</a>
+              <a href="./Cursos.php" class="text-white">Cursos</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -43,7 +43,7 @@
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Banco de Vagas</a>
+              <a href="./bancodevagas.php" class="text-white">Banco de Vagas</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -51,7 +51,7 @@
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Blog</a>
+              <a href="./page-blog.php" class="text-white">Blog</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -59,7 +59,7 @@
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white">Contato</a>
+              <a href="./contatos.php" class="text-white">Contato</a>
             </h6>
           </div>
           <!-- Grid column -->

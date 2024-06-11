@@ -10,6 +10,7 @@
     ">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
+    <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
     <style>
         body {
             font-family: 'Outfit';
@@ -19,6 +20,9 @@
 </head>
 
 <body>
+    <!-- NavBar -->
+	<?php include_once "./template/navbar.php" ?>
+    <!-- NavBar -->
 
     <!-- CABEÇALHO -->
 
@@ -55,8 +59,8 @@
                         Nascente, o ACEDA Monitora
                         vai além de um simples sistema de vigilância - é uma iniciativa de cuidado coletivo que une
                         vizinhos em prol da segurança e bem-estar de todos.</p>
-                    <br>
-                    <h2 class="text-center fw-bold">Porque escolher a ACEDA MONITORA?</h2>
+                        <br>
+                    <h2 class="text-center">Porque escolher a ACEDA MONITORA?</h2>
                     <ul>
                         <li>Acesso 24 horas;</li>
                         <li>Gravação em Nuvem;</li>
@@ -68,7 +72,14 @@
             </div>
         </div>
     </section>
+    <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996"> 
+        <div class="rwb-tooltip">Fale com a ACEDA</div> 
+        <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
+    </a>
 
+    <!-- Footer -->
+    <?php include_once "./template/footer.php" ?>
+    <!-- /Footer -->
 
 </body>
 

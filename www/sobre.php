@@ -181,7 +181,7 @@
             <button type="button" class="btn btn-primary" onclick="aceitarCookies()">Entendido</button>
 
             <button type="button" class="btn btn-primary" onclick="privacidade()"><a
-                    href="../politica-de-privacidade/politica-de-privacidade.html"
+                    href="./politica-de-privacidade.php"
                     class="text-decoration-none text-white" target="_blank">Política de privacidade</a></button>
         </div>
     </div>

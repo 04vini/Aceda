@@ -92,7 +92,7 @@ else
                     
                     <label class="form-label m-2">Imagem utilizada Antes</label>
                     <img src="<?php echo htmlspecialchars($imagem); ?>" style="height: 250px; width: 420px;" />
-
+                    <br>
                     <button type="submit" class="btn btn-success mt-2">Salvar edição</button>
                 </div>
             </form>

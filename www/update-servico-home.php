@@ -83,7 +83,7 @@
                     
                     <label class="form-label m-2" >Imagem utilizada Antes</label>
                     <img src="<?php echo $imagemServico;?>" height="220" width="370"/>
-
+                    <br>
                     <button type="submit" class="btn btn-success mt-2">
                         Salvar edição
                     </button>
