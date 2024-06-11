@@ -41,11 +41,3 @@
 .cookie-popup .btn {
   margin-right: 10px;
 }
-
-.img-square {
-  width: 100%;
-  height: auto;
-  max-width: 400px;
-  /* Ajuste o tamanho máximo conforme necessário */
-  object-fit: cover;
-}
