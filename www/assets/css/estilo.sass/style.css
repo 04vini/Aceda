@@ -38,4 +38,10 @@
 
 .cookie-popup .btn {
   margin-right: 10px;
+}
+
+.image-back {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }/*# sourceMappingURL=style.css.map */

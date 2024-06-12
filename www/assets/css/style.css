@@ -1,25 +1,7 @@
-body {
-    font-family: sans-serif;
+@font-face {
+  font-family: "Outfit";
+  src: url("Outfit/static/Outfit-Regular.ttf") format("woff2");
 }
-
-#nova-noticia, #lista-noticias {
-    margin-bottom: 20px;
-}
-
-#nova-noticia form {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-}
-
-#nova-noticia label, #nova-noticia input, #nova-noticia textarea {
-    margin-bottom: 10px;
-}
-
-#lista-noticias {
-    /* Estilos para exibir a lista de notícias */
-}
-
-#form-noticia input[type="file"] {
-    margin-bottom: 10px;
-}
+.text-justify {
+  text-align: justify;
+}/*# sourceMappingURL=style.css.map */
