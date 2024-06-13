@@ -1,12 +1,12 @@
 <?php
 session_start();
 ob_start();
-include_once 'conexao_login.php';
+include_once 'conexao.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-require '../lib/vendor/autoload.php';
+require './lib/vendor/autoload.php';
 $mail = new PHPMailer(true);
 
 ?>
@@ -41,7 +41,7 @@ $mail = new PHPMailer(true);
                             if (!empty($dados['SendRecupSenha'])) {
                                 //var_dump($dados);
                                 $query_usuario = "SELECT id, nome, usuario 
-                                            FROM usuarios 
+                                            FROM tb_usuarios 
                                             WHERE usuario =:usuario  
                                             LIMIT 1";
                                 $result_usuario = $conn->prepare($query_usuario);
@@ -53,7 +53,7 @@ $mail = new PHPMailer(true);
                                     $chave_recuperar_senha = password_hash($row_usuario['id'], PASSWORD_DEFAULT);
                                     //echo "Chave $chave_recuperar_senha <br>";
 
-                                    $query_up_usuario = "UPDATE usuarios 
+                                    $query_up_usuario = "UPDATE tb_usuarios 
                                                 SET recuperar_senha =:recuperar_senha 
                                                 WHERE id =:id 
                                                 LIMIT 1";
@@ -62,7 +62,7 @@ $mail = new PHPMailer(true);
                                     $result_up_usuario->bindParam(':id', $row_usuario['id'], PDO::PARAM_INT);
 
                                     if ($result_up_usuario->execute()) {
-                                        $link = "http://localhost/aceda/tela-de-login-blog/atualizar_senha.php?chave=$chave_recuperar_senha";
+                                        $link = "http://localhost/aceda/www/atualizar_senha.php?chave=$chave_recuperar_senha";
 
                                         try {
                                             /*$mail->SMTPDebug = SMTP::DEBUG_SERVER;*/
