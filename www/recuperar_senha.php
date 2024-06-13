@@ -47,7 +47,7 @@ $mail = new PHPMailer(true);
                                 $result_usuario = $conn->prepare($query_usuario);
                                 $result_usuario->bindParam(':usuario', $dados['usuario'], PDO::PARAM_STR);
                                 $result_usuario->execute();
-
+                                //AQUI E ONDE EU CRIPTOGRAFO A SENHA
                                 if (($result_usuario) and ($result_usuario->rowCount() != 0)) {
                                     $row_usuario = $result_usuario->fetch(PDO::FETCH_ASSOC);
                                     $chave_recuperar_senha = password_hash($row_usuario['id'], PASSWORD_DEFAULT);
