@@ -42,3 +42,19 @@
   margin-right: 10px;
 }
 
+.text-justify-space {
+  text-align: justify;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+}
