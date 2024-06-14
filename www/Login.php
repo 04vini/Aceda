@@ -41,19 +41,21 @@ include_once 'conexao.php';
                                 //var_dump($dados);
                                 $query_usuario = "SELECT id, nome, usuario, senha_usuario 
                                                 FROM tb_usuarios 
-                                                WHERE usuario =:usuario  
+                                                WHERE usuario = ? 
                                                 LIMIT 1";
                                 $result_usuario = $conn->prepare($query_usuario);
-                                $result_usuario->bindParam(':usuario', $dados['usuario'], PDO::PARAM_STR);
+                                $result_usuario->bind_Param('s', $dados['usuario']);
                                 $result_usuario->execute();
+                                $result_usuario->store_result();
 
-                                if(($result_usuario) and ($result_usuario->rowCount() != 0)){
-                                    $row_usuario = $result_usuario->fetch(PDO::FETCH_ASSOC);
+                                if(($result_usuario) and ($result_usuario->num_rows != 0)){
+                                    $result_usuario->bind_result($id, $nome, $usuario, $senha_usuario);
+                                    $result_usuario->fetch();
                                     //var_dump($row_usuario);
-                                    if(password_verify($dados['senha_usuario'], $row_usuario['senha_usuario'])){
-                                        $_SESSION['id'] = $row_usuario['id'];
-                                        $_SESSION['nome'] = $row_usuario['nome'];
-                                        header("Location: dashboard.php");
+                                    if(password_verify($dados['senha_usuario'], $senha_usuario)){
+                                        $_SESSION['id'] = $id;
+                                        $_SESSION['nome'] = $nome;
+                                        header("Location: ./dashboard.php");
                                     }else{
                                         $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Usuário ou senha inválida!</p>";
                                     }
@@ -71,7 +73,7 @@ include_once 'conexao.php';
                             ?>
                             
                             <h1 class="text-center">Administrador Blog</h1>
-                            <img src="./assets/img/brand-tagline-original.png" class="d-flex m-auto">
+                            <img src="./assets/img/brand-original.png" class="d-flex m-auto">
 
                             <form method="POST" action="">
                                 <input type="text" name="usuario" class="form-control my-4 py-2" placeholder="Login" value="<?php if(isset($dados['usuario'])){ echo $dados['usuario']; } ?>">

@@ -1,14 +1,14 @@
 <?php
     include "conexao.php";
 
-    /*session_start();
+    session_start();
     ob_start();
-    include_once 'conexao_login.php';
+    include_once 'conexao.php';
     
     if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
         $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Necessário realizar o login para acessar a página!</p>";
         header("Location: Login.php");
-    }*/
+    }
     
     //Query das 2 imagens da home carousel
     $query = "SELECT * FROM tb_home_img ORDER BY id DESC LIMIT 2";              
@@ -71,7 +71,7 @@
                 <div class="row m- text-center border border-dark bg-white">
                     <h3 class="text-center mt-3 mb-1"><strong>Imagens Carousel</strong></h3>
                     <div class="col-4">
-                        <img src="<?php echo $row["imagemprimary"];?>" height="220" width="370" class="p-1">
+                        <img src="<?php echo $row["imagemprimary"];?>" height="200" width="350" class="p-1">
                         <a href="update-img-home-primary.php?id=<?php echo $row["id"];?>" class="btn btn-primary rounded-pill text-white">Alterar imagem</a>
                     </div>
                 <?php
@@ -81,7 +81,7 @@
                         {
                     ?>        
                             <div class="col-4">
-                                    <img src="<?php echo $linhaimagem["imagem"];?>" height="220" width="370" class="p-1">
+                                    <img src="<?php echo $linhaimagem["imagem"];?>" height="200" width="350" class="p-1">
                                     
                                         <a href="update-img-home.php?id=<?php echo $linhaimagem["id"];?>" class="btn btn-primary rounded-pill text-white m-1">Alterar imagem</a>
                                     

@@ -1,11 +1,11 @@
 <?php
 session_start();
 ob_start();
-include_once 'conexao_login.php';
+include_once 'conexao.php';
 
 if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
     $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Necessário realizar o login para acessar a página!</p>";
-    header("Location: Login.php");
+    header("Location: ./Login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -25,10 +25,11 @@ if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
     <!-- NavBar -->
 	<?php include_once "./template/navbar-adm.php" ?>
 	<!-- NavBar -->
-    <h1>Bem vindo <?php echo $_SESSION['nome']; ?>!</h1>
+     <div class="container m-5">
+        <h3>Bem vindo <?php echo $_SESSION['nome']; ?>!</h1>
 
-    <a class="btn btn-warning rounded-pill" href="sair.php">Sair</a>
-
+        <a class="btn btn-warning rounded-pill" href="sair.php">Sair</a>
+    </div>
 </body>
 
 </html>

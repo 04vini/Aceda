@@ -37,32 +37,25 @@ $mail = new PHPMailer(true);
                         <div class="card-body">
                             <?php
                             $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-
+                            
                             if (!empty($dados['SendRecupSenha'])) {
                                 //var_dump($dados);
-                                $query_usuario = "SELECT id, nome, usuario 
-                                            FROM tb_usuarios 
-                                            WHERE usuario =:usuario  
-                                            LIMIT 1";
+                                $query_usuario = "SELECT id, nome, usuario FROM tb_usuarios WHERE usuario = ? LIMIT 1";
                                 $result_usuario = $conn->prepare($query_usuario);
-                                $result_usuario->bindParam(':usuario', $dados['usuario'], PDO::PARAM_STR);
+                                $result_usuario->bind_param('s', $dados['usuario']);
                                 $result_usuario->execute();
-                                //AQUI E ONDE EU CRIPTOGRAFO A SENHA
-                                if (($result_usuario) and ($result_usuario->rowCount() != 0)) {
-                                    $row_usuario = $result_usuario->fetch(PDO::FETCH_ASSOC);
-                                    $chave_recuperar_senha = password_hash($row_usuario['id'], PASSWORD_DEFAULT);
+                                $result_usuario->store_result();
+                                //AQUI É ONDE EU CRIPTOGRAFO A SENHA
+                                if ($result_usuario->num_rows != 0) {
+                                    $result_usuario->bind_result($id, $nome, $usuario);
+                                    $result_usuario->fetch();
+                                    $chave_recuperar_senha = password_hash($id, PASSWORD_DEFAULT);
                                     //echo "Chave $chave_recuperar_senha <br>";
-
-                                    $query_up_usuario = "UPDATE tb_usuarios 
-                                                SET recuperar_senha =:recuperar_senha 
-                                                WHERE id =:id 
-                                                LIMIT 1";
+                                    $query_up_usuario = "UPDATE tb_usuarios SET recuperar_senha = ? WHERE id = ? LIMIT 1";
                                     $result_up_usuario = $conn->prepare($query_up_usuario);
-                                    $result_up_usuario->bindParam(':recuperar_senha', $chave_recuperar_senha, PDO::PARAM_STR);
-                                    $result_up_usuario->bindParam(':id', $row_usuario['id'], PDO::PARAM_INT);
-
+                                    $result_up_usuario->bind_param('si', $chave_recuperar_senha, $id);
                                     if ($result_up_usuario->execute()) {
-                                        $link = "http://localhost/aceda/www/atualizar_senha.php?chave=$chave_recuperar_senha";
+                                        $link = "http://localhost/Nova%20pasta/Aceda/www/atualizar_senha.php?chave=$chave_recuperar_senha";
 
                                         try {
                                             /*$mail->SMTPDebug = SMTP::DEBUG_SERVER;*/
@@ -70,25 +63,21 @@ $mail = new PHPMailer(true);
                                             $mail->isSMTP();
                                             $mail->Host       = 'sandbox.smtp.mailtrap.io';
                                             $mail->SMTPAuth   = true;
-                                            $mail->Username   = '4abe5d1ff2a368';
-                                            $mail->Password   = '03d132528f1379';
+                                            $mail->Username   = '9ca1275c878090';
+                                            $mail->Password   = '6cd7a1d2175b55';
                                             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                                             $mail->Port       = 2525;
-
                                             $mail->setFrom('atendimento@aceda.com', 'Atendimento');
-                                            $mail->addAddress($row_usuario['usuario'], $row_usuario['nome']);
-
+                                            $mail->addAddress($usuario, $nome);
                                             $mail->isHTML(true);                                  //Set email format to HTML
                                             $mail->Subject = 'Recuperar senha';
-                                            $mail->Body    = 'Prezado(a) ' . $row_usuario['nome'] .".<br><br>Você solicitou alteração de senha.<br><br>Para continuar o processo de recuperação de sua senha, clique no link abaixo ou cole o endereço no seu navegador: <br><br><a href='" . $link . "'>" . $link . "</a><br><br>Se você não solicitou essa alteração, nenhuma ação é necessária. Sua senha permanecerá a mesma até que você ative este código.<br><br>";
-                                            $mail->AltBody = 'Prezado(a) ' . $row_usuario['nome'] ."\n\nVocê solicitou alteração de senha.\n\nPara continuar o processo de recuperação de sua senha, clique no link abaixo ou cole o endereço no seu navegador: \n\n" . $link . "\n\nSe você não solicitou essa alteração, nenhuma ação é necessária. Sua senha permanecerá a mesma até que você ative este código.\n\n";
-
+                                            $mail->Body    = 'Prezado(a) ' . $nome .".<br><br>Você solicitou alteração de senha.<br><br>Para continuar o processo de recuperação de sua senha, clique no link abaixo ou cole o endereço no seu navegador: <br><br><a href='" . $link . "'>" . $link . "</a><br><br>Se você não solicitou essa alteração, nenhuma ação é necessária. Sua senha permanecerá a mesma até que você ative este código.<br><br>";
+                                            $mail->AltBody = 'Prezado(a) ' . $nome ."\n\nVocê solicitou alteração de senha.\n\nPara continuar o processo de recuperação de sua senha, clique no link abaixo ou cole o endereço no seu navegador: \n\n" . $link . "\n\nSe você não solicitou essa alteração, nenhuma ação é necessária. Sua senha permanecerá a mesma até que você ative este código.\n\n";
                                             $mail->send();
-
                                             $_SESSION['msg'] = "<p style='color: green'>Enviado e-mail com instruções para recuperar a senha. Acesse a sua caixa de e-mail para recuperar a senha!</p>";
                                             header("Location: Login.php");
                                         } catch (Exception $e) {
-                                            echo "Erro: E-mail não enviado sucesso. Mailer Error: {$mail->ErrorInfo}";
+                                            echo "Erro: E-mail não enviado com sucesso. Mailer Error: {$mail->ErrorInfo}";
                                         }
                                     } else {
                                         echo  "<p style='color: #ff0000'>Erro: Tente novamente!</p>";
@@ -102,19 +91,15 @@ $mail = new PHPMailer(true);
                                 echo $_SESSION['msg_rec'];
                                 unset($_SESSION['msg_rec']);
                             }
-
                             ?>
-                            
                             <h1 class="text-center">Enviar link de redefinição</h1>
                             <img src="assets/brand-tagline-original.png" class="d-flex m-auto">
-                            
                             <form method="POST" action="">
                                 <?php
                                 $usuario = "";
                                 if (isset($dados['usuario'])) {
                                     $usuario = $dados['usuario'];
                                 } ?>
-
                                 <input type="text" name="usuario" class="form-control my-4 py-2" placeholder="Insira o email para redefinir sua senha" value="<?php echo $usuario; ?>"><br><br>
                                 <div class="text-center mt-3">
                                     <input type="submit" class="btn btn-primary" value="Recuperar" name="SendRecupSenha">
@@ -128,6 +113,6 @@ $mail = new PHPMailer(true);
         </div>
     </section>
 </body>
-<script src="1.redirecionar_usuario.js"></script>
+<script src="./assets/js/1.redirecionar_usuario.js"></script>
 
 </html>
