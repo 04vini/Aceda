@@ -3,76 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banco De Vagas - Aceda</title>
-	<link href="assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
-    <style>
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-    </style>
+    <title>Banco de vagas</title>
+    <link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
     <!-- NavBar -->
 	<?php include_once "./template/navbar.php" ?>
-	<!-- NavBar -->    
-    <a href=""></a>
-    <!--hero-->
-    <section class="container bg-primary rounded-bottom-5 text-white mb-0">
-        <div class=" float-left p-10 5">
-            <div class="clearfix float-end">
-                <img class="img-fluid" src="./assets/img/logotipo-aceda-pequeno.png" alt="logoAceda">
-            </div>
-            <p>A ACEDA é uma empresa que <br> buscando profissionais <br> apaixonados por seus sonhos <br> 
-            venha fazer parte do nosso time! <br>Preencha o formulário abaixo <br>
-            e se candidate em nossas vagas.</p>
-        </div>
-    </section>
+	<!-- NavBar -->
+    <!--Hero-->
     
-    <!--formulario-->
-    <section class="container mt-0">
-        <div class="row">
-            <div class="col-6 form-group">
-                <label for="fName" class="form-label">Nome Completo</label> <br>
-                <input class="form-control" type="text" id="fName" name="fName"> <br>
-            </div>
-
-            <div class="col-6 form-group">
-                <label class="form-label" for="fEmail">E-mail</label> <br>
-                <input class="form-control" type="email" id="fEmail" name="fEmail"><br>
-            </div>
-            
-            <div class="col-6 form-group">
-                <label class="form-label" for="fTelefone">Telefone</label> <br>
-                <input class="form-control" type="number" id="fTelefone" name="fTelefone"><br>
-            </div>
-            <div class="col-6 form-group">
-                <label class="form-label" for="fPais">País de origem</label> <br>
-                <input class="form-control" type="text" id="fPais" name="fPais"><br>
-            </div>
-            <div class="col-12 form-group">
-                <label class="form-label" for="fArea">Área de atuação</label> <br>
-                <input class="form-control" type="text" id="fArea" name="fArea"><br>
-            </div>
-            <div class="col-12 form-group">
-                <label class="form-label" for="fMensagem">Deixe uma mensagem</label> <br>
-                <textarea class="form-control" name="fMensagem" rows="4" cols="50"></textarea><br>
-            </div>
-
-            <div class="col-12 form-group">
-                <label class="form-label" for="myfile">Insira um curriculo:</label><br>
-                <input class="form-control" type="file" id="myfile" name="myfile"><br>
-            </div>
-                
-            <div class="col-12">
-                <button type="button" class="btn btn-primary rounded-pill form-control text-white">Enviar</button>    
-            </div>
-            
+    <div class="row">
+        <div class="col-12">
+            <img class="img-fluid img-thumbnail" src="./assets/img/Aceda vagas.png" alt="Menina Sorrindo">
         </div>
+    </div>
+
+    <!--Contate-nos-->
+    <section class="container">
+        <form>
+            <div class="mb-3">
+                <label for="InputNome" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="InputNome">
+            </div>
+            <div class="mb-3">
+                <label for="InputDataNasc" class="form-label">Data de nascimento</label>
+                <input type="date" class="form-control" id="InputDataNasc">
+            </div>
+            
+            <p>Sexo</p>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckMasc">
+                <label class="form-check-label" for="flexCheckMasc">
+                    Masculino
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckFem">
+                <label class="form-check-label" for="flexCheckFem">
+                    Feminino
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckOutros">
+                <label class="form-check-label" for="flexCheckOutros">
+                    Outros
+                </label>
+            </div>
+            <div class="mb-3 form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckNI">
+                <label class="form-check-label" for="flexCheckNI">
+                    Prefiro não informar
+                </label>
+            </div>
+            <div class="mb-3">
+              <label for="InputEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="InputEmail" aria-describedby="emailInfo">
+              <div id="emailInfo" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
+            </div>            
+            <div class="mb-3">
+                <label for="InputPO" class="form-label">País de origem</label>
+                <input type="text" class="form-control" id="InputPO">
+            </div>
+            <div class="mb-3">
+                <label for="InputCPF" class="form-label">CPF</label>
+                <input type="number" class="form-control" id="InputCPF">
+            </div>           
+            <div class="mb-3">
+                <label for="InputWhats" class="form-label">Celular/WhatsApp</label>
+                <input type="number" class="form-control" id="InputWhats">
+            </div>
+            <div class="mb-3">
+                <label for="InputTEL" class="form-label">Telefone Fixo</label>
+                <input type="number" class="form-control" id="InputTEL">
+            </div>
+            <div class="mb-3">
+                <label for="InputEst" class="form-label">Estado</label>
+                <input type="text" class="form-control" id="InputEst">
+            </div>
+            <div class="mb-3">
+                <label for="InputCid" class="form-label">Cidade</label>
+                <input type="text" class="form-control" id="InputCid" aria-describedby="cidInfo">
+                <div id="cidInfo" class="form-text">Caso possua empresa aberta.</div>
+            </div>
+            <div class="mb-3">
+                <label for="InputLink" class="form-label">Linkedin</label>
+                <input type="text" class="form-control" id="InputLink" aria-describedby="linkInfo">
+                <div id="linkInfo" class="form-text">Opcional.</div>
+            </div>
+            <div class="form-check">
+                <p>
+                    Termo de Autorização LGPD
+Informamos que os seus dados pessoais serão utilizados para o cumprimento de obrigações contratuais, legais e regulatórias do SEBRAE AQUI - ACEDA em razão de suas atividades, para a execução de seus Programas e prestação de serviços, para fomentar, desenvolver e melhorar soluções para empreendedores e pequenos negócios, para oferecer produtos e serviços que sejam do seu interesse, para realizar pesquisas com os clientes que foram atendidos entre o SEBRAE AQUI - ACEDA e para realizar a comunicação oficial pelo SEBRAE ou por seus prestadores de serviço, por telefone, e-mail, SMS, WhatsApp, etc. Caso você queira conhecer um pouco mais de como o SEBRAE trata os seus dados pessoais, você pode acessar o seu Portal em www.sebrae.com.br/lgpd, lá reunimos um conjunto de informações sobre como estamos atuando com os dados pessoais de nossos clientes, com foco em segurança e transparência. Para Ao prosseguir com seu cadastro, o senhor (a), concorda com nossa política de privacidade e autoriza o Sebrae a realizar o tratamento de seus dados pessoais, INCLUSIVE OS DADOS PESSOAIS SENSÍVEIS, ASSIM DEFINIDOS NO ART. 5, II DA LEI Nº 13.709 DE 2.018, OS QUAIS, ESCLARECEMOS, SÃO COLETADOS PARA FINS MERAMENTE ESTATÍSTICOS E DE ESTUDOS DE DESENVOLVIMENTO SOCIAL.
+ACEITO
+                </p>
+                <input class="form-check-input" type="radio" name="flexPrivacidade" id="flexPrivacidadeAcept">
+                <label class="form-check-label" for="flexPrivacidadeAcept">
+                  ACEITO
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="flexPrivacidade" id="flexPrivacidadeNAcept" checked>
+                <label class="form-check-label" for="flexPrivacidadeNAcept">
+                  NÃO ACEITO
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary text-white">Enviar</button>
+          </form>
     </section>
 <!-- Footer -->
 <?php include_once "./template/footer.php" ?>
 <!-- Footer -->  
-</body>
 </html>
