@@ -150,7 +150,7 @@
     <!-- ENDEREÇO DO MAPS -->
 
     <div style="background-color: #BED63A;">
-        <div class="container mt-5 mb-5 pt-4 pb-5">
+        <div class="container mt-5 pt-4 pb-5">
             <div class="container col-lg-10">
                 <p class="ml-4 text-white shadow-custom-text">
                     Telefone: (11) 2688-9235 <br>
