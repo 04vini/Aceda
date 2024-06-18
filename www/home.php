@@ -124,7 +124,7 @@
 		<div class="container">
 			<div class="row container">
 			<?php	
-				if($resultado)
+				if($resultado) 
 						{
 							while ($linhaCurso = mysqli_fetch_assoc ($resultadoCurso))
 							{

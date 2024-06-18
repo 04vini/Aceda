@@ -123,9 +123,9 @@
                                     <td><?php echo $linha["nome"];?></td>
                                     <td><?php echo $linha["usuario"];?></td>
                                     <td>
-                                        <a class = "btn btn-primary p-1 m-1 rounded-pill text-white" href="./update-user.php?id=<?php echo $linha["id"];?>">Editar</a>
+                                        <a class = "btn btn-primary p-2 rounded-pill text-white" href="./update-user.php?id=<?php echo $linha["id"];?>">Editar</a>
                                         
-                                        <a class = "btn btn-danger p-1 m-1 rounded-pill text-white" href="./delete-user.php?id=<?php echo $linha["id"];?>">Excluir</a>
+                                        <a class = "btn btn-danger p-2 rounded-pill text-white" href="./delete-user.php?id=<?php echo $linha["id"];?>">Excluir</a>
 
                                         
                                     </td>

@@ -34,8 +34,8 @@
 					Configurações
 					</a>
 					<div class="dropdown-menu" aria-labelledby="menuDrop">
-					<a class="dropdown-item" href="./adm-home.php">Config Página inicial</a>
-					<a class="dropdown-item" href="./adm-usuarios.php">Config usuários</a>
+					<a class="dropdown-item" href="./adm-home.php">Página inicial</a>
+					<a class="dropdown-item" href="./adm-usuarios.php">Usuários</a>
 					</div>
 				</li> 
 

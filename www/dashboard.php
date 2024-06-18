@@ -22,28 +22,29 @@ if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body class="bg-secondary"> 
     <!-- NavBar -->
 	<?php include_once "./template/navbar-adm.php" ?>
 	<!-- NavBar -->
-
-    <div class="container">
-        <div class="alert alert-success mt-5 row justify-content-md-center">
-            <div class="col-md-auto">
-                <h4>Bem vindo <?php echo $_SESSION['nome']; ?>!</h1>
-            </div>
-        </div>  
-        
-        <div class="d-flex justify-content-end dropdown">
-            <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Relatórios
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Formulário EmpreendAceda</a></li>
-                <li><a class="dropdown-item" href="#">Formulário Solicitações</a></li>
-            </ul>
-        </div>
+    <div> 
+        <div class="container bg-white m-5">
+            <br>
+            <div class="alert alert-success mt-2 row justify-content-md-center ml-5 me-5">
+                <div class="col-md-auto">
+                    <h4 class="">Bem vindo <?php echo $_SESSION['nome']; ?>!</h1>
+                </div>
+            </div>  
             
+            <div class="d-flex justify-content-end dropdown ">
+                <button class="btn btn-success dropdown-toggle mb-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Relatórios
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="adm-empreenda.php" target="_blank">EmpreendAceda</a></li>
+                    <li><a class="dropdown-item" href="adm-solicitacoes.php" target="_blank">Solicitações</a></li>
+                </ul>
+            </div>
+        </div>    
         
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
