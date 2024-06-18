@@ -71,6 +71,7 @@
     <?php include_once "./template/navbar.php" ?>
     <!-- NavBar -->
 
+
     <!-- CABEÇALHO -->
     <div class="shadow-custom image-back"
         style="background-image: url('../www/assets/img/mãos-dadas.png'); background-position: center;">
@@ -112,7 +113,7 @@
                         Nascente, o <strong>ACEDA Monitora</strong>
                         vai além de um simples sistema de vigilância - é uma iniciativa de cuidado coletivo que une
                         vizinhos em prol da segurança e bem-estar de todos.</p>
-                    <hr> <br>
+                    <br>
                     <h2 class="text-center">Porque escolher a ACEDA MONITORA?</h2>
                     <br>
                     <ul>
@@ -141,7 +142,6 @@
                                 ACEDA!</strong> Nosso programa é projetado para promover o comércio local de
                             Perus/Anhanguera, levando suas
                             ofertas a mais clientes na região.
-                            <hr>
                         <h2 class="text-center">Como funciona?</h2>
                         <ol class="text-justify">
                             <li>Envio de conteúdo: Você nos envi suas fotos, textos, logomarca, produtos e serviços.
