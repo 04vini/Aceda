@@ -384,7 +384,7 @@
 
 
     <!-- RODAPÉ -->
-    <?php include_once "./template/rodape.php" ?>
+    <?php include_once "./template/footer.php" ?>
     <!-- RODAPÉ -->
 
 
