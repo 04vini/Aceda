@@ -18,7 +18,13 @@
 					<a class="nav-link" href="./cursos.php">Cursos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./bancodevagas.php">Banco de Vagas</a>
+					<a class="nav-link" href="./bancodevagas.php">Vagas</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./solicitacoesAceda.php">Solicitações</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./empreendaAceda.php">Empreenda</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="./page-blog.php">Blog</a>
@@ -29,7 +35,6 @@
 				<li class="nav-item">
 					<a class="nav-link" href="./contatos.php">Contatos</a>
 				</li>
-
 			</ul>
 		</div>
 	</div>

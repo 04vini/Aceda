@@ -186,10 +186,12 @@
 				?>
 		  </div>
 	</section>
+
+
 <!-- Ultimas notícias do blog -->
 		
 <!-- Footer -->
-<?php include_once "./template/footer.php" ?>
+	<?php include_once "./template/footer.php" ?>
 <!-- /Footer -->
 
 <!-- Scripts -->
