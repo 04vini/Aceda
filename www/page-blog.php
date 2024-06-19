@@ -29,9 +29,15 @@
                             <img src="<?php echo $linha["imagem"];?>" width="270" height="220" />
                             </div>
                             <div class="col-9 text-right">
+                            <span class="rounded-pill bg-warning text-secundary mb-1 pt-0 pb-0 p-1 font-sm"><?php echo $linha["categoria"];?></span>
                             <h3><?php echo $linha["titulo"];?></h3>
+                            
                             <p><?php echo $linha["descricao"];?></p>
-                            <button type="button" class="btn btn-primary rounded-pill text-white">Ler Mais</button>
+                            <div class="row">   
+                            <span class="row justify-content-end col-me-3 me-5">Postado por:  <?php echo $linha["autor"];?></span>
+
+                            <?php echo '<a class=" col-2 btn btn-primary  m-1 mt-0 me-0 mb-0 rounded-pill text-white" href="./post-blog.php?id=' . $linha["id"] . '">Ler Mais</a>';?>
+                            </div>
                         </div>
                     </div>
                        

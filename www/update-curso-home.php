@@ -75,7 +75,7 @@
                 <input class="form-control" type="text" name="nome-curso" id="nome-curso class="form-control" required value="<?php echo $nomeCurso ?>">
                 
                 <label class="form-label m-2" for="descricao-curso">Descrição</label>
-                <textarea rows="4" class="form-control" type="text" name="descricao-curso" id="descricao-curso" required value="<?php echo $nomeCurso ?>"></textarea>
+                <textarea rows="4" class="form-control" type="text" name="descricao-curso" id="descricao-curso" required value=""><?php echo $nomeCurso ?></textarea>
 
                 <label class="form-label m-2" >Imagem </label>
                 <input type="file" name="imagem-curso" accept="image/*" class="form-control form-control-sm" />

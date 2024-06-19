@@ -1,0 +1,59 @@
+<?php
+    include "conexao.php";
+
+    $query = "SELECT * FROM tb_blog where id = ".$_GET["id"];
+    $dados = mysqli_query($conn, $query);
+    $linha = mysqli_fetch_assoc ($dados);
+
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Aceda</title>
+    <!-- Bootstrap CSS -->
+	<link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../www/assets/css/estilo.sass/style.css">
+    <link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
+    <link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
+</head>
+<body>
+    <!-- NavBar -->
+	<?php include_once "./template/navbar.php" ?>
+    <!-- NavBar -->
+    <!--Noticia-->
+    <div style="background-color:  #2C4D97;">
+        <br>
+        <div class="m-4 p-2 bg-white rounded-5" >
+            <div class="row">
+                <div class="m-3">
+                    <img src="<?php echo $linha["imagem"];?>" class="img-fluid" alt="Responsive image">
+                </div>
+
+                <div class="col-12">
+                    <h2 class="m-5 text-center"><?php echo $linha["titulo"];?></h2>
+                    <div class="m-5"><?php echo $linha["conteudo"];?></div>
+                    <span class="row justify-content-end col-me-3 me-1">Postado por:  <?php echo $linha["autor"];?></span>
+                    <p class=""><small class="row justify-content-end col-me-3 sm me-1"><?php echo $linha["registro"];?></small></p>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+
+
+    <!-- Scripts -->
+	<script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
+    <!-- Scripts -->
+
+    <!-- footer -->
+	<?php include_once "./template/footer.php" ?>
+    <!-- footer -->
+</body>
+</html>
