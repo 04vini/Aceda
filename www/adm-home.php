@@ -102,14 +102,14 @@
                         <div>
                             <h3 class="text-center m-3 "><strong>Serviços</strong></h3>
                         </div>
-
-            <!-- Botão com a função de modal - novo serviço -->
+<!--
+            Botão com a função de modal - novo serviço 
                         <button type="button" class="btn btn-success text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#myModal">
                             Novo Serviço
                         </button>
                         <p class="span text-danger"><small>*Será listado os ultimos 3 serviços criados por conta da atual estrutura da página</small></p>
 
-                <!-- Modal com form - novo serviço-->
+                <Modal com form - novo serviço
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -140,7 +140,7 @@
                                 </div>
                             </div>
                             </div>
-
+-->
                         <div>
                             <table class="table table-hover">
                                 <thead>
@@ -172,9 +172,10 @@
                                                     </td>
                                                     <td>
                                                         <a class = "btn btn-primary p-1 m-1 rounded-pill text-white" href="./update-servico-home.php?id=<?php echo $linhaServico["id"];?>">Editar</a>
-                                                        
-                                                        <a class = "btn btn-danger p-1 m-1 rounded-pill text-white" href="./delete-servico-home.php?id=<?php echo $linhaServico["id"];?>">Excluir</a>
-
+                                                        <!--
+                                                        <a class = "btn btn-danger p-1 m-1 rounded-pill text-white" href="./delete-servico-home.php?id=
+                                                        <?php //echo $linhaServico["id"];?>">Excluir</a>
+                                                        -->
                                                         
                                                     </td>
                                                 </tr>
@@ -198,14 +199,14 @@
                         <h3 class="text-center m-3 "><strong>Cursos</strong></h3>
                     </div>
                     
-
-        <!-- Botão com a função de modal -->
+ <!-- 
+       Botão com a função de modal
                     <button type="button" class="btn btn-success text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#modalCurso">
                         Novo Curso
                     </button>
                     <p class="span text-danger"><small>*Será listado os ultimos 3 cursos criados por conta da atual estrutura da página</small></p>
                     
-            <!-- Modal com form-->
+            Modal com form
                     <div class="modal fade" id="modalCurso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -228,11 +229,12 @@
                                     <button type="submit" class="btn btn-primary text-white">Salvar</button>
                                 </form>
                             </div>
-                            
+                                                              
                             </div>
+                                    
                         </div>
                         </div>
-
+                                    -->
                     <div>
                     <div>
                         <table class="table table-hover">
@@ -264,8 +266,9 @@
                                                     </td>
                                                     <td>
                                                         <a class = "btn btn-primary p-1 m-1 rounded-pill text-white" href="./update-curso-home.php?id=<?php echo $linhaCurso["id"];?>">Editar</a>
-                                                        
-                                                        <a class = "btn btn-danger p-1 m-1 rounded-pill text-white" href="./delete-curso-home.php?id=<?php echo $linhaCurso["id"];?>">Excluir</a>
+                                                        <!--
+                                                        <a class = "btn btn-danger p-1 m-1 rounded-pill text-white" href="./delete-curso-home.php?id=<?php //echo $linhaCurso["id"];?>">Excluir</a>
+                                                        -->
 
                                                         
                                                     </td>

@@ -75,7 +75,7 @@
                     <input type="text" name="nome-servico" id="nome-servico" class="form-control" value="<?php echo $nomeServico;?>">
                     
                     <label class="form-label m-2" for="descricao-servico">Descrição</label>
-                    <textarea rows="6" class="form-control" type="text" name="descricao-servico" id="descricao-servico" required value="<?php echo $descricaoServico;?>"></textarea>
+                    <textarea rows="6" class="form-control" type="text" name="descricao-servico" id="descricao-servico" required value=""><?php echo $descricaoServico;?></textarea>
 
                     <label class="form-label m-2" >Imagem </label>
                     <input type="file" name="imagem-servico" accept="image/*" class="form-control form-control-sm" />
