@@ -49,17 +49,14 @@
             background-color: #e5e3e7;
         }
 
-        .slider-move-left {
-            transform: translateX(-320px);
-        }
-
-        .slider-move-right {
-            transform: translateX(320px);
-        }
-
         .slider-wrap {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slider-wrap.grabbing {
+            cursor: grabbing;
+            cursor: -webkit-grabbing;
         }
     </style>
     <title>Serviços ACEDA</title>
@@ -171,9 +168,10 @@
             <div class="container position-relative">
                 <div class="slider d-flex align-items-center justify-content-start overflow-hidden position-relative">
                     <div class="slider-wrap d-flex align-items-center position-absolute">
+                        <!-- Cards de Serviços -->
                         <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
                             <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/nota-fiscal.png" alt="slide"
+                                <img src="assets/img/img-carrosel-servicos/Card 1 - nota-fiscal.png" alt="slide"
                                     style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
                                 <div class="content p-2 mt-3 text-center">
                                     <h4 class="fw-bold text-dark">Emissão NF-e (Nota Fiscal Eletrônica)</h4>
@@ -184,7 +182,7 @@
                         </div>
                         <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
                             <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/curriculos.png" alt="slide"
+                                <img src="../www/assets/img/img-carrosel-servicos/Card 2 - curriculos.png" alt="slide"
                                     style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
                                 <div class="content p-2 mt-3 text-center">
                                     <h4 class="fw-bold text-dark">Elaboração eficiente de Currículos (CV)</h4>
@@ -195,8 +193,8 @@
                         </div>
                         <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
                             <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/consultar.png" alt="slide"
-                                    style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
+                                <img src="../www/assets/img/img-carrosel-servicos/Card 3 - consultar INSS.png"
+                                    alt="slide" style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
                                 <div class="content p-2 mt-3 text-center">
                                     <h4 class="fw-bold text-dark">Consulta do cadastro no INSS</h4>
                                     <p>Acesse todas as informações necessárias sobre sua previdência social através de
@@ -206,8 +204,8 @@
                         </div>
                         <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
                             <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/bilhete-de-autocarro.png" alt="slide"
-                                    style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
+                                <img src="../www/assets/img/img-carrosel-servicos/Card 4 - Cadastro bilhete unico.png"
+                                    alt="slide" style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
                                 <div class="content p-2 mt-3 text-center">
                                     <h4 class="fw-bold text-dark">Cadastro Bilhete Único e Idoso</h4>
                                     <p>Simplificamos o processo de cadastro para o Bilhete Único e Bilhete do Idoso,
@@ -217,7 +215,7 @@
                         </div>
                         <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
                             <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/poupa-tempo.png" alt="slide"
+                                <img src="assets/img/img-carrosel-servicos/Card 5 - poupa-tempo.png" alt="slide"
                                     style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
                                 <div class="content p-2 mt-3 text-center">
                                     <h4 class="fw-bold text-dark">Agendamentos Poupa Tempo</h4>
@@ -228,7 +226,7 @@
                         </div>
                         <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
                             <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/processo-procon.png" alt="slide"
+                                <img src="assets/img/img-carrosel-servicos/Card 6 - processo-procon.png" alt="slide"
                                     style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
                                 <div class="content p-2 mt-3 text-center">
                                     <h4 class="fw-bold text-dark">Abertura de Processos PROCON</h4>
@@ -239,7 +237,7 @@
                         </div>
                         <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
                             <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/divida.png" alt="slide"
+                                <img src="assets/img/img-carrosel-servicos/Card 8 - divida.png" alt="slide"
                                     style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
                                 <div class="content p-2 mt-3 text-center">
                                     <h4 class="fw-bold text-dark">Consulta Desenrola (Dívida Ativa)</h4>
@@ -250,18 +248,18 @@
                         </div>
                         <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
                             <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/lei-comercio.png" alt="slide"
-                                    style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
+                                <img src="assets/img/img-carrosel-servicos/Card 9 - lei-comercio.png" alt="slide"
+                                    style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3 pt-4">
                                 <div class="content p-2 mt-3 text-center">
                                     <h4 class="fw-bold text-dark">Consulta e Cadastro TPU ou Tô Legal</h4>
-                                    <p>Ajudamos você a cumprir as normas urbanísticas da sua cidade com o TPU (Termo de
-                                        Permissão de Uso) ou Tô Legal.</p>
+                                    <p>Ajudamos você a cadastrar seu comércio na cidade com o TPU (Termo de Permissão de
+                                        Uso) ou Tô Legal.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
                             <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/pesquisa-serasa.png" alt="slide"
+                                <img src="assets/img/img-carrosel-servicos/Card 10 - pesquisa-serasa.png" alt="slide"
                                     style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
                                 <div class="content p-2 mt-3 text-center">
                                     <h4 class="fw-bold text-dark">Consultas SPC, SERASA e Cartórios</h4>
@@ -272,7 +270,7 @@
                         </div>
                         <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
                             <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/receita-federal.png" alt="slide"
+                                <img src="assets/img/img-carrosel-servicos/Card 11 - receita-federal.png" alt="slide"
                                     style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
                                 <div class="content p-2 mt-3 text-center">
                                     <h4 class="fw-bold text-dark">Alteração de Dados na Receita Federal</h4>
@@ -281,7 +279,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -301,94 +298,146 @@
         </section>
     </div>
 
-
     <!-- CÓDIGO SCRIPT DO CARROSEL DE OUTROS SERVIÇOS DA ACEDA,
-     NÃO CONSEGUI FAZER O CARROSEL FUNCIONAR SEM COLOCAR ELE DIRETO
-     NO ARQUIVO HTML-->
+NÃO CONSEGUI FAZER O CARROSEL FUNCIONAR SEM COLOCAR ELE DIRETO
+NO ARQUIVO HTML-->
 
-    <script>
-        let currentSlide = 0;
-        const slideCount = document.querySelectorAll('.slide-card').length;
-        const slideWidth = 320;
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide-card');
+    const slideCount = slides.length;
+    const slideWidth = 320;
+    const visibleSlides = 4;  // Quantidade de slides visíveis no carrossel
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID = 0;
+    const sliderWrap = document.querySelector('.slider-wrap');
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slideCount;
+    // Clone all slides and append them to the end
+    for (let i = 0; i < slideCount; i++) {
+        const clone = slides[i].cloneNode(true);
+        sliderWrap.appendChild(clone);
+    }
+
+    function nextSlide() {
+        currentSlide++;
+        if (currentSlide === slideCount) {
+            setTimeout(() => {
+                sliderWrap.style.transition = 'none';
+                currentSlide = 0;
+                sliderWrap.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            }, 1000);
+        }
+        updateSlide(currentSlide);
+    }
+
+    function previousSlide() {
+        if (currentSlide === 0) {
+            currentSlide = slideCount - visibleSlides;
+            sliderWrap.style.transition = 'none';
+            sliderWrap.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            setTimeout(() => {
+                sliderWrap.style.transition = 'transform 1s ease-in-out';
+                currentSlide--;
+                updateSlide(currentSlide);
+            }, 20);
+        } else {
+            currentSlide--;
             updateSlide(currentSlide);
         }
+    }
 
-        function previousSlide() {
-            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
-            updateSlide(currentSlide);
-        }
+    function updateSlide(index) {
+        sliderWrap.style.transition = 'transform 1s ease-in-out';
+        sliderWrap.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
 
-        function updateSlide(index) {
-            document.querySelector('.slider-wrap').style.transform = `translateX(-${index * slideWidth}px)`;
-            document.querySelectorAll('.slide-card').forEach((slide) => {
-                slide.classList.remove('active');
-            });
-            document.querySelectorAll('.slide-card')[index].classList.add('active');
-
-
-            updateButtons(index);
-        }
-
-        function updateButtons(index) {
-
-            if (index === slideCount - 1) {
-                document.querySelector("#next-arrow").setAttribute("disabled", "");
-                document.querySelector("#next-arrow i").style.color = "#c5c5c5";
-                document.querySelector("#next-arrow").classList.replace("bg-white", "bg-disabled");
-            } else {
-                document.querySelector("#next-arrow").removeAttribute("disabled");
-                document.querySelector("#next-arrow i").style.color = "#212529";
-                document.querySelector("#next-arrow").classList.replace("bg-disabled", "bg-white");
-            }
-
-
-            if (index === 0) {
-                document.querySelector("#previous-arrow").setAttribute("disabled", "");
-                document.querySelector("#previous-arrow i").style.color = "#c5c5c5";
-                document.querySelector("#previous-arrow").classList.replace("bg-white", "bg-disabled");
-            } else {
-                document.querySelector("#previous-arrow").removeAttribute("disabled");
-                document.querySelector("#previous-arrow i").style.color = "#212529";
-                document.querySelector("#previous-arrow").classList.replace("bg-disabled", "bg-white");
-            }
-        }
-
-        function startAutoSlide() {
-            setInterval(() => {
-                nextSlide();
-            }, 3000);
-        }
-
-
-        startAutoSlide();
-
-        document.querySelector("#next-arrow").addEventListener('click', () => {
+    function startAutoSlide() {
+        setInterval(() => {
             nextSlide();
-        });
+        }, 4000);
+    }
 
-        document.querySelector("#previous-arrow").addEventListener('click', () => {
-            previousSlide();
-        });
-    </script>
+    startAutoSlide();
+
+    document.querySelector("#next-arrow").addEventListener('click', nextSlide);
+    document.querySelector("#previous-arrow").addEventListener('click', previousSlide);
+
+    // Mouse events
+    sliderWrap.addEventListener('mousedown', dragStart);
+    sliderWrap.addEventListener('mouseup', dragEnd);
+    sliderWrap.addEventListener('mouseleave', dragEnd);
+    sliderWrap.addEventListener('mousemove', drag);
+
+    // Touch events
+    sliderWrap.addEventListener('touchstart', dragStart);
+    sliderWrap.addEventListener('touchend', dragEnd);
+    sliderWrap.addEventListener('touchmove', drag);
+
+    function dragStart(event) {
+        isDragging = true;
+        startPos = getPositionX(event);
+        prevTranslate = currentTranslate;
+        animationID = requestAnimationFrame(animation);
+        sliderWrap.classList.add('grabbing');
+    }
+
+    function dragEnd() {
+        isDragging = false;
+        cancelAnimationFrame(animationID);
+        const movedBy = currentTranslate - prevTranslate;
+
+        if (movedBy < -100 && currentSlide < slideCount - 1) {
+            currentSlide++;
+        }
+
+        if (movedBy > 100 && currentSlide > 0) {
+            currentSlide--;
+        }
+
+        setPositionByIndex();
+        sliderWrap.classList.remove('grabbing');
+    }
+
+    function drag(event) {
+        if (isDragging) {
+            const currentPosition = getPositionX(event);
+            currentTranslate = prevTranslate + currentPosition - startPos;
+        }
+    }
+
+    function getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+
+    function animation() {
+        setSliderPosition();
+        if (isDragging) requestAnimationFrame(animation);
+    }
+
+    function setSliderPosition() {
+        sliderWrap.style.transform = `translateX(${currentTranslate}px)`;
+    }
+
+    function setPositionByIndex() {
+        currentTranslate = currentSlide * -slideWidth;
+        prevTranslate = currentTranslate;
+        setSliderPosition();
+    }
+</script>
 
 
     <!-- BOTÃO WHATSAPP DA ACEDA -->
-
     <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996">
         <div class="rwb-tooltip">Fale com a ACEDA</div>
         <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
     </a>
 
-
     <!-- RODAPÉ -->
     <?php include_once "./template/footer.php" ?>
     <!-- RODAPÉ -->
-
-
-
 </body>
 
 </html>
