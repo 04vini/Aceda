@@ -15,7 +15,7 @@ if (isset($_POST) && !empty($_POST)) {
     
     $id = $_GET['id'];
 
-    $titulo = isset($_POST['title-post']) ? $_POST['title-post'] : NULL ;
+    $titulo = isset($_POST['title-post']) ? $_POST['title-post'] : NULL;
 
     $descricao = isset($_POST['descricao-post']) ? $_POST['descricao-post'] : NULL;
 
@@ -29,7 +29,7 @@ if (isset($_POST) && !empty($_POST)) {
     $registro = date("Y-m-d H:i:s");
     
     //Validação e tratamento da imagem para inserção no banco
-    if (isset($_FILES['imagem']) && !empty ($_FILES['imagem'])) {
+    if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] == UPLOAD_ERR_OK) {
         $imagem = "./assets/img/".$_FILES["imagem"]["name"];
         move_uploaded_file($_FILES["imagem"]["tmp_name"], $imagem);
     } else {
@@ -124,7 +124,7 @@ if (isset($_POST) && !empty($_POST)) {
                     <input type="text" name="autor-post" id="autor-post" required class="form-control" value="<?php echo $autor;?>" />
 
                     <label class="form-label m-2">Selecione nova Imagem</label>
-                    <input type="file" name="imagem" accept="image/*" class="form-control form-control-sm"  required/>
+                    <input type="file" name="imagem" accept="image/*" class="form-control form-control-sm" />
 
                     <label class="form-label m-2">Imagem utilizada Antes</label>
                     <img src="<?php echo $imagem;?>" />
