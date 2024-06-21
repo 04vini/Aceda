@@ -27,11 +27,11 @@
               </li>
               <br>
               <li class="list-group-item">
-                <i class="bi bi-facebook me-1" style ="font-size: 2rem;"></i>
-                <i class="bi bi-twitter-x me-1" style ="font-size: 2rem;"></i>
-                <i class="bi bi-instagram me-1" style ="font-size: 2rem;"></i>
-                <i class="bi bi-linkedin me-1" style ="font-size: 2rem;"></i>
-                <i class="bi bi-whatsapp" style ="font-size: 2rem;"></i>
+                <a href="https://web.facebook.com/groups/aceda" target="_blank" class="text-black"><i class="bi bi-facebook me-1" style ="font-size: 2rem;"></i></a>
+                <a href="https://www.instagram.com/aceda.sampa/" target="_blank" class="text-black"><i class="bi bi-instagram me-1" style ="font-size: 2rem;"></i></a>
+                <a href="https://www.linkedin.com/company/aceda-associacao-comercial/?originalSubdomain=br" target="_blank" class="text-black"><i class="bi bi-linkedin me-1" style ="font-size: 2rem;"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=5511958771996" target="_blank" class="text-black"><i class="bi bi-whatsapp" style ="font-size: 2rem;"></i></a>
+                <a href="https://www.youtube.com/channel/UCONWZzayv95wuaUwYaItYNA" target="_blank" class="text-black"><i class="bi bi-youtube" style ="font-size: 2rem;"></i></a>
               </li>
             </ul>
           </div>
