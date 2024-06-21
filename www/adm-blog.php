@@ -23,16 +23,40 @@
         }
     }
 
+    // Configuração da paginação
+    $limit = 5; // Número de registros por página
+    $page = isset($_GET['page']) && $_GET['page'] > 0 ? $_GET['page'] : 1;
+    $offset = ($page - 1) * $limit;
+
+    // Query para buscar os registros com paginação
+    $query .= " LIMIT $limit OFFSET $offset";
+
     $dados = mysqli_query($conn, $query); // Executa a consulta SQL
+
+    // Contagem total de registros para paginação
+    $total_registros_query = "SELECT COUNT(*) AS total FROM tb_blog";
+    if (!empty($filtro)) {
+        $total_registros_query .= " WHERE titulo LIKE '%$filtro_escapado%' OR categoria LIKE '%$filtro_escapado%' OR autor LIKE '%$filtro_escapado%'";
+    }
+    $total_registros_result = mysqli_query($conn, $total_registros_query);
+    $total_registros = mysqli_fetch_assoc($total_registros_result)['total'];
+    
+    // Calcular o número total de páginas
+    $total_paginas = ceil($total_registros / $limit);
+
+    // Liberar resultado da contagem de registros
+    mysqli_free_result($total_registros_result);
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Config Blog - Aceda</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./assets/css/main.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
     <script src="https://cdn.tiny.cloud/1/f3sgpku312e9vuqeq3aevsab9ho77hgpfcq3xfqfoo5s4hz3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
@@ -46,14 +70,14 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-        const alertBox = document.getElementById("alertBox");
-        if (alertBox) {
-            setTimeout(() => {
-            alertBox.style.display = 'none'; // 5 Segundos
-            }, 5000);
-        } else {
-            console.error("Element with ID 'alertBox' not found");
-        }
+            const alertBox = document.getElementById("alertBox");
+            if (alertBox) {
+                setTimeout(() => {
+                    alertBox.style.display = 'none'; // 5 Segundos
+                }, 5000);
+            } else {
+                console.error("Element with ID 'alertBox' not found");
+            }
         });
     </script>
 </head>
@@ -86,15 +110,15 @@
                     </button>
 
                     <!-- Modal com form - novo Post-->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog modal-xl" role="document">
+                    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h4 class="modal-title text-center" id="myModalLabel">Insira o novo Post</h4>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="post" action="insert-blog.php" enctype="multipart/form-data" class="">
+                                    <form method="post" action="insert-blog.php" enctype="multipart/form-data">
                                         <div class="mb-3">
                                             <label class="form-label" for="title-post">Título</label>
                                             <input type="text" name="title-post" id="title-post" required class="form-control" />
@@ -102,7 +126,7 @@
                                             <label class="form-label pt-1" for="descricao-post">Breve Resumo</label>
                                             <textarea name="descricao-post" id="descricao-post" required class="form-control"> </textarea>
                                             
-                                            <label class="form-label pt-1" for="text-post">Conteudo completo</label>
+                                            <label class="form-label pt-1" for="text-post">Conteúdo completo</label>
                                             <!-- Textarea substituído por TinyMCE -->
                                             <textarea class="form-control" name="text-post" id="text-post" required></textarea>
                                             
@@ -141,7 +165,7 @@
                         </div>
                     </div>
 
-                    <!-- Listando os registros de posts do blog -->
+                    <!-- Total de registros e Listando os registros de posts do blog -->
                     <div class="mt-4 table-responsive">
                         <table class="table table-hover">
                             <thead>
@@ -174,15 +198,31 @@
                                             echo '<td>';
                                             echo '<a class="btn btn-primary p-1 m-1 rounded-pill text-white" href="./update-blog.php?id=' . $linha["id"] . '">Editar</a>';
                                             echo '<a class="btn btn-danger p-1 m-1 rounded-pill text-white" href="./delete-blog.php?id=' . $linha["id"] . '">Excluir</a>';
+                                            echo '<a class="mt-1" href="./post-blog.php?id=' . $linha["id"] . '" target="_blank">Ver <i class="fas fa-eye ml-1"></i></a>';
                                             echo '</td>';
                                             echo '</tr>';
                                         }
                                     } else {
-                                        echo '<tr><td colspan="5">Nenhum registro encontrado.</td></tr>';
+                                        echo '<tr><td colspan="9">Nenhum registro encontrado.</td></tr>';
                                     }
                                 ?>
+                                
                             </tbody>
                         </table>
+                        <p class="">Total de Registros: <?php echo $total_registros; ?></p>
+
+                        <!-- Paginação -->
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <?php for ($i = 1; $i <= $total_paginas; $i++) : ?>
+                                    <li class="page-item <?php if ($page == $i) echo 'active'; ?>">
+                                        <a class="page-link" href="?page=<?php echo $i . ($filtro ? '&filtro=' . urlencode($filtro) : ''); ?>">
+                                            <?php echo $i; ?>
+                                        </a>
+                                    </li>
+                                <?php endfor; ?>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -193,5 +233,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </body>
 </html>

@@ -43,18 +43,33 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Ronaldo</td>
-                                <td>Aceda</td>
-                                <td>5199999999</td>
-                                <td>Aceda.sampa.br</td>
-                                <td>São Paulo</td>
-                                <td>Sim</td>
-                                <td>aceda-logo.png</td>
-                                <td>Aceito</td>
-                                <td>16/06/2024</td>
-                            </tr>
+
+                        <?php
+                            include "conexao.php";
+
+                            $query = "SELECT * FROM tb_empreenda ORDER BY id DESC";
+                            $dados = mysqli_query($conn, $query);
+                                    // Loop para exibir os resultados da consulta
+                                    if ($dados && mysqli_num_rows($dados) > 0) {
+                                        while ($linha = mysqli_fetch_assoc($dados)) {
+                                echo '<tr>';
+                                echo '<td>' . $linha["id"] . '</td>';
+                                echo '<td>' . $linha["nome_responsavel"] . '</td>';
+                                echo '<td>' . $linha["nome_negocio"] . '</td>';
+                                echo '<td>' . $linha["celular"] . '</td>';
+                                echo '<td>' . $linha["redes"] . '</td>';
+                                echo '<td>' . $linha["loja"] . '</td>';
+                                echo '<td>' . $linha["possuilogo"] . '</td>';
+                                if (!empty($linha["anexo"])) {
+                                    echo '<td><a href="http://localhost/Nova%20pasta/Aceda/www' . $linha["anexo"] . '" >Ver logo</a></td>';
+                                } else {
+                                    echo '<td></td>';
+                                };
+                                echo '<td>' . $linha["aceite"] . '</td>';
+                                echo '<td>' . $linha["registro"] . '</td>';
+                                }
+                            }
+                        ?>
                         </tbody>
                 </table>    
             </div>

@@ -173,7 +173,7 @@
 								<strong class="d-inline-block mb-1 text-primary"><?php echo $linhablog["titulo"];?></strong>
 								<div class="text-warning text-secundary justify-content-start mb-2 mt-0 font-sm"><small><?php echo $linhablog["categoria"];?></small></div>
 								<p class="card-text mb-auto" ><?php echo $linhablog["descricao"];?></p>
-								<?php echo '<a class=" col-5 btn btn-primary p-0 mt-1 me-0 mb-0 rounded-pill text-white" href="./post-blog.php?id=' . $linhablog["id"] . '">Ler Mais</a>';?>;
+								<?php echo '<a class=" col-3 btn btn-primary p-0 mt-1 me-0 mb-0 rounded-pill text-white" href="./post-blog.php?id=' . $linhablog["id"] . '">Ler Mais</a>'?>
 							</div>
 							<div class="col-auto d-none d-lg-block">
 								<img src="<?php echo $linhablog["imagem"];?>" width="200" height="200" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#55595c"/></img>
