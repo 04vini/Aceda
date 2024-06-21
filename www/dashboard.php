@@ -27,7 +27,7 @@ if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
 	<?php include_once "./template/navbar-adm.php" ?>
 	<!-- NavBar -->
     <div> 
-        <div class="container bg-white m-5">
+        <div class="container bg-white mt-5">
             <br>
             <div class="alert alert-success mt-2 row justify-content-md-center ml-5 me-5">
                 <div class="col-md-auto">
