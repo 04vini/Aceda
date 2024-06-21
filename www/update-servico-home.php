@@ -16,15 +16,19 @@
         
         $id = $_GET['id'];
         $nomeServico = isset($_POST['nome-servico']) ? $_POST['nome-servico'] : NULL ;
-
         $descricaoServico = isset($_POST['descricao-servico']) ? $_POST['descricao-servico'] : NULL;
 
         //Validação e tratamento da imagem para inserção no banco
-        if (isset($_FILES['imagem-servico']) && !empty ($_FILES['imagem-servico'])) 
+        $query = "SELECT imagem_servico FROM tb_servico_home WHERE id = ".$id;
+        $res = mysqli_query($conn, $query);
+        $dados = mysqli_fetch_array($res);
+        $imagemServico = $dados['imagem_servico'];
+
+        if (isset($_FILES['imagem-servico']) && !empty ($_FILES['imagem-servico']['name'])) 
         {
             $imagemServico = "./assets/img/".$_FILES["imagem-servico"]["name"];
             move_uploaded_file($_FILES["imagem-servico"]["tmp_name"], $imagemServico);
-        };
+        }
 
         //Query de atualização dos dados no banco
         $query = "UPDATE tb_servico_home SET nome='$nomeServico', descricao='$descricaoServico', imagem_servico='$imagemServico' WHERE id= ".$id;
@@ -36,8 +40,7 @@
     } 
     else if (isset($_GET["id"]) && !empty($_GET["id"]))
     {
-
-        $query = "SELECT * FROM tb_servico_home where id = ".$_GET["id"];
+        $query = "SELECT * FROM tb_servico_home WHERE id = ".$_GET["id"];
 
         $res = mysqli_query($conn, $query);
 
@@ -48,13 +51,10 @@
         $descricaoServico = $dados["descricao"];
         $imagemServico = $dados["imagem_servico"];
 
-
     }else {
         header("Location: ./upload.php?mensagem=Selecione um usuário para editar");
         exit();
     }
-
-
 
 ?>
 
@@ -69,13 +69,13 @@
 <body>
     <div>
         <div class="col-md-4 p-2 m-5">
-            <form class="card" method="post" enctype="multipart/form-data" />
+            <form class="card" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label m-2" for="nome-servico">Nome</label>
                     <input type="text" name="nome-servico" id="nome-servico" class="form-control" value="<?php echo $nomeServico;?>">
                     
                     <label class="form-label m-2" for="descricao-servico">Descrição</label>
-                    <textarea rows="6" class="form-control" type="text" name="descricao-servico" id="descricao-servico" required value=""><?php echo $descricaoServico;?></textarea>
+                    <textarea rows="6" class="form-control" type="text" name="descricao-servico" id="descricao-servico" required><?php echo $descricaoServico;?></textarea>
 
                     <label class="form-label m-2" >Imagem </label>
                     <input type="file" name="imagem-servico" accept="image/*" class="form-control form-control-sm" />

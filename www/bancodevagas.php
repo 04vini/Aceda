@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banco de vagas</title>
+    <title>Curriculos</title>
     <link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
 </head>
 <body>
     <!-- NavBar -->
@@ -14,7 +15,7 @@
     
     <div class="row">
         <div class="col-12">
-            <img class="img-fluid img-thumbnail" src="./assets/img/Aceda vagas.png" alt="Menina Sorrindo">
+            <img class="img-fluid img-thumbnail" src="./assets/img/curriculos2.png" alt="Menina Sorrindo">
         </div>
     </div>
 
@@ -114,4 +115,8 @@ ACEITO
 <!-- Footer -->
 <?php include_once "./template/footer.php" ?>
 <!-- Footer -->  
+    <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996"> 
+            <div class="rwb-tooltip">Fale com a ACEDA</div> 
+            <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
+	</a>
 </html>

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitações Reunião Aceda</title>
     <link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
+
 </head>
 <body>
     <!-- NavBar -->
@@ -135,5 +137,9 @@ ACEITO
     </section>
 <!-- Footer -->
 <?php include_once "./template/footer.php" ?>
-<!-- Footer -->  
+<!-- Footer --> 
+    <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996"> 
+            <div class="rwb-tooltip">Fale com a ACEDA</div> 
+            <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
+	</a>
 </html>

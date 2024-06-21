@@ -16,15 +16,19 @@
         
         $id = $_GET['id'];
         $nomeCurso = isset($_POST['nome-curso']) ? $_POST['nome-curso'] : NULL ;
-
         $descricaoCurso = isset($_POST['descricao-curso']) ? $_POST['descricao-curso'] : NULL;
 
         //Validação e tratamento da imagem para inserção no banco
-        if (isset($_FILES['imagem-curso']) && !empty ($_FILES['imagem-curso'])) 
+        $query = "SELECT imagem_curso FROM tb_curso_home WHERE id = ".$id;
+        $res = mysqli_query($conn, $query);
+        $dados = mysqli_fetch_array($res);
+        $imagemCurso = $dados['imagem_curso'];
+
+        if (isset($_FILES['imagem-curso']) && !empty ($_FILES['imagem-curso']['name'])) 
         {
             $imagemCurso = "./assets/img/".$_FILES["imagem-curso"]["name"];
             move_uploaded_file($_FILES["imagem-curso"]["tmp_name"], $imagemCurso);
-        };
+        }
 
         //Query de atualização dos dados no banco
         $query = "UPDATE tb_curso_home SET nome_curso='$nomeCurso', descricao_curso='$descricaoCurso', imagem_curso='$imagemCurso' WHERE id= ".$id;
@@ -36,7 +40,6 @@
     } 
     else if (isset($_GET["id"]) && !empty($_GET["id"]))
     {
-
         $query = "SELECT * FROM tb_curso_home where id = ".$_GET["id"];
 
         $res = mysqli_query($conn, $query);
@@ -48,13 +51,10 @@
         $descricaoCurso = $dados["descricao_curso"];
         $imagemCurso = $dados["imagem_curso"];
 
-
     }else {
         header("Location: ./adm-home.php?mensagem=Selecione um Curso para editar");
         exit();
     }
-
-
 
 ?>
 
@@ -69,18 +69,18 @@
 <body>
     <div>
         <div class="col-md-4 p-2 m-5">
-            <form class="card" method="post" enctype="multipart/form-data" />
+            <form class="card" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
-                <label class="form-label m-2" for="nome-curso">Nome</label>
-                <input class="form-control" type="text" name="nome-curso" id="nome-curso class="form-control" required value="<?php echo $nomeCurso ?>">
-                
-                <label class="form-label m-2" for="descricao-curso">Descrição</label>
-                <textarea rows="4" class="form-control" type="text" name="descricao-curso" id="descricao-curso" required value=""><?php echo $nomeCurso ?></textarea>
+                    <label class="form-label m-2" for="nome-curso">Nome</label>
+                    <input class="form-control" type="text" name="nome-curso" id="nome-curso" required value="<?php echo $nomeCurso ?>">
 
-                <label class="form-label m-2" >Imagem </label>
-                <input type="file" name="imagem-curso" accept="image/*" class="form-control form-control-sm" />
+                    <label class="form-label m-2" for="descricao-curso">Descrição</label>
+                    <textarea rows="4" class="form-control" name="descricao-curso" id="descricao-curso" required><?php echo $descricaoCurso ?></textarea>
+
+                    <label class="form-label m-2">Imagem</label>
+                    <input type="file" name="imagem-curso" accept="image/*" class="form-control form-control-sm" />
                     
-                    <label class="form-label m-2" >Imagem utilizada Antes</label>
+                    <label class="form-label m-2">Imagem utilizada Antes</label>
                     <img src="<?php echo $imagemCurso;?>" height="220" width="370"/>
 
                     <button type="submit" class="btn btn-success mt-2">

@@ -26,7 +26,7 @@
 					<a class="nav-link" href="./cursos.php">Cursos</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./bancodevagas.php">Vagas</a>
+					<a class="nav-link" href="./bancodevagas.php">Curriculos</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="./page-blog.php">Blog</a>

@@ -7,7 +7,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 
 // Buscar registros do banco de dados
-$sql = "SELECT * FROM tb_empreenda";
+$sql = "SELECT * FROM tb_empreenda ORDER BY id DESC";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
