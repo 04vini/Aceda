@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="../www/assets/css/estilo.sass/style.css">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
+    <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
+
 </head>
 <body>
     <!-- NavBar -->
@@ -54,6 +56,11 @@
 
     <!-- footer -->
 	<?php include_once "./template/footer.php" ?>
+    
     <!-- footer -->
+    <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996"> 
+            <div class="rwb-tooltip">Fale com a ACEDA</div> 
+            <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
+    </a>
 </body>
 </html>
