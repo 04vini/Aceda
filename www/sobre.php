@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
+    <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
     <script src="../www/assets/js/scrip-sobre.js"></script>
     <title>ACEDA - Quem somos nós?</title>
 </head>
@@ -189,6 +190,10 @@
 <!-- Footer -->
 <?php include_once "./template/footer.php" ?>
 <!-- /Footer -->
+    <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996"> 
+            <div class="rwb-tooltip">Fale com a ACEDA</div> 
+            <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
+	</a>
 </body>
 
 

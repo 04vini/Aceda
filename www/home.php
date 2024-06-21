@@ -38,6 +38,7 @@
 	<!-- Bootstrap CSS -->
 	<link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
 	<title>ACEDA | Associação Comercial Distrito Anhanguera</title>
 </head>
 
@@ -199,7 +200,10 @@
 	<script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
 <!-- Scripts -->
 
-
+	<a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996"> 
+            <div class="rwb-tooltip">Fale com a ACEDA</div> 
+            <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
+	</a>
 
 </body>
 
