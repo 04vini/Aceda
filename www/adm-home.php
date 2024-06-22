@@ -199,7 +199,7 @@
                         <h3 class="text-center m-3 "><strong>Cursos</strong></h3>
                     </div>
                     
- <!-- 
+<!-- 
        Botão com a função de modal
                     <button type="button" class="btn btn-success text-white rounded-pill" data-bs-toggle="modal" data-bs-target="#modalCurso">
                         Novo Curso
