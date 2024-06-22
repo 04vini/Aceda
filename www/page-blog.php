@@ -54,11 +54,15 @@
                     </div>
                 </div>
         </div>
+        <br>
     <?php
         }
     }
     ?>
     </div>
+    <br>
+    <hr class="text-secondary">
+    
     <!-- Paginação -->
     <div class="container">
         <div class="row justify-content-center">
@@ -71,7 +75,7 @@
                     // Links de paginação
                     for ($i = 1; $i <= $total_paginas; $i++) {
                         $active = $i == $pagina_atual ? 'active' : '';
-                        echo "<li class='page-item $active'><a class='page-link' href='?pagina=$i'>$i</a></li>";
+                        echo "<li class='page-item $active'><a class='m-1 rounded-pill page-link' href='?pagina=$i'>$i</a></li>";
                     }
                     ?>
                 </ul>

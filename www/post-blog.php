@@ -34,7 +34,7 @@
         <br>
         <div class="m-4 p-2 bg-white rounded-5" >
             <div class="row">
-                <div class="m-3">
+                <div>
                     <img src="<?php echo $linha["imagem"];?>" class="img-fluid" alt="Responsive image">
                 </div>
 

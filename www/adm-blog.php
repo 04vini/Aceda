@@ -209,7 +209,7 @@
                                 
                             </tbody>
                         </table>
-                        <p class="">Total de Registros: <?php echo $total_registros; ?></p>
+                        <p>Total de Registros: <?php echo $total_registros; ?></p>
 
                         <!-- Paginação -->
                         <nav aria-label="Page navigation example">
