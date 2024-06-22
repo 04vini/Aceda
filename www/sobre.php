@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-    <script src="../www/assets/js/scrip-sobre.js"></script>
     <title>ACEDA - Quem somos nós?</title>
 </head>
 
@@ -169,21 +168,6 @@
                         class="mx-auto d-block shadow-custom rounded-2"></iframe>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- POP UP DE USO DE COOKIES -->
-
-    <div class="cookie-popup">
-        <div class="container">
-            <p>Este site utiliza cookies para melhorar sua experiência de navegação. Ao continuar navegando, você
-                concorda com o uso de cookies.</p>
-
-            <button type="button" class="btn btn-primary" onclick="aceitarCookies()">Entendido</button>
-
-            <button type="button" class="btn btn-primary" onclick="privacidade()"><a
-                    href="./politica-de-privacidade.php"
-                    class="text-decoration-none text-white" target="_blank">Política de privacidade</a></button>
         </div>
     </div>
 
