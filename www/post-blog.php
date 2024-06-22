@@ -5,7 +5,10 @@
     $dados = mysqli_query($conn, $query);
     $linha = mysqli_fetch_assoc ($dados);
 
-
+    if ($linha && isset($linha["registro"])) {
+        $dataHora = strtotime($linha["registro"]);
+        $registroFormatado = date("d/m/Y H:i:s", $dataHora);
+    }
 ?>
 
 
@@ -42,7 +45,7 @@
                     <h2 class="m-5 text-center"><?php echo $linha["titulo"];?></h2>
                     <div class="m-5"><?php echo $linha["conteudo"];?></div>
                     <span class="row justify-content-end col-me-3 me-1">Postado por:  <?php echo $linha["autor"];?></span>
-                    <p class=""><small class="row justify-content-end col-me-3 sm me-1"><?php echo $linha["registro"];?></small></p>
+                    <p class=""><small class="row justify-content-end col-me-3 sm me-1"><?php echo $registroFormatado;?></small></p>
                 </div>
             </div>
         </div>

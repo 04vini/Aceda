@@ -35,6 +35,12 @@
 
     if ($dados) {
         while ($linha = mysqli_fetch_assoc($dados)) {
+            if ($linha && isset($linha["registro"])) {
+                $dataHora = strtotime($linha["registro"]);
+                date_default_timezone_set('America/Sao_Paulo');
+                setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
+                $registroFormatado = strftime("%d de %B", $dataHora);
+            }
     ?>
         <div class="bg-dark">
             <br>
@@ -49,6 +55,7 @@
                         <p><?php echo $linha['descricao']; ?></p>
                         <div class="row">
                             <span class="row justify-content-end col-me-3 me-5">Postado por: <?php echo $linha['autor']; ?></span>
+                            <p class=""><small class="row justify-content-end col-me-3 sm me-1"><?php echo mb_convert_case($registroFormatado, MB_CASE_UPPER, "UTF-8");?></small></p>
                             <a class="col-2 btn btn-primary m-1 mt-0 me-0 mb-0 rounded-pill text-white" href="./post-blog.php?id=<?php echo $linha['id']; ?>">Ler Mais</a>
                         </div>
                     </div>

@@ -186,6 +186,9 @@
                                     // Loop para exibir os resultados da consulta
                                     if ($dados && mysqli_num_rows($dados) > 0) {
                                         while ($linha = mysqli_fetch_assoc($dados)) {
+                                            $dataHora = strtotime($linha["registro"]);
+                                            $registroFormatado = date("d/m/Y H:i:s", $dataHora);
+
                                             echo '<tr>';
                                             echo '<td>' . $linha["id"] . '</td>';
                                             echo '<td><img src="' . $linha["imagem"] . '" width="120" height="120" /></td>';
@@ -194,7 +197,7 @@
                                             echo '<td>' . $linha["conteudo"] . '</td>';
                                             echo '<td>' . $linha["categoria"] . '</td>';
                                             echo '<td>' . $linha["autor"] . '</td>';
-                                            echo '<td>' . $linha["registro"] . '</td>';
+                                            echo '<td>' . $registroFormatado . '</td>';
                                             echo '<td>';
                                             echo '<a class="btn btn-primary p-1 m-1 rounded-pill text-white" href="./update-blog.php?id=' . $linha["id"] . '">Editar</a>';
                                             echo '<a class="btn btn-danger p-1 m-1 rounded-pill text-white" href="./delete-blog.php?id=' . $linha["id"] . '">Excluir</a>';
