@@ -124,7 +124,7 @@
                         <h5 class="card-title">Ações que se transformam</h5>
                         <p class="card-text">Plano de ação 2024.</p>
                         <button class="btn btn-primary">
-                            <a href="docs_aceda/ACEDA Plano de ação.pdf"
+                            <a href="assets/ACEDA Plano de ação.pdf"
                                 class="mx-auto d-block text-decoration-none text-white" target="_blank">VEJA
                                 AQUI</a>
                         </button>
