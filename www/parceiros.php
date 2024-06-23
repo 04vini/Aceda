@@ -91,5 +91,7 @@
 <!-- Footer -->
 <?php include_once "./template/footer.php" ?>
 <!-- /Footer -->
+<script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
+
 </body>
 </html>

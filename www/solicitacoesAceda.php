@@ -147,4 +147,6 @@
             <div class="rwb-tooltip">Fale com a ACEDA</div> 
             <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
 	</a>
+    <script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
+
 </html>

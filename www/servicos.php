@@ -355,14 +355,6 @@ NO ARQUIVO HTML-->
         sliderWrap.style.transform = `translateX(-${index * slideWidth}px)`;
     }
 
-    function startAutoSlide() {
-        setInterval(() => {
-            nextSlide();
-        }, 4000);
-    }
-
-    startAutoSlide();
-
     document.querySelector("#next-arrow").addEventListener('click', nextSlide);
     document.querySelector("#previous-arrow").addEventListener('click', previousSlide);
 

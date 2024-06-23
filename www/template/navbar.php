@@ -1,7 +1,3 @@
-<head>
-	<link rel="icon" type="image/x-icon" href="../assets/img/favicons/android-icon-48x48.png">
-</head>
-
 <nav class="navbar navbar-expand-lg ">
 	<div class="container">
 		<a class="navbar-brand" href="./home.php">

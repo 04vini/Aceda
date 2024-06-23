@@ -33,14 +33,15 @@
     // Consulta para buscar os registros
     $query = "SELECT * FROM tb_blog ORDER BY id DESC LIMIT $offset, $registros_por_pagina";
     $dados = mysqli_query($conn, $query);
-
+    
+    //BUG NESSA PARTE DO BLOG
     if ($dados) {
         while ($linha = mysqli_fetch_assoc($dados)) {
             if ($linha && isset($linha["registro"])) {
                 $dataHora = strtotime($linha["registro"]);
                 date_default_timezone_set('America/Sao_Paulo');
                 setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
-                $registroFormatado = strftime("%d de %B", $dataHora);
+                $registroFormatado = date("d de \M", $dataHora);
             }
             
     ?>

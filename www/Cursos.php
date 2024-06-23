@@ -26,9 +26,9 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h2 class="mb-5">Sobre nossos cursos</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam vel porro culpa molestiae, enim cum excepturi eveniet, 
-                nobis vero unde ullam ipsam architecto ea error itaque. Sint neque deserunt doloribus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi nobis veritatis animi? Sit at, incidunt, itaque molestias recusandae, 
-                tenetur vitae debitis quam id perspiciatis numquam tempora ullam ab sed consequatur necessitatibus. Dignissimos reiciendis explicabo modi sapiente animi dolorem assumenda fugit architecto tempora autem! Quod sit nulla cumque sapiente vero architecto pariatur similique asperiores vitae dolore porro laudantium suscipit deleniti illum itaque doloribus obcaecati quidem explicabo, nam quasi ab eveniet? Voluptates facilis delectus nemo quidem, laboriosam repellat voluptatum rem molestias ut dolorum pariatur explicabo voluptas exercitationem animi. Totam repellat aliquid saepe possimus, ipsam unde hic, voluptatem odit quis, adipisci officiis veniam.</p>
+                <p>Prepare-se para dar o primeiro passo em direção ao sucesso com nossos cursos cuidadosamente elaborados para atender às suas necessidades e ambições!
+
+Preencha nosso formulário rápido e sem compromisso e descubra um universo de oportunidades que podem transformar seus negócios.</p>
             </div>
         </div>
     </section>
@@ -133,6 +133,9 @@ ACEITO
             <div class="rwb-tooltip">Fale com a ACEDA</div> 
             <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
 	</a>
+
+	<script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
