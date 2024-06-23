@@ -33,8 +33,6 @@ $dadosblog = mysqli_query($conn, $queryblog);
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-	</style>
 	<!-- Bootstrap CSS -->
 	<link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -43,10 +41,11 @@ $dadosblog = mysqli_query($conn, $queryblog);
 	<link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
 	<link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
 	<script src="../www/assets/js/scrip-cookies.js"></script>
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
 	<title>ACEDA | Associação Comercial Distrito Anhanguera</title>
 </head>
 
-<body>
+<body style="font-family: Outfit;">
 	<!-- NavBar -->
 	<?php include_once "./template/navbar.php" ?>
 	<!-- NavBar -->
@@ -64,14 +63,14 @@ $dadosblog = mysqli_query($conn, $queryblog);
 				</div>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img class="d-block w-100" src="<?php echo $row[" imagemprimary"]; ?>" alt="">
+						<img class="d-block w-100 img-fluid" src="<?php echo $row["imagemprimary"]; ?>" alt="">
 					</div>
 					<?php
 					if ($dados) {
 						while ($linha = mysqli_fetch_assoc($dados)) {
 							?>
 					<div class="carousel-item">
-						<img class="d-block w-100" src="<?php echo $linha[" imagem"]; ?>" alt="">
+						<img class="d-block w-100 img-fluid" src="<?php echo $linha["imagem"]; ?>" alt="">
 					</div>
 					<?php
 						}
@@ -93,42 +92,46 @@ $dadosblog = mysqli_query($conn, $queryblog);
 			</div>
 	</section>
 	<!-- /Hero -->
-
-	<section class="bg-success shadow mx-1">
-		<h2 class="text-white">Serviços Aceda</h2>
-	</section>
-
+	<div class = "row">
+		<div class = "col">
+			<section class="bg-success shadow mx-1">
+				<h2 class="text-white">Serviços Aceda</h2>
+			</section>
+	</div>
 	<!-- Serviços -->
 	<section>
 		<div class="container">
 			<div class="row">
-				<?php
-				if ($resultado) {
-					while ($rows = mysqli_fetch_assoc($resultado)) {
-						?>
-				<div class="col-4 text-center p-1">
-					<img src="<?php echo $rows[" imagem_servico"]; ?>" class="img-fluid rounded-circle p-5 w-50" alt="">
-					<h3>
-						<?php echo $rows["nome"]; ?>
-					</h3>
-					<p>
-						<?php echo $rows["descricao"]; ?>
-					</p>
-					<a class="btn btn-outline-success rounded-pill" href="./servicos.php">Saiba mais</a>
-				</div>
-				<?php
+				<div class ="col d-flex flex-column order-md-first">
+					<?php
+					if ($resultado) {
+						while ($rows = mysqli_fetch_assoc($resultado)) {
+							?>
+					<div class="col text-center p-1">
+						<img class = "img-fluid" src="<?php echo $rows["imagem_servico"]; ?>" class="img-fluid rounded-circle p-5 w-50" alt="">
+						<h3>
+							<?php echo $rows["nome"]; ?>
+						</h3>
+						<p>
+							<?php echo $rows["descricao"]; ?>
+						</p>
+						<a class="btn btn-outline-success rounded-pill" href="./servicos.php">Saiba mais</a>
+					</div>
+					<?php
+						}
 					}
-				}
-				?>
-
+					?>
+				</div>
 			</div>
 		</div>
 	</section>
 	<!-- /Serviços -->
-
-	<section class="bg-primary shadow mx-1">
-		<h2 class="text-white">Cursos</h2>
-	</section>
+	<div class = "row">
+		<div class = "col">
+			<section class="bg-primary shadow mx-1">
+				<h2 class="text-white">Cursos</h2>
+			</section>
+	</div>
 	<!-- Cursos -->
 	<section>
 		<div class="container">
@@ -137,17 +140,17 @@ $dadosblog = mysqli_query($conn, $queryblog);
 				if ($resultado) {
 					while ($linhaCurso = mysqli_fetch_assoc($resultadoCurso)) {
 						?>
-				<div class="col-4">
-					<div class="card border-0">
-						<img src="<?php echo $linhaCurso[" imagem_curso"]; ?>" alt="" class="rounded-pill">
-						<div class="card-body">
-							<h5 class="card-title">
+				<div class="col d-flex flex-column order-md-first">
+					<div class="col d-flex flex-column 	 card border-0">
+						<img class = "img-fluid" src="<?php echo $linhaCurso["imagem_curso"]; ?>" alt="" class="rounded-pill">
+						<div class="col card-body">
+							<h5 class="col card-title">
 								<?php echo $linhaCurso["nome_curso"]; ?>
 							</h5>
-							<p class="card-text text-muted">
+							<p class="col card-text text-muted">
 								<?php echo $linhaCurso["descricao_curso"]; ?>
 							</p>
-							<a href="./cursos.php" class="btn btn-primary rounded-pill text-white">Ver Curso</a>
+							<a href="./cursos.php" class="col btn btn-primary rounded-pill text-white">Ver Curso</a>
 						</div>
 					</div>
 				</div>
@@ -167,9 +170,14 @@ $dadosblog = mysqli_query($conn, $queryblog);
 	<!-- /Contato Short -->
 
 	<!-- Ultimas notícias do blog -->
-	<section class="bg-warning shadow mx-1">
-		<h2 class="text-white">Fique por dentro!</h2>
-	</section>
+	 <div class = "row">
+		<div class = "col">
+			<section class="bg-warning shadow mx-1">
+				<h2 class="text-white">Fique por dentro!</h2>
+			</section>
+		</div>
+	 </div>
+	
 	<!-- Blog -->
 	<section>
 		<div class="row mb-2">
@@ -192,10 +200,10 @@ $dadosblog = mysqli_query($conn, $queryblog);
 						<p class="card-text mb-auto">
 							<?php echo $linhablog["descricao"]; ?>
 						</p>
-						<?php echo '<a class=" col-3 btn btn-primary p-0 mt-1 me-0 mb-0 rounded-pill text-white" href="./post-blog.php?id=' . $linhablog["id"] . '">Ler Mais</a>' ?>
+						<?php echo '<a class="col btn btn-primary p-0 mt-1 me-0 mb-0 rounded-pill text-white" href="./post-blog.php?id=' . $linhablog["id"] . '">Ler Mais</a>' ?>
 					</div>
 					<div class="col-auto d-none d-lg-block">
-						<img src="<?php echo $linhablog[" imagem"]; ?>" width="200" height="200" role="img"
+						<img src="<?php echo $linhablog["imagem"]; ?>" width="200" height="200" role="img"
 						aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 						<rect width="100%" height="100%" fill="#55595c" /></img>
 					</div>

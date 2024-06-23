@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
     <link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
 </head>
-<body>
+
+<body style="font-family: Outfit;">
     <!-- NavBar -->
 	<?php include_once "./template/navbar.php" ?>
 	<!-- NavBar -->
     <!--Hero-->
     
     <div class="row">
-        <div class="col-12">
-            <img class="img-fluid img-thumbnail" src="./assets/img/aceda curso.png" alt="Menina Sorrindo">
+        <div class="col">
+            <img class="img-fluid img-thumbnail" src="./assets/img/aceda curso.png" alt="">
         </div>
     </div>
 
@@ -132,4 +134,5 @@ ACEITO
             <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
 	</a>
 </body>
+
 </html>

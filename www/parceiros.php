@@ -6,9 +6,10 @@
     <!-- Bootstrap CSS -->
 	<link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-    <title>Parceiros | ACEDA</title>
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<title>Parceiros | ACEDA</title>
 </head>
-<body class= "bg-primary bg-opacity-50">
+<body class= "bg-primary bg-opacity-50" style="font-family: Outfit;">
 	<!-- NavBar -->
 	<?php include_once "./template/navbar.php" ?>
 	<!-- NavBar -->

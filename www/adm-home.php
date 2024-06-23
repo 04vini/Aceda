@@ -31,6 +31,7 @@
     <title>Config Pagina Inicial</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="./assets/css/main.min.css" rel="stylesheet" crossorigin="anonymous">  
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
         const alertBox = document.getElementById("alertBox");
@@ -71,7 +72,7 @@
                 <div class="row m- text-center border border-dark bg-white">
                     <h3 class="text-center mt-3 mb-1"><strong>Imagens Carousel</strong></h3>
                     <div class="col-4">
-                        <img src="<?php echo $row["imagemprimary"];?>" height="200" width="350" class="p-1">
+                        <img class="img-fluid" src="<?php echo $row["imagemprimary"];?>" height="200" width="350" class="p-1">
                         <a href="update-img-home-primary.php?id=<?php echo $row["id"];?>" class="btn btn-primary rounded-pill text-white">Alterar imagem</a>
                     </div>
                 <?php

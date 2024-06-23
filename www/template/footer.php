@@ -6,12 +6,17 @@
 
 <!-- Footer -->
 <footer class="text-center text-black" style="background-color: #FFE32D">
-      <div class="float-start">
-        <img src="./assets/img/brand-tagline-green@2x.png" alt="Aceda logo">
-      </div>
+    <div class = "row">
+        <div class = "col d-flex flex-column">
+          <div class="float-start">
+            <img class ="img-fluid" src="./assets/img/brand-tagline-green@2x.png" alt="Aceda logo">
+          </div>
+        </div>
+    </div>
+      
       <!-- Section: Text -->
       <div class="p-3">
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center ">
           <div class="col-lg-8">
             <ul class="list-group-flush">
               <li class="list-group-item">

@@ -19,6 +19,7 @@ if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
     <link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -29,7 +30,7 @@ if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
     <div> 
         <div class="container bg-white mt-5">
             <br>
-            <div class="alert alert-success mt-2 row justify-content-md-center ml-5 me-5">
+            <div class="alert alert-success mt-2 row justify-content-md-center">
                 <div class="col-md-auto">
                     <h4 class="">Bem vindo <?php echo $_SESSION['nome']; ?>!</h1>
                 </div>

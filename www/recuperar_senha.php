@@ -25,6 +25,7 @@ $mail = new PHPMailer(true);
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
     <title>Blog ACEDA</title>
 </head>
 
