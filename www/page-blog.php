@@ -38,10 +38,12 @@
     if ($dados) {
         while ($linha = mysqli_fetch_assoc($dados)) {
             if ($linha && isset($linha["registro"])) {
-                $dataHora = strtotime($linha["registro"]);
-                date_default_timezone_set('America/Sao_Paulo');
-                setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
-                $registroFormatado = date("d de \M", $dataHora);
+                $dataHora = new DateTime($linha["registro"], new DateTimeZone('America/Sao_Paulo'));
+
+                $formatter = new IntlDateFormatter('pt_BR', IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'America/Sao_Paulo');
+                $formatter->setPattern("d 'de' MMMM"); // Definir o padrão de formato
+                
+                $registroFormatado = $formatter->format($dataHora);
             }
             
     ?>
