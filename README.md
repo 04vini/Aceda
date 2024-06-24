@@ -1,5 +1,6 @@
 # Boilerplate Site Aceda
 
+* PHP 8.2.4
 * Boostrap 5
 * Gulp
 * Toastr - Not Used

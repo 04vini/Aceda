@@ -32,10 +32,10 @@
 					</div>
 				</li> 
 
-				<li class= "pl-5">
-				<span class= "pl-5 ml-5"> <?php echo $_SESSION['nome'] . "&emsp;|" ; ?></span>
+				<li class= "ps-5">
+				<span class= "ps-5 ms-5"> <?php echo $_SESSION['nome'] . "&emsp;|" ; ?></span>
 
-				<a class="btn btn-danger rounded-pill ml-3 " href="sair.php">Sair</a>
+				<a class="btn btn-danger rounded-pill ms-3 " href="sair.php">Sair</a>
 				</li>
 			</ul>
 		</div>

@@ -180,7 +180,7 @@ $dadosblog = mysqli_query($conn, $queryblog);
 	
 	<!-- Blog -->
 	<section>
-		<div class="row mb-2">
+		<div class="row mb-2 ms-2">
 			<?php
 			if ($dadosblog) {
 				while ($linhablog = mysqli_fetch_assoc($dadosblog)) {

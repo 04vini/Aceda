@@ -16,6 +16,9 @@
     <?php
     include "conexao.php";
 
+    // Defina o timezone padrão
+    date_default_timezone_set('America/Sao_Paulo');
+
     // Número de registros por página
     $registros_por_pagina = 5;
 
@@ -33,26 +36,22 @@
     // Consulta para buscar os registros
     $query = "SELECT * FROM tb_blog ORDER BY id DESC LIMIT $offset, $registros_por_pagina";
     $dados = mysqli_query($conn, $query);
-    
-    //BUG NESSA PARTE DO BLOG
+
     if ($dados) {
         while ($linha = mysqli_fetch_assoc($dados)) {
             if ($linha && isset($linha["registro"])) {
-                $dataHora = new DateTime($linha["registro"], new DateTimeZone('America/Sao_Paulo'));
-
-                $formatter = new IntlDateFormatter('pt_BR', IntlDateFormatter::FULL, IntlDateFormatter::NONE, 'America/Sao_Paulo');
-                $formatter->setPattern("d 'de' MMMM"); // Definir o padrão de formato
-                
-                $registroFormatado = $formatter->format($dataHora);
+                // Converte o registro para DateTime e formata corretamente
+                $dataHora = new DateTime($linha["registro"]);
+                setlocale(LC_TIME, 'pt_BR.utf8', 'portuguese');
+                $registroFormatado = strftime("%d de %B de %Y às %H:%M", $dataHora->getTimestamp());
             }
-            
     ?>
         <div style="background-color: #A3C8D8;">
             <br>
             <div class="container mb-1 mt-2">
                 <div class="row bg-white p-5">
                     <div class="col img-fluid text-left">
-                        <img class="rounded-4 pe-2"src="<?php echo $linha['imagem']; ?>" width="270" height="220" />
+                        <img class="rounded-4 pe-2" src="<?php echo $linha['imagem']; ?>" width="270" height="220" />
                     </div>
                     <div class="col text-right">
                         <span class="bg-warning text-dark mb-1 pt-0 pb-0 p-1 font-sm"><?php echo $linha['categoria']; ?></span>
@@ -60,13 +59,13 @@
                         <p><?php echo $linha['descricao']; ?></p>
                         <div class="row">
                             <span class="row justify-content-end col-me-3 me-5">Postado por: <?php echo $linha['autor']; ?></span>
-                            <p class=""><small class="row justify-content-end col-me-3 sm me-1"><?php echo mb_convert_case($registroFormatado, MB_CASE_UPPER, "UTF-8");?></small></p>
+                            <p class=""><small class="row justify-content-end col-me-3 sm me-1"><?php echo mb_convert_case($registroFormatado, MB_CASE_UPPER, "UTF-8"); ?></small></p>
                             <a class="col btn btn-primary m-1 mt-0 me-0 mb-0 rounded-pill text-white" href="./post-blog.php?id=<?php echo $linha['id']; ?>">Ler Mais</a>
                         </div>
                     </div>
                 </div>
-        </div>
-        <br>
+            </div>
+            <br>
     <?php
         }
     }

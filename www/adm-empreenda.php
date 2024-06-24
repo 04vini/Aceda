@@ -19,7 +19,7 @@
 <body>
 
         
-        <div class="container">
+        <div class="m-4">
             <div>
                 <h3 class="row justify-content-center mt-3 pt-1">Relatório Empreenda Aceda</h3>
             </div>
@@ -53,6 +53,8 @@
                                     // Loop para exibir os resultados da consulta
                                     if ($dados && mysqli_num_rows($dados) > 0) {
                                         while ($linha = mysqli_fetch_assoc($dados)) {
+                                            $dataHora = strtotime($linha["registro"]);
+                                            $registroFormatado = date("d/m/Y H:i:s", $dataHora);
                                 echo '<tr>';
                                 echo '<td>' . $linha["id"] . '</td>';
                                 echo '<td>' . $linha["nome_responsavel"] . '</td>';
@@ -62,12 +64,12 @@
                                 echo '<td>' . $linha["loja"] . '</td>';
                                 echo '<td>' . $linha["possuilogo"] . '</td>';
                                 if (!empty($linha["anexo"])) {
-                                    echo '<td><a href="http://localhost/Nova%20pasta/Aceda/www' . $linha["anexo"] . '" >Ver logo</a></td>';
+                                    echo '<td><a href="http://localhost/Nova%20pasta/Aceda/www' . $linha["anexo"] . '" download="' . basename($linha["anexo"]) . '">Ver logo</a></td>';
                                 } else {
                                     echo '<td></td>';
                                 };
                                 echo '<td>' . $linha["aceite"] . '</td>';
-                                echo '<td>' . $linha["registro"] . '</td>';
+                                echo '<td>' . $registroFormatado . '</td>';
                                 }
                             }
                         ?>
