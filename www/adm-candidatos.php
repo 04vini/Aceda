@@ -32,7 +32,11 @@
     <!-- NavBar -->
     <?php include_once "./template/navbar-adm.php"?>
     <!-- NavBar -->
-        <div class="m-4">
+
+    <div class="bg-secondary bg-gradient">
+    <div class="ms-3 me-3 mt-1">
+    <br>
+        <div class="m-4 bg-white p-2">
             <div>
                 <h3 class="row justify-content-center mt-3 pt-1">Candidatos</h3>
             </div>
@@ -102,6 +106,12 @@
             </div>
 
         </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        </div>    
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
