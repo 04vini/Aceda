@@ -106,13 +106,13 @@
             </div>
             <div class="col-12 col-md-7 order-md-last">
                 <div class="text-start p-4">
-                    <h1 class="text-center">O seu parceiro em segurança comunitária!</h1> <br>
+                    <h1 class="text-center display-6">O seu parceiro em segurança comunitária!</h1> <br>
                     <p class="text-justify-space">Com mais de 35 câmeras estrategicamente posicionadas no bairro do Sol
                         Nascente, o <strong>ACEDA Monitora</strong>
                         vai além de um simples sistema de vigilância - é uma iniciativa de cuidado coletivo que une
                         vizinhos em prol da segurança e bem-estar de todos.</p>
                     <br>
-                    <h2 class="text-center">Porque escolher a ACEDA MONITORA?</h2>
+                    <h2 class="text-center display-6">Porque escolher a ACEDA MONITORA?</h2>
                     <br>
                     <ul>
                         <li>Acesso 24 horas;</li>
