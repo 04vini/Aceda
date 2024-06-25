@@ -97,7 +97,7 @@
             </div>
         <?php } ?>
         
-        <div class="ml-4 me-4 mt-2">
+        <div class="ms-4 me-4 mt-2">
             <br>
             <div class="border border-dark bg-white">
                 <div class="m-5">
