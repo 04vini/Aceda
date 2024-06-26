@@ -1,7 +1,10 @@
 {
-  "name": "pagina-sobre",
+  "name": "Aceda Site",
+  "description": "Site criado por 3 desenvolvedores voluntários da ONG Aceda",
+  "keywords": ["Aceda, Marcos Hernandes, Ronaldo Lacerda, Tomas Pereira"],
+  "author": "Marcos Vinicius Hernandes Da Silva Carreiro <mvhcarreiro.2010@gmail.com> (https://www.linkedin.com/in/marcos-carreiro/), Tomás Moiano Pereira <thomas033628@gmail.com> (https://www.linkedin.com/in/tom%C3%A1s-moiano-933b8b190/), Ronaldo Lacerda <ronaldolacerdadasilva@gmail.com> (https://www.linkedin.com/in/ronaldo-lacerda-295335248/)",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "home.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
