@@ -35,6 +35,9 @@
 					<a class="nav-link" href="./parceiros.php">Parceiros</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link" href="./page-voluntarios.php">Voluntários</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="./contatos.php">Contatos</a>
 				</li>
 			</ul>
