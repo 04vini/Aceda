@@ -17,8 +17,10 @@
 
     $senhaUser = isset($_POST['senhaUser']) ? $_POST['senhaUser'] : NULL;
 
+    $senhaHash = password_hash($senhaUser, PASSWORD_DEFAULT);
+
     //Query de inserçao dos dados no banco
-    $query = "INSERT INTO tb_usuarios (nome, usuario, senha_usuario) VALUES ( '$nomeUser', '$emailUser', '$senhaUser')";
+    $query = "INSERT INTO tb_usuarios (nome, usuario, senha_usuario) VALUES ( '$nomeUser', '$emailUser', '$senhaHash')";
     $res = mysqli_query($conn, $query);
 
     header("Location: ./adm-usuarios.php?mensagem=Usuário Criado com sucesso");
