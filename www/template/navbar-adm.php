@@ -32,6 +32,7 @@
 					<div class="dropdown-menu" aria-labelledby="menuDrop">
 					<a class="dropdown-item" href="./adm-home.php">Página inicial</a>
 					<a class="dropdown-item" href="./adm-usuarios.php">Usuários</a>
+					<a class="dropdown-item" href="./adm-config-cursos.php">Página cursos</a>
 					</div>
 				</li> 
 

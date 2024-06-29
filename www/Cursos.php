@@ -65,14 +65,24 @@ Preencha nosso formulário rápido e sem compromisso e descubra um universo de o
                 <div id="emailInfo" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
             </div>
             <p>Tema do Curso de Interesse.</p>
-            <select class="form-select mb-3" name="curso">
-                <option value="" default>-- Selecione um curso --</option>
-                <option value="curso1">Comece como um empreendedor e não como blogueirinho (presencial) 13/jun 19h</option>
-                <option value="curso2">Comece a fechar parcerias e monetizar (presencial) 27/jun 19h</option>
-                <option value="curso3">Seja uma empresária criativa no mundo dos negócios 11/jul 19h</option>
-                <option value="curso4">Seja uma mulher que busca o equilíbrio como meta de vida 25/jul 19h</option>
-                <option value="curso5">Super Mei: Organize Seu Negócio - Gestão Financeira (Presencial) 15à18/jul 19h Semanal 04 dias</option>
-            </select>
+            
+            <?php
+                include "conexao.php";
+                $sql = "SELECT * FROM tb_configcursos";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    echo '<select class="form-control">';
+                    echo '<option value="">Selecione um curso</option>';
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<option value="' . $row['id'] . '">' . htmlspecialchars($row['curso']) . '</option>';
+                    }
+                    echo '</select>';
+                } else {
+                    echo '<p>Nenhum curso encontrado.</p>';
+                }
+
+            ?>
+            <br>
             <div class="mb-3">
                 <label for="InputCPF" class="form-label">CPF</label>
                 <input type="text" class="form-control" id="InputCPF" name="InputCPF">
