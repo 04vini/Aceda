@@ -77,7 +77,6 @@ $dadosblog = mysqli_query($conn, $queryblog);
 					}
 					?>
 
-
 					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
 						data-bs-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
