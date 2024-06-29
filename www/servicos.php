@@ -92,7 +92,7 @@
     </div>
 
     <!-- SESSÃO ACEDA MONITORA -->
-    <section class="container mt-5 mb-5">
+    <section class="container">
         <div class="d-flex justify-content-center">
             <img class="img-fluid" src="../www/assets/img/acedamonitora@3x.png" style="max-width: 55%; height: auto;">
         </div>

@@ -37,14 +37,21 @@ $dadosblog = mysqli_query($conn, $queryblog);
 	<link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-	<link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
-	<link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
 	<script src="../www/assets/js/scrip-cookies.js"></script>
 	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
+	<link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
+	<style>
+		@media (max-width: 767px) {
+			.carousel-inner img {
+				height: 300px !important;
+			}
+		}
+	</style>
 	<title>ACEDA | Associação Comercial Distrito Anhanguera</title>
 </head>
 
-<body style="font-family: Outfit;">
+<body style="font-family: Outfit; margin: 0; padding: 0; border: 0;">
 	<!-- NavBar -->
 	<?php include_once "./template/navbar.php" ?>
 	<!-- NavBar -->
@@ -73,13 +80,11 @@ $dadosblog = mysqli_query($conn, $queryblog);
 					}
 					?>
 
-					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-						data-bs-slide="prev">
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						<span class="visually-hidden">Previous</span>
 					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-						data-bs-slide="next">
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
 						<span class="visually-hidden">Next</span>
 					</button>
@@ -112,7 +117,7 @@ $dadosblog = mysqli_query($conn, $queryblog);
 							while ($rows = mysqli_fetch_assoc($resultado)) {
 						?>
 								<div class="col text-center p-1">
-									<img class="img-fluid" src="<?php echo $rows["imagem_servico"]; ?>" class="img-fluid rounded-circle p-5 w-50" alt="">
+									<img class="img-fluid" src="<?php echo $rows["imagem_servico"]; ?>" class="img-fluid rounded-circle p-5 w-50 h-50" alt="">
 									<h3>
 										<?php echo $rows["nome"]; ?>
 									</h3>
@@ -131,10 +136,12 @@ $dadosblog = mysqli_query($conn, $queryblog);
 		</section>
 		<!-- /Serviços -->
 		<div class="row">
-			<div class="col">
-				<section class="bg-primary shadow mx-1">
-					<h2 class="text-white">Cursos</h2>
-				</section>
+			<div>
+				<div class="col">
+					<section class="shadow" style="background-color: #2C4D97; margin-right: -10px">
+						<h2 class="text-white fw-semibold">cursos</h2>
+					</section>
+				</div>
 			</div>
 			<!-- Cursos -->
 			<section>
@@ -163,8 +170,6 @@ $dadosblog = mysqli_query($conn, $queryblog);
 						}
 						?>
 
-
-
 					</div>
 				</div>
 			</section>
@@ -176,46 +181,42 @@ $dadosblog = mysqli_query($conn, $queryblog);
 			<!-- Ultimas notícias do blog -->
 			<div class="row">
 				<div class="col">
-					<section class="bg-warning shadow mx-1">
-						<h2 class="text-white">Fique por dentro!</h2>
+					<section class="shadow" style="background-color: #FFE32D;">
+						<h2 class="text-white fw-semibold">fique por dentro!</h2>
 					</section>
 				</div>
 			</div>
 
 			<!-- Blog -->
 			<section>
-				<div class="row mb-2 ms-2">
-					<?php
-					if ($dadosblog) {
-						while ($linhablog = mysqli_fetch_assoc($dadosblog)) {
-					?>
-							<div class="col-md-6">
-								<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-									<div class="col p-4 d-flex flex-column position-static">
-										<strong class="d-inline-block mb-1 text-primary">
-											<?php echo $linhablog["titulo"]; ?>
-										</strong>
-										<div class="text-warning text-secundary justify-content-start mb-2 mt-0 font-sm">
-											<small>
-												<?php echo $linhablog["categoria"]; ?>
-											</small>
+				<div class="container">
+					<div class="row row-cols-1 row-cols-md-2 g-4">
+						<?php
+						if ($dadosblog) {
+							while ($linhablog = mysqli_fetch_assoc($dadosblog)) {
+						?>
+								<div class="col">
+									<div class="card border rounded overflow-hidden shadow-sm h-100">
+										<div class="row g-0">
+											<div class="col-md-6 d-flex align-items-center">
+												<img src="<?php echo $linhablog["imagem"]; ?>" class="img-fluid rounded-start" alt="Imagem do Blog">
+											</div>
+											<div class="col-md-6">
+												<div class="card-body">
+													<h5 class="card-title text-primary mb-1"><?php echo $linhablog["titulo"]; ?></h5>
+													<p class="card-text text-secondary mb-2"><?php echo $linhablog["categoria"]; ?></p>
+													<p class="card-text"><?php echo $linhablog["descricao"]; ?></p>
+													<a href="./post-blog.php?id=<?php echo $linhablog["id"]; ?>" class="btn btn-primary rounded-pill text-white">Ler Mais</a>
+												</div>
+											</div>
 										</div>
-										<p class="card-text mb-auto">
-											<?php echo $linhablog["descricao"]; ?>
-										</p>
-										<?php echo '<a class="col btn btn-primary p-0 mt-1 me-0 mb-0 rounded-pill text-white" href="./post-blog.php?id=' . $linhablog["id"] . '">Ler Mais</a>' ?>
-									</div>
-									<div class="col-auto d-none d-lg-block">
-										<img src="<?php echo $linhablog["imagem"]; ?>" width="200" height="200" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-										<rect width="100%" height="100%" fill="#55595c" /></img>
 									</div>
 								</div>
-							</div>
-
-					<?php
-						};
-					};
-					?>
+						<?php
+							}
+						}
+						?>
+					</div>
 				</div>
 			</section>
 
