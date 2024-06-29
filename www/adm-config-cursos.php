@@ -39,7 +39,7 @@ if ((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))) {
                 <input type="text" name="curso_label" id="curso_label">
                 <br><br>
             </div>
-            <button type="submit" class="btn btn-primary">Adicionar Curso</button>
+            <button type="submit" class="btn btn-success rounded-pill text-white">Adicionar Curso</button>
         </form>
 
         <hr>
@@ -59,8 +59,8 @@ if ((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))) {
                         echo '<li class="list-group-item d-flex justify-content-between align-items-center">'
                             . htmlspecialchars($row['curso']) . '
                             <div>
-                                <a href="adm-update-config-cursos.php?id=' . $row['id'] . '" class="btn btn-sm btn-primary mr-2">Editar</a>
-                                <a href="adm-delete-config-cursos.php?id=' . $row['id'] . '" class="btn btn-sm btn-danger">Excluir</a>
+                                <a href="adm-update-config-cursos.php?id=' . $row['id'] . '" class="btn btn-sm btn-primary rounded-pill text-white mr-2">Editar</a>
+                                <a href="adm-delete-config-cursos.php?id=' . $row['id'] . '" class="btn btn-sm btn-danger rounded-pill text-white">Excluir</a>
                             </div>
                         </li>';
                     }
