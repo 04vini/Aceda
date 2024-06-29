@@ -22,6 +22,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="./adm-candidatos.php">Banco de candidatos</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="./adm-voluntarios.php">Voluntários</a>
+				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="menuDrop" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Configurações
@@ -33,9 +36,9 @@
 				</li> 
 
 				<li class= "ps-5">
-				<span class= "ps-5 ms-5"> <?php echo $_SESSION['nome'] . "&emsp;|" ; ?></span>
+				<span class= "ps-5 ms-2"> <?php echo $_SESSION['nome'] . "&emsp;|" ; ?></span>
 
-				<a class="btn btn-danger rounded-pill ms-3 " href="sair.php">Sair</a>
+				<a class="btn btn-danger rounded-pill ms-1 " href="sair.php">Sair</a>
 				</li>
 			</ul>
 		</div>
