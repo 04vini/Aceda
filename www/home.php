@@ -72,7 +72,6 @@ $dadosblog = mysqli_query($conn, $queryblog);
 						}
 					}
 					?>
-<<<<<<< HEAD
 
 					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
 						data-bs-slide="prev">
@@ -84,8 +83,6 @@ $dadosblog = mysqli_query($conn, $queryblog);
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
 						<span class="visually-hidden">Next</span>
 					</button>
-=======
->>>>>>> 67f9b965632d36f189247e6451646888319f0e6b
 				</div>
 				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
