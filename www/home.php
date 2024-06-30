@@ -25,15 +25,12 @@ $queryblog = "SELECT * FROM tb_blog
 $dadosblog = mysqli_query($conn, $queryblog);
 ?>
 
-
 <!doctype html>
 <html lang="pt-BR">
 
 <head>
-	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Bootstrap CSS -->
 	<link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
@@ -44,6 +41,8 @@ $dadosblog = mysqli_query($conn, $queryblog);
 	<style>
 		@media (max-width: 767px) {
 			.carousel-inner img {
+				margin-top: 0px;
+				margin-bottom: 0px;
 				height: 300px !important;
 			}
 		}
@@ -101,13 +100,13 @@ $dadosblog = mysqli_query($conn, $queryblog);
 		</div>
 	</section>
 	<!-- /Hero -->
+	<!-- Serviços -->
 	<div class="row">
 		<div class="col">
 			<section class="shadow" style="background-color: #278F48;">
 				<h2 class="text-white fw-semibold">serviços aceda</h2>
 			</section>
 		</div>
-		<!-- Serviços -->
 		<section>
 			<div class="container">
 				<div class="row">
@@ -117,7 +116,7 @@ $dadosblog = mysqli_query($conn, $queryblog);
 							while ($rows = mysqli_fetch_assoc($resultado)) {
 						?>
 								<div class="col text-center p-1">
-									<img class="img-fluid" src="<?php echo $rows["imagem_servico"]; ?>" class="img-fluid rounded-circle p-5 w-50 h-50" alt="">
+									<img src="<?php echo $rows["imagem_servico"]; ?>" class="img-fluid rounded-circle p-5 w-50 h-50">
 									<h3>
 										<?php echo $rows["nome"]; ?>
 									</h3>
