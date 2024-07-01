@@ -104,7 +104,7 @@ $dadosblog = mysqli_query($conn, $queryblog);
 	<div class="row">
 		<div class="col">
 			<section class="shadow" style="background-color: #278F48;">
-				<h2 class="text-white fw-semibold">serviços aceda</h2>
+				<h2 class="text-white fw-semibold">Serviços aceda</h2>
 			</section>
 		</div>
 		<section>
@@ -133,14 +133,13 @@ $dadosblog = mysqli_query($conn, $queryblog);
 				</div>
 			</div>
 		</section>
+	</div>
 		<!-- /Serviços -->
 		<div class="row">
-			<div>
-				<div class="col">
-					<section class="shadow" style="background-color: #2C4D97; margin-right: -10px">
-						<h2 class="text-white fw-semibold">cursos</h2>
+			<div class="col">
+					<section class="shadow" style="background-color: #2C4D97;">
+						<h2 class="text-white fw-semibold">Cursos</h2>
 					</section>
-				</div>
 			</div>
 			<!-- Cursos -->
 			<section>
@@ -172,6 +171,7 @@ $dadosblog = mysqli_query($conn, $queryblog);
 					</div>
 				</div>
 			</section>
+		</div>
 			<!-- /Cursos -->
 
 			<!-- Contato Short -->
