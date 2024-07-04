@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg ">
-	<div class="container">
+<nav class="navbar navbar-expand-lg">
+	<div class="container-fluid">
 		<a class="navbar-brand" href="./home.php">
 			<img src="./assets/img/logo_aceda.png" alt="Aceda Associação Comercial" height="32">
 		</a>
@@ -11,17 +11,16 @@
 				<li class="nav-item">
 					<a class="nav-link active" href="./sobre.php">Sobre Aceda</a>
 				</li>
-
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="teste.php" id="menuDrop" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Serviços
+						Serviços
 					</a>
 					<div class="dropdown-menu" aria-labelledby="menuDrop">
-					<a class="dropdown-item" href="./servicos.php">Serviços</a>
-					<a class="dropdown-item" href="./solicitacoesAceda.php">Solicitações</a>
-					<a class="dropdown-item" href="./empreendaAceda.php">Empreenda</a>
+						<a class="dropdown-item" href="./servicos.php">Serviços</a>
+						<a class="dropdown-item" href="./solicitacoesAceda.php">Solicitações</a>
+						<a class="dropdown-item" href="./empreendaAceda.php">Empreenda</a>
 					</div>
-				</li> 
+				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="./cursos.php">Cursos</a>
 				</li>
