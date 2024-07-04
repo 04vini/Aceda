@@ -15,7 +15,7 @@
     </div>
       
       <!-- Section: Text -->
-      <div class="p-3">
+      <div>
         <div class="row d-flex justify-content-center ">
           <div class="col-lg-8">
             <ul class="list-group-flush">

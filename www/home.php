@@ -108,7 +108,7 @@ $dadosblog = mysqli_query($conn, $queryblog);
 			</section>
 		</div>
 		<section>
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col d-flex flex-column order-md-first">
 						<?php
@@ -143,8 +143,8 @@ $dadosblog = mysqli_query($conn, $queryblog);
 			</div>
 			<!-- Cursos -->
 			<section>
-				<div class="container">
-					<div class="row container">
+				<div class="container-fluid">
+					<div class="row container-fluid">
 						<?php
 						if ($resultado) {
 							while ($linhaCurso = mysqli_fetch_assoc($resultadoCurso)) {
@@ -188,7 +188,7 @@ $dadosblog = mysqli_query($conn, $queryblog);
 
 			<!-- Blog -->
 			<section>
-				<div class="container">
+				<div class="container-fluid">
 					<div class="row row-cols-1 row-cols-md-2 g-4">
 						<?php
 						if ($dadosblog) {
@@ -238,7 +238,7 @@ $dadosblog = mysqli_query($conn, $queryblog);
 			<!-- POP UP DE USO DE COOKIES -->
 
 			<div class="cookie-popup">
-				<div class="container">
+				<div class="container-fluid">
 					<p>Este site utiliza cookies para melhorar sua experiência de navegação. Ao continuar navegando, você
 						concorda com o uso de cookies.</p>
 
