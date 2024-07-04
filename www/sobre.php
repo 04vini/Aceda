@@ -22,7 +22,7 @@
     <!-- 1º SESSÃO -->
 
     <section class="p-5" style="background-color:#2C4D97;">
-        <div class="container">
+        <div class="container-fluid">
             <h1 class="text-center text-white fw-bold">sobre a aceda</h1>
             <p class="text-center text-white">A ACEDA é uma organização sem fins lucrativos que atua como
                 um catalisador
@@ -42,7 +42,7 @@
 
     <!-- 2ª SESSÃO -->
 
-    <section class="container mt-5">
+    <section class="container-fluid mt-5">
         <div class="row">
             <div class="col-12 col-md-5 order-md-first">
                 <img src="../www/assets/img/imagem-01.jpg" class="img-fluid mt-3 rounded-2 shadow-custom">
@@ -69,7 +69,7 @@
     <!-- MISSÃO, VISÃO E VALORES -->
 
     <div style="background-color: #A3C8D8;">
-        <div class="container mt-5 pb-5 pt-5">
+        <div class="container-fluid mt-5 pb-5 pt-5">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col text-center">
                     <div class="card border-0 rounded bg-white custom-shadow">
@@ -115,7 +115,7 @@
 
     <h1 style="color: #2C4D97;" class="text-center fw-bold custom-shadow mt-5">transparência</h1>
 
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
         <div class="row justify-content-center">
             <div class="col-md-4 mb-3">
                 <div class="card shadow-custom">
@@ -151,8 +151,8 @@
     <!-- ENDEREÇO DO MAPS -->
 
     <div style="background-color: #BED63A;">
-        <div class="container mt-5 pt-4 pb-5">
-            <div class="container col-lg-10">
+        <div class="container-fluid mt-5 pt-4 pb-5">
+            <div class="container-fluid col-lg-10">
                 <p class="ml-4 text-white shadow-custom-text">
                     Telefone: (11) 2688-9235 <br>
                     WhatsApp: (11) 95877-1996 <br>

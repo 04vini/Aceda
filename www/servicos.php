@@ -8,55 +8,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="../www/assets/css/estilo.sass/style.css">
+    <link rel="stylesheet" href="assets/css/estilo.css/carrosel-serviços.css">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
-    <link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
-    <style>
-        body {
-            font-family: 'Outfit';
-            padding: 0;
-            margin: 0;
-        }
-
-        /* CÓDIGO CSS/CARROSEL DE SERVIÇOS - NÃO CONSEGUI FAZER O 
-        CSS E O JAVASCRIPT DO CARROSEL DE SERVIÇOS FUNCIONAR FORA DO CÓDIGO HTML */
-
-        .slider {
-            height: 400px;
-            display: flex;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .slide-card {
-            width: 300px;
-            flex: 0 0 auto;
-            transition: transform 0.5s ease;
-        }
-
-        .arrow {
-            width: 40px;
-            height: 40px;
-        }
-
-        .bg-disabled {
-            background-color: #e5e3e7;
-        }
-
-        .slider-wrap {
-            display: flex;
-            transition: transform 1s ease-in-out;
-        }
-
-        .slider-wrap.grabbing {
-            cursor: grabbing;
-            cursor: -webkit-grabbing;
-        }
-    </style>
     <title>Serviços ACEDA</title>
 </head>
+
 
 <body>
 
@@ -85,9 +47,9 @@
     </div>
 
     <!-- SESSÃO ACEDA MONITORA -->
-    <section class="container mt-1"> <!-- Reduzi a margem superior para 3 -->
+    <section class="container mt-1">
         <div class="d-flex justify-content-center">
-            <img class="img-fluid" src="../www/assets/img/acedamonitora@3x.png" style="max-width: 55%;">
+            <img class="img-fluid" src="../www/assets/img/acedamonitora@3x.png" style="max-width: 65%;">
         </div>
         <div class="row mt-3">
             <div class="col-12 col-md-5 order-md-first">
@@ -116,7 +78,7 @@
 
 
     <!-- ACEDA DIVULGA -->
-    <section class="container mt-5 mb-5">
+    <section class="container mt-1">
         <div class="d-flex justify-content-center">
             <img class="img-fluid" src="../www/assets/img/divulgaaceda.png" style="max-width: 48%; height: auto;">
         </div>
@@ -150,250 +112,143 @@
 
     <!-- OUTROS SERVIÇOS -->
 
-    <div style="background-color:  #2C4D97;" class="pb-1 shadow">
-        <!-- SLIDE DE SERVIÇOS -->
-        <section class="p-md-2 p-2 mb-5 container">
-            <h2 class="text-center text-white pt-4 pb-4 shadow-custom-text fw-bold">Conheça nossos demais serviços</h2>
-            <div class="container position-relative">
-                <div class="slider d-flex align-items-center justify-content-start overflow-hidden position-relative">
-                    <div class="slider-wrap d-flex align-items-center position-absolute">
-                        <!-- Cards de Serviços -->
-                        <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
-                            <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/Card 1 - nota-fiscal.png" alt="slide" style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
-                                <div class="content p-2 mt-3 text-center">
-                                    <h4 class="fw-bold text-dark">Emissão NF-e (Nota Fiscal Eletrônica)</h4>
-                                    <p>Emita suas notas fiscais eletrônicas com rapidez e facilidade, garantindo
-                                        conformidade com as regulamentações fiscais.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
-                            <div class="text-decoration-none">
-                                <img src="../www/assets/img/img-carrosel-servicos/Card 2 - curriculos.png" alt="slide" style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
-                                <div class="content p-2 mt-3 text-center">
-                                    <h4 class="fw-bold text-dark">Elaboração eficiente de Currículos (CV)</h4>
-                                    <p>Conte com nossa expertise para elaborar um currículo que destaque suas
-                                        habilidades e experiências de forma profissional.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
-                            <div class="text-decoration-none">
-                                <img src="../www/assets/img/img-carrosel-servicos/Card 3 - consultar INSS.png" alt="slide" style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
-                                <div class="content p-2 mt-3 text-center">
-                                    <h4 class="fw-bold text-dark">Consulta do cadastro no INSS</h4>
-                                    <p>Acesse todas as informações necessárias sobre sua previdência social através de
-                                        nosso serviço de consulta INSS.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
-                            <div class="text-decoration-none">
-                                <img src="../www/assets/img/img-carrosel-servicos/Card 4 - Cadastro bilhete unico.png" alt="slide" style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
-                                <div class="content p-2 mt-3 text-center">
-                                    <h4 class="fw-bold text-dark">Cadastro Bilhete Único e Idoso</h4>
-                                    <p>Simplificamos o processo de cadastro para o Bilhete Único e Bilhete do Idoso,
-                                        garantindo acesso facilitado ao transporte público para os idosos.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
-                            <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/Card 5 - poupa-tempo.png" alt="slide" style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
-                                <div class="content p-2 mt-3 text-center">
-                                    <h4 class="fw-bold text-dark">Agendamentos Poupa Tempo</h4>
-                                    <p>Oferecemos agendamento de serviços no Poupa Tempo, com destaque para a emissão de
-                                        segunda via de documentos pessoais.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
-                            <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/Card 6 - processo-procon.png" alt="slide" style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
-                                <div class="content p-2 mt-3 text-center">
-                                    <h4 class="fw-bold text-dark">Abertura de Processos PROCON</h4>
-                                    <p>Auxiliamos você na abertura de processos no Procon, garantindo suporte
-                                        especializado e eficiente para resolver suas questões de consumo. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
-                            <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/Card 8 - divida.png" alt="slide" style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
-                                <div class="content p-2 mt-3 text-center">
-                                    <h4 class="fw-bold text-dark">Consulta Desenrola (Dívida Ativa)</h4>
-                                    <p>Através do serviço de Consulta Desenrola, oferecemos uma maneira simples e rápida
-                                        de verificar suas dívidas ativas. </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
-                            <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/Card 9 - lei-comercio.png" alt="slide" style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3 pt-4">
-                                <div class="content p-2 mt-3 text-center">
-                                    <h4 class="fw-bold text-dark">Consulta e Cadastro TPU ou Tô Legal</h4>
-                                    <p>Ajudamos você a cadastrar seu comércio na cidade com o TPU (Termo de Permissão de
-                                        Uso) ou Tô Legal.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
-                            <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/Card 10 - pesquisa-serasa.png" alt="slide" style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
-                                <div class="content p-2 mt-3 text-center">
-                                    <h4 class="fw-bold text-dark">Consultas SPC, SERASA e Cartórios</h4>
-                                    <p>Oferecemos consultas ao SPC, SERASA e Cartórios para você conhecer sua situação
-                                        financeira de forma dethada e precisa.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide-card position-relative bg-white shadow-sm mx-2 rounded">
-                            <div class="text-decoration-none">
-                                <img src="assets/img/img-carrosel-servicos/Card 11 - receita-federal.png" alt="slide" style="display: flex; width: 50%; margin: auto;" class="w-50 mt-3">
-                                <div class="content p-2 mt-3 text-center">
-                                    <h4 class="fw-bold text-dark">Alteração de Dados na Receita Federal</h4>
-                                    <p>Oferecemos consultas ao SPC, SERASA e Cartórios para você conhecer sua situação
-                                        financeira de forma dethada e precisa.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <div class="slider-container mb-1">
+        <h2 class="text-center mb-4 fw-semibold">Conheça nossos outros serviços</h2>
+        <div class="slider owl-carousel">
+            <div class="card">
+                <div class="img-fluid mx-auto mt-2" style="max-width: 50%;">
+                    <img src="assets/img/img-carrosel-servicos/Card 1 - nota-fiscal.png">
                 </div>
-
-                <!-- BOTÕES DE ROLAGEM DO SLIDE -->
-
-                <button id="previous-arrow" class="btn bg-white shadow-sm rounded-circle position-absolute d-flex align-items-center justify-content-center arrow" style="top: 50%; left: 10px; transform: translateY(-50%); z-index: 1;">
-                    <i class="bi bi-chevron-left"></i>
-                </button>
-                <button id="next-arrow" class="btn bg-white shadow-sm rounded-circle position-absolute d-flex align-items-center justify-content-center arrow" style="top: 50%; right: 10px; transform: translateY(-50%); z-index: 1;">
-                    <i class="bi bi-chevron-right"></i>
-                </button>
+                <div class="content">
+                    <div class="title">Emissão NF-e (Nota Fiscal Eletrônica)</div>
+                    <p>Emita suas notas fiscais eletrônicas com rapidez e facilidade, garantindo conformidade com as regulamentações fiscais.</p>
+                </div>
             </div>
-        </section>
+            <div class="card">
+                <div class="img-fluid mx-auto mt-2" style="max-width: 50%;">
+                    <img src="assets/img/img-carrosel-servicos/card2 - curriculos.png">
+                </div>
+                <div class="content">
+                    <div class="title">Elaboração de Currículos Profissionais</div>
+                    <p>Conte com nossa expertise para elaborar um currículo que destaque suas habilidades e experiências de forma profissional.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-fluid mx-auto mt-2" style="max-width: 50%;">
+                    <img src="assets/img/img-carrosel-servicos/card3 - consultar INSS.png">
+                </div>
+                <div class="content">
+                    <div class="title">Consulta do cadastro no INSS</div>
+                    <p>Planeje seu Futuro com Confiança: Acesse todas as informações necessárias sobre sua previdência social através de nosso serviço de consulta INSS. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-fluid mx-auto mt-2" style="max-width: 50%;">
+                    <img src="assets/img/img-carrosel-servicos/card4 - Cadastro bilhete unico.png">
+                </div>
+                <div class="content">
+                    <div class="title">Cadastro Bilhete Único e Idoso</div>
+                    <p>Simplificamos o processo de cadastro para o Bilhete Único e Bilhete do Idoso, garantindo acesso facilitado ao transporte público </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-fluid mx-auto mt-2" style="max-width: 50%;">
+                    <img src="assets/img/img-carrosel-servicos/card5 - poupa-tempo.png">
+                </div>
+                <div class="content">
+                    <div class="title">Agendamentos Poupa Tempo</div>
+                    <p>Oferecemos agendamento de serviços no Poupa Tempo, com destaque para a emissão de segunda via de documentos pessoais.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-fluid mx-auto mt-2" style="max-width: 50%;">
+                    <img src="assets/img/img-carrosel-servicos/card6 - processo-procon.png">
+                </div>
+                <div class="content">
+                    <div class="title">Abertura de Processos Procon</div>
+                    <p>Auxiliamos você na abertura de processos no Procon, garantindo suporte especializado e eficiente para resolver suas questões de consumo.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-fluid mx-auto mt-2" style="max-width: 50%;">
+                    <img src="assets/img/img-carrosel-servicos/card7 - documento-carro.png">
+                </div>
+                <div class="content">
+                    <div class="title">Impressão CRVL-e (Digital)</div>
+                    <p>Oferecemos uma solução digital para facilitar a obtenção e impressão do
+                        Certificado de Registro e Licenciamento de Veículo Eletrônico (CRVL-e).</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-fluid mx-auto mt-2" style="max-width: 50%;">
+                    <img src="assets/img/img-carrosel-servicos/card8 - divida.png">
+                </div>
+                <div class="content">
+                    <div class="title">Consulta Desenrola (Dívida Ativa)</div>
+                    <p>Através do serviço de Consulta Desenrola, oferecemos uma maneira simples
+                        e rápida de verificar suas dívidas ativas.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-fluid mx-auto mt-2" style="max-width: 50%;">
+                    <img src="assets/img/img-carrosel-servicos/card9 - lei-comercio.png">
+                </div>
+                <div class="content">
+                    <div class="title">Consulta e Cadastro TPU ou Tô Legal</div>
+                    <p>
+                        Oferecemos suporte com a Consulta e Cadastro TPU ou Tô Legal
+                        para garantir conformidade com as normas urbanísticas. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-fluid mx-auto mt-2" style="max-width: 50%;">
+                    <img src="assets/img/img-carrosel-servicos/card10 - pesquisa-serasa.png">
+                </div>
+                <div class="content">
+                    <div class="title">Consultas SPC, SERASA e Cartórios</div>
+                    <p>
+                        Com nosso serviço de Consultas SPC, SERASA e Cartórios fornecemos
+                        acesso a informações detalhadas sobre sua situação financeira. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="img-fluid mx-auto mt-2" style="max-width: 50%;">
+                    <img src="assets/img/img-carrosel-servicos/card11 - receita-federal.png">
+                </div>
+                <div class="content">
+                    <div class="title">Alteração de Dados na Receita Federal</div>
+                    <p>
+                        Com o serviço de Alteração de Dados na Receita Federal, oferecemos uma solução ágil e
+                        eficiente para atualização de suas informações cadastrais. </p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- CÓDIGO SCRIPT DO CARROSEL DE OUTROS SERVIÇOS DA ACEDA,
-NÃO CONSEGUI FAZER O CARROSEL FUNCIONAR SEM COLOCAR ELE DIRETO
-NO ARQUIVO HTML-->
-
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide-card');
-        const slideCount = slides.length;
-        const slideWidth = 320;
-        const visibleSlides = 4; // Quantidade de slides visíveis no carrossel
-        let isDragging = false;
-        let startPos = 0;
-        let currentTranslate = 0;
-        let prevTranslate = 0;
-        let animationID = 0;
-        const sliderWrap = document.querySelector('.slider-wrap');
-
-        // Clone all slides and append them to the end
-        for (let i = 0; i < slideCount; i++) {
-            const clone = slides[i].cloneNode(true);
-            sliderWrap.appendChild(clone);
-        }
-
-        function nextSlide() {
-            currentSlide++;
-            if (currentSlide === slideCount) {
-                setTimeout(() => {
-                    sliderWrap.style.transition = 'none';
-                    currentSlide = 0;
-                    sliderWrap.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-                }, 1000);
+        $(".slider").owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
             }
-            updateSlide(currentSlide);
-        }
-
-        function previousSlide() {
-            if (currentSlide === 0) {
-                currentSlide = slideCount - visibleSlides;
-                sliderWrap.style.transition = 'none';
-                sliderWrap.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-                setTimeout(() => {
-                    sliderWrap.style.transition = 'transform 1s ease-in-out';
-                    currentSlide--;
-                    updateSlide(currentSlide);
-                }, 20);
-            } else {
-                currentSlide--;
-                updateSlide(currentSlide);
-            }
-        }
-
-        function updateSlide(index) {
-            sliderWrap.style.transition = 'transform 1s ease-in-out';
-            sliderWrap.style.transform = `translateX(-${index * slideWidth}px)`;
-        }
-
-        document.querySelector("#next-arrow").addEventListener('click', nextSlide);
-        document.querySelector("#previous-arrow").addEventListener('click', previousSlide);
-
-        // Mouse events
-        sliderWrap.addEventListener('mousedown', dragStart);
-        sliderWrap.addEventListener('mouseup', dragEnd);
-        sliderWrap.addEventListener('mouseleave', dragEnd);
-        sliderWrap.addEventListener('mousemove', drag);
-
-        // Touch events
-        sliderWrap.addEventListener('touchstart', dragStart);
-        sliderWrap.addEventListener('touchend', dragEnd);
-        sliderWrap.addEventListener('touchmove', drag);
-
-        function dragStart(event) {
-            isDragging = true;
-            startPos = getPositionX(event);
-            prevTranslate = currentTranslate;
-            animationID = requestAnimationFrame(animation);
-            sliderWrap.classList.add('grabbing');
-        }
-
-        function dragEnd() {
-            isDragging = false;
-            cancelAnimationFrame(animationID);
-            const movedBy = currentTranslate - prevTranslate;
-
-            if (movedBy < -100 && currentSlide < slideCount - 1) {
-                currentSlide++;
-            }
-
-            if (movedBy > 100 && currentSlide > 0) {
-                currentSlide--;
-            }
-
-            setPositionByIndex();
-            sliderWrap.classList.remove('grabbing');
-        }
-
-        function drag(event) {
-            if (isDragging) {
-                const currentPosition = getPositionX(event);
-                currentTranslate = prevTranslate + currentPosition - startPos;
-            }
-        }
-
-        function getPositionX(event) {
-            return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-        }
-
-        function animation() {
-            setSliderPosition();
-            if (isDragging) requestAnimationFrame(animation);
-        }
-
-        function setSliderPosition() {
-            sliderWrap.style.transform = `translateX(${currentTranslate}px)`;
-        }
-
-        function setPositionByIndex() {
-            currentTranslate = currentSlide * -slideWidth;
-            prevTranslate = currentTranslate;
-            setSliderPosition();
-        }
+        });
     </script>
+
 
 
     <!-- BOTÃO WHATSAPP DA ACEDA -->
