@@ -2,9 +2,10 @@
   font-family: "Outfit";
   src: url("Outfit/static/Outfit-Regular.ttf") format("woff2");
 }
-
 .text-justify {
   text-align: justify;
 }
 
-/*# sourceMappingURL=style.css.map */
+body {
+  overflow-x: hidden;
+}/*# sourceMappingURL=style.css.map */

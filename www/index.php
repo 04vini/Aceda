@@ -46,6 +46,10 @@ $dadosblog = mysqli_query($conn, $queryblog);
 				height: 300px !important;
 			}
 		}
+
+		body {
+			overflow-x: hidden;
+		}
 	</style>
 	<title>ACEDA | Associação Comercial Distrito Anhanguera</title>
 </head>
@@ -134,13 +138,8 @@ $dadosblog = mysqli_query($conn, $queryblog);
 			</div>
 		</section>
 	</div>
-<<<<<<< HEAD
 	<!-- /Serviços -->
 	<div class="row">
-		<div class="col">
-			<section class="shadow" style="background-color: #2C4D97;">
-				<h2 class="text-white fw-semibold">Cursos</h2>
-=======
 		<!-- /Serviços -->
 		<div class="row">
 			<div class="col">
@@ -177,7 +176,6 @@ $dadosblog = mysqli_query($conn, $queryblog);
 
 					</div>
 				</div>
->>>>>>> af5f96b9f62b5bc754609b5f7d8d777dc22785f5
 			</section>
 		</div>
 		<!-- Cursos -->
@@ -212,11 +210,6 @@ $dadosblog = mysqli_query($conn, $queryblog);
 		</section>
 	</div>
 	<!-- /Cursos -->
-
-<<<<<<< HEAD
-	<!-- Contato Short -->
-	<!-- /Contato Short -->
-
 	<!-- Ultimas notícias do blog -->
 	<div class="row">
 		<div class="col">
@@ -255,68 +248,6 @@ $dadosblog = mysqli_query($conn, $queryblog);
 					}
 				}
 				?>
-=======
-			<!-- Blog -->
-			<section>
-				<div class="container-fluid">
-					<div class="row row-cols-1 row-cols-md-2 g-4">
-						<?php
-						if ($dadosblog) {
-							while ($linhablog = mysqli_fetch_assoc($dadosblog)) {
-						?>
-								<div class="col">
-									<div class="card border rounded overflow-hidden shadow-sm h-100">
-										<div class="row g-0">
-											<div class="col-md-6 d-flex align-items-center">
-												<img src="<?php echo $linhablog["imagem"]; ?>" class="img-fluid rounded-start" alt="Imagem do Blog">
-											</div>
-											<div class="col-md-6">
-												<div class="card-body">
-													<h5 class="card-title text-primary mb-1"><?php echo $linhablog["titulo"]; ?></h5>
-													<p class="card-text text-secondary mb-2"><?php echo $linhablog["categoria"]; ?></p>
-													<p class="card-text"><?php echo $linhablog["descricao"]; ?></p>
-													<a href="./post-blog.php?id=<?php echo $linhablog["id"]; ?>" class="btn btn-primary rounded-pill text-white">Ler Mais</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-						<?php
-							}
-						}
-						?>
-					</div>
-				</div>
-			</section>
-
-
-			<!-- Ultimas notícias do blog -->
-
-			<!-- Footer -->
-			<?php include_once "./template/footer.php" ?>
-			<!-- /Footer -->
-
-			<!-- Scripts -->
-			<script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
-			<!-- Scripts -->
-
-			<a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996">
-				<div class="rwb-tooltip">Fale com a ACEDA</div>
-				<img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
-			</a>
-
-			<!-- POP UP DE USO DE COOKIES -->
-
-			<div class="cookie-popup">
-				<div class="container-fluid">
-					<p>Este site utiliza cookies para melhorar sua experiência de navegação. Ao continuar navegando, você
-						concorda com o uso de cookies.</p>
-
-					<button type="button" class="btn btn-primary text-white" onclick="aceitarCookies()">Entendido</button>
-
-					<button type="button" class="btn btn-primary" onclick="privacidade()"><a href="./politica-de-privacidade.php" class="text-decoration-none text-white" target="_blank">Política de privacidade</a></button>
-				</div>
->>>>>>> af5f96b9f62b5bc754609b5f7d8d777dc22785f5
 			</div>
 		</div>
 	</section>
@@ -328,8 +259,6 @@ $dadosblog = mysqli_query($conn, $queryblog);
 	<?php include_once "./template/footer.php" ?>
 	<!-- /Footer -->
 
-	<!-- Scripts -->
-	<script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
 	<!-- Scripts -->
 
 	<a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996">
@@ -350,6 +279,9 @@ $dadosblog = mysqli_query($conn, $queryblog);
 		</div>
 	</div>
 
+
+	<!-- Scripts -->
+	<script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
 
 </body>
 

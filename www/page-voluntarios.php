@@ -52,6 +52,10 @@
                 object-fit: cover;
             }
         }
+        
+        body {
+			overflow-x: hidden;
+		}
     </style>
 </head>
 <body style="font-family: Outfit;">

@@ -19,6 +19,11 @@
             }
         });
     </script>
+    <style>
+        body {
+			overflow-x: hidden;
+		}
+    </style>
 </head>
 <body>
     <!-- NavBar -->

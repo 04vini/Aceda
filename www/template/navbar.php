@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="./home.php">
+	<div class="container">
+		<a class="navbar-brand" href="./index.php">
 			<img src="./assets/img/logo_aceda.png" alt="Aceda Associação Comercial" height="32">
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -8,6 +8,11 @@
 	<link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
 	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
 	<title>Parceiros | ACEDA</title>
+	<style>
+        body {
+			overflow-x: hidden;
+		}
+    </style>
 </head>
 <body class= "bg-primary bg-opacity-50" style="font-family: Outfit;">
 	<!-- NavBar -->

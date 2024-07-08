@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+    <style>
+        .rounded-custom {
+            border-radius: 15px;
+        }
+    </style>
     <title>ACEDA - Quem somos nós?</title>
 </head>
 
-<body style="font-family: Outfit;">
+<body style="font-family: Outfit; overflow-x: hidden;">
 
-<!-- Navbar -->
-<?php include_once "./template/navbar.php" ?>
-<!-- /Navbar -->
+    <!-- Navbar -->
+    <?php include_once "./template/navbar.php" ?>
+    <!-- /Navbar -->
 
     <!-- 1º SESSÃO -->
 
@@ -42,7 +47,7 @@
 
     <!-- 2ª SESSÃO -->
 
-    <section class="container-fluid mt-5">
+    <section class="container mt-5">
         <div class="row">
             <div class="col-12 col-md-5 order-md-first">
                 <img src="../www/assets/img/imagem-01.jpg" class="img-fluid mt-3 rounded-2 shadow-custom">
@@ -69,35 +74,32 @@
     <!-- MISSÃO, VISÃO E VALORES -->
 
     <div style="background-color: #A3C8D8;">
-        <div class="container-fluid mt-5 pb-5 pt-5">
+        <div class="container mt-5 pb-5 pt-5">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col text-center">
-                    <div class="card border-0 rounded bg-white custom-shadow">
-                        <div class="card-body shadow-custom">
+                    <div class="card border-0 rounded bg-white h-100 custom-shadow">
+                        <div class="card-body shadow-custom d-flex flex-column">
                             <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="../www/assets/img/card-missao.png">
-                            <h2 class="card-title">Missão</h2>
-                            <p class="card-text">Organizar, integrar e mobilizar a comunidade empresarial e comercial em
-                                seus interesses comuns, de forma igualitária, sustentável e oportuna para ambos os
-                                portes e comunidade em seu entorno.</p>
+                            <h3 class="card-title">Missão</h3>
+                            <p class="card-text">Organizar, integrar e mobilizar a comunidade empresarial e comercial em seus interesses comuns, de forma igualitária, sustentável e oportuna para ambos os portes e comunidade em seu entorno.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col text-center">
-                    <div class="card border-0 rounded bg-white">
-                        <div class="card-body shadow-custom">
+                    <div class="card border-0 rounded bg-white h-100 custom-shadow">
+                        <div class="card-body shadow-custom d-flex flex-column">
                             <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="../www/assets/img/card-visao.png" alt="">
-                            <h2 class="card-title">Visão</h2>
-                            <p class="card-text pb-4">Atuação na defesa dos interesses previdenciários dos segurados do
-                                INSS ou instituto previdência própria, em busca de benefícios previdenciários.</p>
+                            <h3 class="card-title">Visão</h3>
+                            <p class="card-text pb-4">Atuação na defesa dos interesses previdenciários dos segurados do INSS ou instituto previdência própria, em busca de benefícios previdenciários.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col text-center">
-                    <div class="card border-0">
-                        <div class="card-body shadow-custom">
+                    <div class="card border-0 rounded bg-white h-100 custom-shadow">
+                        <div class="card-body shadow-custom d-flex flex-column">
                             <img class="card-img rounded h-50 w-50 mb-2 mx-auto" src="../www/assets/img/card-valores.png">
-                            <h2 class="card-title">Valores</h2>
-                            <div class="d-flex justify-content-center align-items-center">
+                            <h3 class="card-title">Valores</h3>
+                            <div class="d-flex justify-content-center align-items-center flex-grow-1">
                                 <ul class="list-group text-start">
                                     <li class="list-group-item border-0">. Conhecimento</li>
                                     <li class="list-group-item border-0">. Proatividade</li>
@@ -110,22 +112,20 @@
             </div>
         </div>
     </div>
-
     <!-- TRANSPARÊNCIA -->
 
-    <h1 style="color: #2C4D97;" class="text-center fw-bold custom-shadow mt-5">transparência</h1>
+    <h1 style="color: #2C4D97;" class="text-center fw-semibold custom-shadow mt-5">Transparência</h1>
 
-    <div class="container-fluid mt-5">
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-4 mb-3">
                 <div class="card shadow-custom">
                     <img src="../www/assets/img/imagem-03.jpg" class="card-img-top" alt="...">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Ações que se transformam</h5>
+                        <h4 class="card-title">Ações que se transformam</h4>
                         <p class="card-text">Plano de ação 2024.</p>
                         <button class="btn btn-primary">
-                            <a href="assets/ACEDA Plano de ação.pdf"
-                                class="mx-auto d-block text-decoration-none text-white" target="_blank">VEJA
+                            <a href="assets/ACEDA Plano de ação.pdf" class="mx-auto d-block text-decoration-none text-white" target="_blank">VEJA
                                 AQUI</a>
                         </button>
                     </div>
@@ -136,11 +136,10 @@
                 <div class="card shadow-custom">
                     <img src="../www/assets/img/imagem-02.jpg" class="card-img-top">
                     <div class="card-body text-center">
-                        <h5 class="card-title">DRE - ACEDA</h5>
+                        <h4 class="card-title">DRE - ACEDA</h4>
                         <p class="card-text">Demonstração do Resultado do Exercício.</p>
                         <button class="btn btn-primary">
-                            <a href="https://drive.google.com/drive/folders/1SQA2HhNh88g-lPmHSuKsDw_J38Tssn4W"
-                                class="mx-auto d-block text-decoration-none text-white" target="_blank">VEJA AQUI</a>
+                            <a href="https://drive.google.com/drive/folders/1SQA2HhNh88g-lPmHSuKsDw_J38Tssn4W" class="mx-auto d-block text-decoration-none text-white" target="_blank">VEJA AQUI</a>
                         </button>
                     </div>
                 </div>
@@ -151,34 +150,30 @@
     <!-- ENDEREÇO DO MAPS -->
 
     <div style="background-color: #BED63A;">
-        <div class="container-fluid mt-5 pt-4 pb-5">
+        <div class="container mt-5 pt-4 pb-5">
             <div class="container-fluid col-lg-10">
-                <p class="ml-4 text-white shadow-custom-text">
-                    Telefone: (11) 2688-9235 <br>
-                    WhatsApp: (11) 95877-1996 <br>
-                    E-mail: contato@aceda.sampa.br <br>
-                    Endereço: Av. Euclides da Cunha, 705, Res. Sol Nascente São Paulo - SP, 05281-000
+                <p class="ml-4 text-white" style="font-size: 20px;">
+                    . E-mail: contato@aceda.sampa.br <br>
+                    . Endereço: Av. Euclides da Cunha, 705, Res. Sol Nascente São Paulo - SP, 05281-000 <br>
+                    . Telefone: (11) 2688-9235 <br>
+                    . WhatsApp: (11) 95877-1996
                 </p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-sm-12 col-lg-10">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.78083686723!2d-46.782102625719155!3d-23.432282856860738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cefd1956d40001%3A0xaa8610aeae776cb7!2sACEDA%20-%20Associa%C3%A7%C3%A3o%20Comercial%20e%20Empresarial%20do%20Distrito%20Anhanguera!5e0!3m2!1spt-BR!2sbr!4v1715041430712!5m2!1spt-BR!2sbr"
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        class="mx-auto d-block shadow-custom rounded-2"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.78083686723!2d-46.782102625719155!3d-23.432282856860738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cefd1956d40001%3A0xaa8610aeae776cb7!2sACEDA%20-%20Associa%C3%A7%C3%A3o%20Comercial%20e%20Empresarial%20do%20Distrito%20Anhanguera!5e0!3m2!1spt-BR!2sbr!4v1715041430712!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mx-auto d-block shadow-custom rounded-2"></iframe>
                 </div>
             </div>
         </div>
     </div>
 
-<!-- Footer -->
-<?php include_once "./template/footer.php" ?>
-<!-- /Footer -->
-    <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996"> 
-            <div class="rwb-tooltip">Fale com a ACEDA</div> 
-            <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
-	</a>
+    <!-- Footer -->
+    <?php include_once "./template/footer.php" ?>
+    <!-- /Footer -->
+    <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996">
+        <div class="rwb-tooltip">Fale com a ACEDA</div>
+        <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
+    </a>
     <script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
 </body>
 
