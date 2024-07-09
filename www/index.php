@@ -153,7 +153,7 @@ $dadosblog = mysqli_query($conn, $queryblog);
 						?>
 								<div class="col d-flex flex-column order-md-first">
 									<div class="col d-flex flex-column 	 card border-0">
-										<img class="img-fluid" src="<?php echo $linhaCurso["imagem_curso"]; ?>" alt="" class="rounded-pill">
+										<img class="img-fluid rounded-pill" src="<?php echo $linhaCurso["imagem_curso"]; ?>" alt="">
 										<div class="col card-body">
 											<h5 class="col card-title">
 												<?php echo $linhaCurso["nome_curso"]; ?>
@@ -161,7 +161,7 @@ $dadosblog = mysqli_query($conn, $queryblog);
 											<p class="col card-text text-muted">
 												<?php echo $linhaCurso["descricao_curso"]; ?>
 											</p>
-											<a href="./cursos.php" class="col btn btn-primary rounded-pill text-white">Ver Curso</a>
+											<a href="./page-curso.php?id=<?php echo $linhaCurso["id"]; ?>" class="btn btn-primary rounded-pill text-white">Ver Curso</a>
 										</div>
 									</div>
 								</div>
@@ -174,37 +174,6 @@ $dadosblog = mysqli_query($conn, $queryblog);
 				</div>
 			</section>
 		</div>
-		<!-- Cursos -->
-		<section>
-			<div class="container">
-				<div class="row container">
-					<?php
-					if ($resultado) {
-						while ($linhaCurso = mysqli_fetch_assoc($resultadoCurso)) {
-					?>
-							<div class="col d-flex flex-column order-md-first">
-								<div class="col d-flex flex-column 	 card border-0">
-									<img class="img-fluid" src="<?php echo $linhaCurso["imagem_curso"]; ?>" alt="" class="rounded-pill">
-									<div class="col card-body">
-										<h5 class="col card-title">
-											<?php echo $linhaCurso["nome_curso"]; ?>
-										</h5>
-										<p class="col card-text text-muted">
-											<?php echo $linhaCurso["descricao_curso"]; ?>
-										</p>
-										<a href="./cursos.php" class="col btn btn-primary rounded-pill text-white">Ver Curso</a>
-									</div>
-								</div>
-							</div>
-					<?php
-						}
-					}
-					?>
-
-				</div>
-			</div>
-		</section>
-	</div>
 	<!-- /Cursos -->
 
 	<!-- Ultimas notícias do blog -->

@@ -67,9 +67,9 @@
         
     <br>
 <!--Mensagens recebidas via GET após ações CRUD-->    
-        <div class="container">      
+        <div class="ms-4 me-4">      
 <!-- Configurações da imagem da página inicial -->
-                <div class="row m- text-center border border-dark bg-white">
+                <div class="row m-1 text-center border border-dark bg-white">
                     <h3 class="text-center mt-3 mb-1"><strong>Imagens Carousel</strong></h3>
                     <div class="col-4">
                         <img class="img-fluid" src="<?php echo $row["imagemprimary"];?>" height="200" width="350" class="p-1">
@@ -142,7 +142,7 @@
                             </div>
                             </div>
 -->
-                        <div>
+                        <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
@@ -244,6 +244,7 @@
                                     <th>ID</th>
                                     <th>Nome do Curso</th>
                                     <th>Descrição do Curso</th>
+                                    <th>Conteúdo do Curso</th>
                                     <th>Imagem do Curso</th>
                                 </tr> 
                             </thead>
@@ -262,6 +263,7 @@
                                                     <td><?php echo $linhaCurso["id"];?></td>
                                                     <td><?php echo $linhaCurso["nome_curso"];?></td>
                                                     <td><?php echo $linhaCurso["descricao_curso"];?></td>
+                                                    <td><?php echo $linhaCurso["conteudo_curso"];?></td>
                                                     <td>
                                                         <img src="<?php echo $linhaCurso["imagem_curso"];?>" width="180" height="120" />
                                                     </td>
