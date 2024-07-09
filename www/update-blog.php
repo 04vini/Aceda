@@ -5,7 +5,7 @@ include_once 'conexao.php';
 
 if ((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))) {
     $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Necessário realizar o login para acessar a página!</p>";
-    header("Location: Login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -16,19 +16,15 @@ if (isset($_POST) && !empty($_POST)) {
     $id = $_GET['id'];
 
     $titulo = isset($_POST['title-post']) ? $_POST['title-post'] : NULL;
-
     $descricao = isset($_POST['descricao-post']) ? $_POST['descricao-post'] : NULL;
-
     $conteudo = isset($_POST['text-post']) ? $_POST['text-post'] : NULL;
-
     $categoria = isset($_POST['categoria-post']) ? $_POST['categoria-post'] : NULL;
-
     $autor = isset($_POST['autor-post']) ? $_POST['autor-post'] : NULL;
 
     date_default_timezone_set('America/Sao_Paulo');
     $registro = date("Y-m-d H:i:s");
-    
-    //Validação e tratamento da imagem para inserção no banco
+
+    // Validação e tratamento da imagem para inserção no banco
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] == UPLOAD_ERR_OK) {
         $imagem = "./assets/img/".$_FILES["imagem"]["name"];
         move_uploaded_file($_FILES["imagem"]["tmp_name"], $imagem);
@@ -40,8 +36,14 @@ if (isset($_POST) && !empty($_POST)) {
         $imagem = $linha_select_imagem['imagem'];
     }
 
-    //Query de atualização dos dados no banco
-    $query = "UPDATE tb_blog SET titulo='$titulo', descricao='$descricao', conteudo='$conteudo', categoria='$categoria', autor='$autor', imagem='$imagem', registro='$registro' WHERE id= ".$id;
+    // Manter o status atual
+    $query_select_status = "SELECT status FROM tb_blog WHERE id = ".$id;
+    $res_select_status = mysqli_query($conn, $query_select_status);
+    $linha_select_status = mysqli_fetch_assoc($res_select_status);
+    $status = $linha_select_status['status'];
+
+    // Query de atualização dos dados no banco
+    $query = "UPDATE tb_blog SET titulo='$titulo', descricao='$descricao', conteudo='$conteudo', categoria='$categoria', autor='$autor', imagem='$imagem', registro='$registro', status='$status' WHERE id= ".$id;
 
     $res = mysqli_query($conn, $query);
     if ($res) {
@@ -88,7 +90,7 @@ if (isset($_POST) && !empty($_POST)) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
     <!-- TinyMCE -->
-    <script src="https://cdn.tiny.cloud/1/f3sgpku312e9vuqeq3aevsab9ho77hgpfcq3xfqfoo5s4hz3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/en78k1z2gxjfp5gumv13an511r938xpxbkooty0hidyjxfv2/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
             selector: 'textarea#text-post', // Seletor para o textarea visível
@@ -109,13 +111,13 @@ if (isset($_POST) && !empty($_POST)) {
                     <input type="text" name="title-post" id="title-post" required class="form-control" value="<?php echo $titulo;?>" />
 
                     <label class="form-label m-2" for="descricao-post">Descrição</label>
-                    <textarea type="text" rows="4" name="descricao-post" id="descricao-post" required class="form-control"><?php echo $descricao;?></textarea>
-
-                    <div data-mdb-input-init class="form-outline">
-                        <label class="form-label m-2" for="text-post">Conteudo do Post</label>
-                        <!-- Textarea substituído por TinyMCE -->
-                        <textarea rows="5" class="form-control" type="text" name="text-post" id="text-post" required><?php echo $conteudo;?></textarea>
-                    </div> 
+                    <textarea name="descricao-post" id="descricao-post" required class="form-control" maxlength="600"><?php echo $descricao;?></textarea>
+                    <p class="span text-danger text-end"><small>*Este é um resumo do Post, Limite de 600 Caracteres</small></p>
+                    
+                    <label class="form-label pt-1" for="text-post">Conteúdo completo</label>
+                    <!-- Textarea substituído por TinyMCE -->
+                    <textarea class="form-control" name="text-post" id="text-post" required maxlength="5000"><?php echo $conteudo;?></textarea>
+                    <p class="span text-danger text-end"><small>*Post completo, Limite de 5000 Caracteres</small></p>
                     
                     <label class="form-label m-2" for="categoria-post">Categoria</label>
                     <input type="text" name="categoria-post" id="categoria-post" required class="form-control" value="<?php echo $categoria;?>" />
@@ -125,6 +127,7 @@ if (isset($_POST) && !empty($_POST)) {
 
                     <label class="form-label m-2">Selecione nova Imagem</label>
                     <input type="file" name="imagem" accept="image/*" class="form-control form-control-sm" />
+                    <p class="span text-danger text-end"><small>*Tamanho ideal 300x300</small></p>
 
                     <label class="form-label m-2">Imagem utilizada Antes</label>
                     <img src="<?php echo $imagem;?>" />

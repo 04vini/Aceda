@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
     <style>
-        body {
+		body {
 			overflow-x: hidden;
 		}
-    </style>
+	</style>
 </head>
 <body style="font-family: Outfit;">
     <!-- NavBar -->
@@ -33,13 +33,13 @@
     // Calcula o offset
     $offset = ($pagina_atual - 1) * $registros_por_pagina;
 
-    // Consulta para contar o total de registros
-    $query_total = "SELECT COUNT(*) as total FROM tb_blog";
+    // Consulta para contar o total de registros ativos
+    $query_total = "SELECT COUNT(*) as total FROM tb_blog WHERE status='ativo'";
     $resultado_total = mysqli_query($conn, $query_total);
     $total_registros = mysqli_fetch_assoc($resultado_total)['total'];
 
-    // Consulta para buscar os registros
-    $query = "SELECT * FROM tb_blog ORDER BY id DESC LIMIT $offset, $registros_por_pagina";
+    // Consulta para buscar os registros ativos
+    $query = "SELECT * FROM tb_blog WHERE status='ativo' ORDER BY id DESC LIMIT $offset, $registros_por_pagina";
     $dados = mysqli_query($conn, $query);
 
     if ($dados) {
@@ -73,6 +73,9 @@
             <br>
     <?php
         }
+    } else {
+        // Exibe um erro se a consulta falhar
+        echo "Erro na consulta SQL: " . mysqli_error($conn);
     }
     ?>
     <br>

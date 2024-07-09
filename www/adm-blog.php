@@ -6,20 +6,21 @@
     // Verifica se o usuário está logado
     if ((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))) {
         $_SESSION['msg'] = "<p style='color: #ff0000'>Erro: Necessário realizar o login para acessar a página!</p>";
-        header("Location: Login.php");
+        header("Location: login.php");
         exit(); 
     }
 
     // Inicializa variáveis
-    $filtro = '';
-    $query = "SELECT * FROM tb_blog ORDER BY id DESC"; // Query padrão sem filtro inicialmente
+        $filtro = '';
+        $status = isset($_GET['status']) ? $_GET['status'] : 'ativo'; // Valor padrão é 'ativo'
+        $query = "SELECT * FROM tb_blog WHERE status='$status' ORDER BY id DESC"; // Query padrão sem filtro inicialmente
 
     // Verifica se há filtro enviado via GET
     if (isset($_GET['filtro'])) {
         $filtro = trim($_GET['filtro']); // Remove espaços em branco desnecessários
         if (!empty($filtro)) {
             $filtro_escapado = mysqli_real_escape_string($conn, $filtro); // Escapa o filtro para evitar SQL injection
-            $query = "SELECT * FROM tb_blog WHERE titulo LIKE '%$filtro_escapado%' OR categoria LIKE '%$filtro_escapado%' OR autor LIKE '%$filtro_escapado%' ORDER BY id DESC";
+            $query = "SELECT * FROM tb_blog WHERE (titulo LIKE '%$filtro_escapado%' OR categoria LIKE '%$filtro_escapado%' OR autor LIKE '%$filtro_escapado%') AND status='$status' ORDER BY id DESC";
         }
     }
 
@@ -34,10 +35,10 @@
     $dados = mysqli_query($conn, $query); // Executa a consulta SQL
 
     // Contagem total de registros para paginação
-    $total_registros_query = "SELECT COUNT(*) AS total FROM tb_blog";
-    if (!empty($filtro)) {
-        $total_registros_query .= " WHERE titulo LIKE '%$filtro_escapado%' OR categoria LIKE '%$filtro_escapado%' OR autor LIKE '%$filtro_escapado%'";
-    }
+    $total_registros_query = "SELECT COUNT(*) AS total FROM tb_blog WHERE status='$status'";
+        if (!empty($filtro)) {
+            $total_registros_query .= " AND (titulo LIKE '%$filtro_escapado%' OR categoria LIKE '%$filtro_escapado%' OR autor LIKE '%$filtro_escapado%')";
+        }
     $total_registros_result = mysqli_query($conn, $total_registros_query);
     $total_registros = mysqli_fetch_assoc($total_registros_result)['total'];
     
@@ -58,10 +59,21 @@
     <link href="./assets/css/main.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
     <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
-    <script src="https://cdn.tiny.cloud/1/f3sgpku312e9vuqeq3aevsab9ho77hgpfcq3xfqfoo5s4hz3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/en78k1z2gxjfp5gumv13an511r938xpxbkooty0hidyjxfv2/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
             selector: 'textarea#text-post',
+            plugins: 'lists code emoticons',
+              toolbar: 'undo redo | styles | bold italic | ' +
+                'alignleft aligncenter alignright alignjustify | ' +
+                'outdent indent | numlist bullist | ',
+              emoticons_append: {
+                custom_mind_explode: {
+                  keywords: ['brain', 'mind', 'explode', 'blown'],
+                  char: '🤯'
+                }
+              },
+              content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
             setup: function (editor) {
                 editor.on('change', function () {
                     editor.save();
@@ -125,14 +137,17 @@
                                             <input type="text" name="title-post" id="title-post" required class="form-control" />
                                             
                                             <label class="form-label pt-1" for="descricao-post">Breve Resumo</label>
-                                            <textarea name="descricao-post" id="descricao-post" required class="form-control"> </textarea>
+                                            <textarea name="descricao-post" id="descricao-post" required class="form-control" maxlength="600"> </textarea>
+                                            <p class="span text-danger text-end"><small>*Este é um resumo do Post, Limite de 600 Caracteres</small></p>
                                             
                                             <label class="form-label pt-1" for="text-post">Conteúdo completo</label>
                                             <!-- Textarea substituído por TinyMCE -->
-                                            <textarea class="form-control" name="text-post" id="text-post" required></textarea>
+                                            <textarea class="form-control" name="text-post" id="text-post" required maxlength="5000"></textarea>
+                                            <p class="span text-danger text-end"><small>*Post completo, Limite de 5000 Caracteres</small></p>
                                             
                                             <label class="form-label pt-1" for="imagem">Selecione a Imagem</label>
                                             <input type="file" name="imagem" accept="image/*" class="form-control form-control-sm mb-2" />
+                                            <p class="span text-danger text-end"><small>*Tamanho ideal de imagem 300x300</small></p>
 
                                             <label class="form-label pt-1" for="categoria-post">Categoria</label>
                                             <input type="text" name="categoria-post" id="categoria-post" required class="form-control" />
@@ -150,7 +165,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <!-- Formulário de busca -->
                     <div class="row justify-content-end">
                         <div class="col-md-4">
@@ -165,6 +180,14 @@
                             </form>
                         </div>
                     </div>
+                    
+                     <!-- Botões de filtro -->
+                        <div class="row justify-content-start mt-2">
+                            <div class="col-md-4">
+                                <a href="?status=ativo" class="btn btn-sm rounded-pill btn-<?php echo ($status == 'ativo') ? 'primary' : 'secondary'; ?>">Ativos</a>
+                                <a href="?status=inativo" class="btn btn-sm rounded-pill btn-<?php echo ($status == 'inativo') ? 'primary' : 'secondary'; ?>">Inativos</a>
+                            </div>
+                        </div>
 
                     <!-- Total de registros e Listando os registros de posts do blog -->
                     <div class="mt-4 table-responsive">
@@ -179,38 +202,43 @@
                                     <th>Categoria</th>
                                     <th>Autor</th>
                                     <th>Registro</th>
+                                    <th>Status</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                    // Loop para exibir os resultados da consulta
-                                    if ($dados && mysqli_num_rows($dados) > 0) {
-                                        while ($linha = mysqli_fetch_assoc($dados)) {
-                                            $dataHora = strtotime($linha["registro"]);
-                                            $registroFormatado = date("d/m/Y H:i:s", $dataHora);
-
-                                            echo '<tr>';
-                                            echo '<td>' . $linha["id"] . '</td>';
-                                            echo '<td><img src="' . $linha["imagem"] . '" width="120" height="120" /></td>';
-                                            echo '<td>' . $linha["titulo"] . '</td>';
-                                            echo '<td>' . $linha["descricao"] . '</td>';
-                                            echo '<td>' . $linha["conteudo"] . '</td>';
-                                            echo '<td>' . $linha["categoria"] . '</td>';
-                                            echo '<td>' . $linha["autor"] . '</td>';
-                                            echo '<td>' . $registroFormatado . '</td>';
-                                            echo '<td>';
-                                            echo '<a class="btn btn-primary p-1 m-1 rounded-pill text-white" href="./update-blog.php?id=' . $linha["id"] . '">Editar</a>';
-                                            echo '<a class="btn btn-danger p-1 m-1 rounded-pill text-white" href="./delete-blog.php?id=' . $linha["id"] . '">Excluir</a>';
-                                            echo '<a class="mt-1" href="./post-blog.php?id=' . $linha["id"] . '" target="_blank">Ver <i class="fas fa-eye ml-1"></i></a>';
-                                            echo '</td>';
-                                            echo '</tr>';
+                                // Loop para exibir os resultados da consulta
+                                if ($dados && mysqli_num_rows($dados) > 0) {
+                                    while ($linha = mysqli_fetch_assoc($dados)) {
+                                        $dataHora = strtotime($linha["registro"]);
+                                        $registroFormatado = date("d/m/Y H:i:s", $dataHora);
+                            
+                                        echo '<tr>';
+                                        echo '<td>' . $linha["id"] . '</td>';
+                                        echo '<td><img src="' . $linha["imagem"] . '" width="120" height="120" /></td>';
+                                        echo '<td>' . $linha["titulo"] . '</td>';
+                                        echo '<td>' . $linha["descricao"] . '</td>';
+                                        echo '<td>' . $linha["conteudo"] . '</td>';
+                                        echo '<td>' . $linha["categoria"] . '</td>';
+                                        echo '<td>' . $linha["autor"] . '</td>';
+                                        echo '<td>' . $registroFormatado . '</td>';
+                                        echo '<td>' . ucfirst($linha["status"]) . '</td>'; // Exibe o status
+                                        echo '<td>';
+                                        echo '<a class="btn btn-primary p-1 m-1 rounded-pill text-white" href="./update-blog.php?id=' . $linha["id"] . '">Editar</a>';
+                                        if ($linha["status"] == 'ativo') {
+                                            echo '<a class="btn btn-warning p-1 m-1 rounded-pill text-white" href="./toggle-status-blog.php?id=' . $linha["id"] . '&status=inativo">Desativar</a>';
+                                        } else {
+                                            echo '<a class="btn btn-success p-1 m-1 rounded-pill text-white" href="./toggle-status-blog.php?id=' . $linha["id"] . '&status=ativo">Ativar</a>';
                                         }
-                                    } else {
-                                        echo '<tr><td colspan="9">Nenhum registro encontrado.</td></tr>';
+                                        echo '<a class="mt-1" href="./post-blog.php?id=' . $linha["id"] . '" target="_blank">Ver <i class="fas fa-eye ml-1"></i></a>';
+                                        echo '</td>';
+                                        echo '</tr>';
                                     }
+                                } else {
+                                    echo '<tr><td colspan="10">Nenhum registro encontrado.</td></tr>';
+                                }
                                 ?>
-                                
                             </tbody>
                         </table>
                         <p>Total de Registros: <?php echo $total_registros; ?></p>

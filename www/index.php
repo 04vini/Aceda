@@ -20,8 +20,7 @@ $consultaCurso = "SELECT * FROM tb_curso_home ORDER BY id DESC LIMIT 3";
 $resultadoCurso = mysqli_query($conn, $consultaCurso);
 
 //Query Ultimas notícias Blog
-$queryblog = "SELECT * FROM tb_blog 
-    ORDER BY id DESC LIMIT 2";
+$queryblog = "SELECT * FROM tb_blog WHERE status = 'ativo' ORDER BY id DESC LIMIT 2";
 $dadosblog = mysqli_query($conn, $queryblog);
 ?>
 
@@ -34,10 +33,10 @@ $dadosblog = mysqli_query($conn, $queryblog);
 	<link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-	<script src="../www/assets/js/scrip-cookies.js"></script>
+	<script src="./assets/js/scrip-cookies.js"></script>
 	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
-	<link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
-	<link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
+	<link rel="stylesheet" href="./assets/css/estilo.css/fontes.css">
+	<link rel="stylesheet" href="./assets/css/estilo.css/style.css">
 	<style>
 		@media (max-width: 767px) {
 			.carousel-inner img {
@@ -46,7 +45,6 @@ $dadosblog = mysqli_query($conn, $queryblog);
 				height: 300px !important;
 			}
 		}
-
 		body {
 			overflow-x: hidden;
 		}
@@ -91,15 +89,15 @@ $dadosblog = mysqli_query($conn, $queryblog);
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
 						<span class="visually-hidden">Next</span>
 					</button>
+				    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					    <span class="visually-hidden">Previous</span>
+				    </button>
+				    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					    <span class="visually-hidden">Next</span>
+				    </button>
 				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
 			</div>
 		</div>
 	</section>
@@ -119,8 +117,8 @@ $dadosblog = mysqli_query($conn, $queryblog);
 						if ($resultado) {
 							while ($rows = mysqli_fetch_assoc($resultado)) {
 						?>
-								<div class="col text-center p-1">
-									<img src="<?php echo $rows["imagem_servico"]; ?>" class="img-fluid rounded-circle p-5 w-50 h-50">
+								<div class="col text-center">
+									<img src="<?php echo $rows["imagem_servico"]; ?>" class="img-fluid w-20 h-50 mb-2">
 									<h3>
 										<?php echo $rows["nome"]; ?>
 									</h3>
@@ -138,15 +136,13 @@ $dadosblog = mysqli_query($conn, $queryblog);
 			</div>
 		</section>
 	</div>
+
 	<!-- /Serviços -->
 	<div class="row">
-		<!-- /Serviços -->
-		<div class="row">
-			<div class="col">
-					<section class="shadow" style="background-color: #2C4D97;">
-						<h2 class="text-white fw-semibold">Cursos</h2>
-					</section>
-			</div>
+		<div class="col">
+			<section class="shadow" style="background-color: #2C4D97;">
+				<h2 class="text-white fw-semibold">Cursos</h2>
+		    </section>
 			<!-- Cursos -->
 			<section>
 				<div class="container-fluid">
@@ -210,23 +206,24 @@ $dadosblog = mysqli_query($conn, $queryblog);
 		</section>
 	</div>
 	<!-- /Cursos -->
+
 	<!-- Ultimas notícias do blog -->
 	<div class="row">
 		<div class="col">
 			<section class="shadow" style="background-color: #FFE32D;">
-				<h2 class="text-white fw-semibold">fique por dentro!</h2>
+				<h2 class="text-white fw-semibold">Fique por dentro!</h2>
 			</section>
 		</div>
 	</div>
-
+		
 	<!-- Blog -->
 	<section>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row row-cols-1 row-cols-md-2 g-4">
 				<?php
-				if ($dadosblog) {
-					while ($linhablog = mysqli_fetch_assoc($dadosblog)) {
-				?>
+				    if ($dadosblog) {
+						while ($linhablog = mysqli_fetch_assoc($dadosblog)) {
+					?>
 						<div class="col">
 							<div class="card border rounded overflow-hidden shadow-sm h-100">
 								<div class="row g-0">
@@ -234,10 +231,10 @@ $dadosblog = mysqli_query($conn, $queryblog);
 										<img src="<?php echo $linhablog["imagem"]; ?>" class="img-fluid rounded-start" alt="Imagem do Blog">
 									</div>
 									<div class="col-md-6">
-										<div class="card-body">
-											<h5 class="card-title text-primary mb-1"><?php echo $linhablog["titulo"]; ?></h5>
-											<p class="card-text text-secondary mb-2"><?php echo $linhablog["categoria"]; ?></p>
-											<p class="card-text"><?php echo $linhablog["descricao"]; ?></p>
+										<div class="card-body p-1">
+											<h4 class="card-title text-primary mb-2"><?php echo $linhablog["titulo"]; ?></h4>
+											<span class="card-text text-secondary rounded-pill bg-warning mb-2 p-1 mt-2"><?php echo $linhablog["categoria"]; ?></span>
+											<p class="card-text mt-1"><?php echo $linhablog["descricao"]; ?></p>
 											<a href="./post-blog.php?id=<?php echo $linhablog["id"]; ?>" class="btn btn-primary rounded-pill text-white">Ler Mais</a>
 										</div>
 									</div>
@@ -252,13 +249,14 @@ $dadosblog = mysqli_query($conn, $queryblog);
 		</div>
 	</section>
 
-
 	<!-- Ultimas notícias do blog -->
 
 	<!-- Footer -->
 	<?php include_once "./template/footer.php" ?>
 	<!-- /Footer -->
 
+	<!-- Scripts -->
+	<script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
 	<!-- Scripts -->
 
 	<a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996">
@@ -279,9 +277,6 @@ $dadosblog = mysqli_query($conn, $queryblog);
 		</div>
 	</div>
 
-
-	<!-- Scripts -->
-	<script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
 
 </body>
 
