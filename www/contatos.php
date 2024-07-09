@@ -55,8 +55,16 @@
             </iframe>
         </div>
         <br>
-        <span class="border rounded-5 bg-warning p-1 m-8 mt-12 fs-6 ">Quer saber mais sobre nossos cursos? <a href="./cursos.php">Clique aqui</a></span>
+        
+        <div class="container full-height d-flex justify-content-center align-items-center mb-5">
+            <a href="https://api.whatsapp.com/send?phone=5511958771996" target="_blank">
+                <button type="button" class="btn btn-success text-white rounded-pill btn-lg fs-4">
+                    Quer saber mais sobre nossos cursos? CLIQUE AQUI!
+                </button>
+            </a>
         </div>
+    
+    </div>
     <!-- Main -->
 
 <!-- Footer -->
