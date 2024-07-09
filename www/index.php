@@ -121,16 +121,16 @@ $dadosblog = mysqli_query($conn, $queryblog);
 					?>
 					<div class="d-flex flex-column order-md-first">
 						<div class="card border-0">
-						<img class="img-fluid rounded-pill" src="<?php echo $rows["imagem_servico"]; ?>" alt="">
-						<div class="card-body">
-							<h5 class="card-title">
-							<?php echo $rows["nome"]; ?>
-							</h5>
-							<p class="card-text text-muted">
-							<?php echo $rows["descricao"]; ?>
-							</p>
-							<a class="btn btn-outline-success rounded-pill" href="./servicos.php">Saiba mais</a>
-						</div>
+							<img class="img-fluid rounded-pill" src="<?php echo $rows["imagem_servico"]; ?>" alt="">
+							<div class="card-body">
+								<h5 class="card-title">
+								<?php echo $rows["nome"]; ?>
+								</h5>
+								<p class="card-text text-muted">
+								<?php echo $rows["descricao"]; ?>
+								</p>
+								<a class="btn btn-outline-success rounded-pill" href="./servicos.php">Saiba mais</a>
+							</div>
 						</div>
 					</div>
 					<?php
@@ -167,8 +167,8 @@ $dadosblog = mysqli_query($conn, $queryblog);
 							<h5 class="card-title">
 							<?php echo $linhaCurso["nome_curso"]; ?>
 							</h5>
-							<p class="card-text text-muted text-truncate">
-							<?php echo $linhaCurso["descricao_curso"]; ?>
+							<p class="card-text text-muted text-truncate" data-bs-max-chars="20">
+							<?php echo nl2br($linhaCurso["descricao_curso"]); ?>
 							</p>
 							<a href="./page-curso.php?id=<?php echo $linhaCurso["id"]; ?>" class="btn btn-primary rounded-pill text-white">Ver Curso</a>
 						</div>
@@ -214,7 +214,9 @@ $dadosblog = mysqli_query($conn, $queryblog);
 										<div class="card-body p-1">
 											<h4 class="card-title text-primary mb-2"><?php echo $linhablog["titulo"]; ?></h4>
 											<span class="card-text text-secondary rounded-pill bg-warning mb-2 p-1 mt-2"><?php echo $linhablog["categoria"]; ?></span>
-											<p class="card-text text-truncate mt-1"><?php echo $linhablog["descricao"]; ?></p>
+											<p class="card-text mt-1">
+												<?php echo $linhablog["descricao"];?>
+											</p>
 											<a href="./post-blog.php?id=<?php echo $linhablog["id"]; ?>" class="btn btn-primary rounded-pill text-white">Ler Mais</a>
 										</div>
 									</div>
