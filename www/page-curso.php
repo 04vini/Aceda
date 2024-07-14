@@ -18,7 +18,7 @@
     <link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
     <title>Curso - aceda</title>
 </head>
 <body>

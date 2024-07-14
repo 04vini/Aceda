@@ -25,8 +25,8 @@ $mail = new PHPMailer(true);
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
-    <title>Blog ACEDA</title>
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
+    <title>Blog aceda</title>
     <style>
         body {
 			overflow-x: hidden;
@@ -67,12 +67,12 @@ $mail = new PHPMailer(true);
                                             /*$mail->SMTPDebug = SMTP::DEBUG_SERVER;*/
                                             $mail->CharSet = 'UTF-8';
                                             $mail->isSMTP();
-                                            $mail->Host       = 'sandbox.smtp.mailtrap.io';
+                                            $mail->Host       = 'smtp.gmail.com';
                                             $mail->SMTPAuth   = true;
-                                            $mail->Username   = '9ca1275c878090';
-                                            $mail->Password   = '6cd7a1d2175b55';
+                                            $mail->Username   = 'mayara.canella@aceda.sampa.br';
+                                            $mail->Password   = 'tsuq bhdx crpa mvby';
                                             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                                            $mail->Port       = 2525;
+                                            $mail->Port       = 587;
                                             $mail->setFrom('atendimento@aceda.com', 'Atendimento');
                                             $mail->addAddress($usuario, $nome);
                                             $mail->isHTML(true);                                  //Set email format to HTML

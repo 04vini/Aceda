@@ -7,7 +7,7 @@
 	<!-- Bootstrap CSS -->
 	<link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
 	<title>Parceiros | ACEDA</title>
 	<style>
 		body {
@@ -31,7 +31,7 @@
 				<div class="col text-center border border-gray border-1 rounded-4 m-1 bg-white p-1">
 					<img src="./assets/img/cinternet.png" class="img-fluid rounded-pill" alt="">
 					<h3>Creative Internet</h3>
-					<p class="pt-5">A ACEDA através de sua parceira com a Creative Internet concede a seus associados o benefício de Upload = Download (Mesma velocidade para baixar e subir seus arquivos, fotos,
+					<p class="pt-5">A aceda através de sua parceira com a Creative Internet concede a seus associados o benefício de Upload = Download (Mesma velocidade para baixar e subir seus arquivos, fotos,
 						vídeos etc.).
 					</p>
 				</div>
@@ -39,14 +39,14 @@
 					<img src="./assets/img/3tellogo.png" class="img-fluid rounded-pill" alt="">
 					<h3>3 Tel</h3>
 					<p class="pt-5">A 3Tel é uma empresa de tecnologia e serviços de internet.
-						Em parceria com a ACEDA ela disponibiliza aos associados 50% a mais de VELOCIDADE de internet.
+						Em parceria com a aceda ela disponibiliza aos associados 50% a mais de VELOCIDADE de internet.
 					</p>
 				</div>
 				<div class="col text-center border border-gray border-1 rounded-4 m-1 bg-white pt-1">
 					<img src="./assets/img/pii.png" class="img-fluid rounded-pill" alt="">
 					<h3>IndexPii</h3>
 					<p>A IndexPii é uma empresa de serviços empresariais que realiza controle e gestão de negócio nas áreas administrativa, financeira, contábil e tecnologia.
-						Em parceria com a ACEDA a IndexPii concede ao associado 10% de desconto nos planos anuais e 5% nos planos mensais em todos os serviços da empresa IndexPii.
+						Em parceria com a aceda a IndexPii concede ao associado 10% de desconto nos planos anuais e 5% nos planos mensais em todos os serviços da empresa IndexPii.
 					</p>
 				</div>
 			</div>
@@ -89,7 +89,7 @@
 	<!-- /Demais parceiros -->
 	<div>
 		<a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996">
-			<div class="rwb-tooltip">Fale com a ACEDA</div>
+			<div class="rwb-tooltip">Fale com a aceda</div>
 			<img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
 		</a>
 	</div>

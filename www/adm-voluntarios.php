@@ -53,11 +53,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Config Blog - Aceda</title>
+    <title>Config Blog - aceda</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./assets/css/main.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
     <script src="https://cdn.tiny.cloud/1/f3sgpku312e9vuqeq3aevsab9ho77hgpfcq3xfqfoo5s4hz3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({

@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="assets/css/estilo.css/carrosel-serviços.css">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
-    <title>Serviços ACEDA</title>
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
+    <title>Serviços aceda</title>
     <style>
         body {
 			overflow-x: hidden;
@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-lg-7 col-md-12">
                     <h3 class="m-lg-5 text-center pt-4 pb-3 fw-semibold shadow-custom-text">
-                        A ACEDA oferece uma ampla gama de serviços para impulsionar seu negócio e facilitar sua vida.
+                        A aceda oferece uma ampla gama de serviços para impulsionar seu negócio e facilitar sua vida.
                         <br>
                         Confira aqui o que podemos fazer por você!
                     </h3>
@@ -65,9 +65,9 @@
             <div class="col-12 col-md-7 order-md-last">
                 <div class="text-start p-4">
                     <h3 class="text-center fw-bold">O seu parceiro em segurança comunitária!</h3> <br>
-                    <p class="text-justify-space">Com mais de 35 câmeras estrategicamente posicionadas no bairro do Sol Nascente, o <strong>ACEDA Monitora</strong> vai além de um simples sistema de vigilância - é uma iniciativa de cuidado coletivo que une vizinhos em prol da segurança e bem-estar de todos.</p>
+                    <p class="text-justify-space">Com mais de 35 câmeras estrategicamente posicionadas no bairro do Sol Nascente, o <strong>aceda Monitora</strong> vai além de um simples sistema de vigilância - é uma iniciativa de cuidado coletivo que une vizinhos em prol da segurança e bem-estar de todos.</p>
                     <br>
-                    <h3 class="text-center fw-bold">Porque escolher a ACEDA MONITORA?</h3>
+                    <h3 class="text-center fw-bold">Porque escolher a aceda MONITORA?</h3>
                     <br>
                     <ul>
                         <li>Acesso 24 horas;</li>
@@ -93,7 +93,7 @@
                     <div class="p-4">
                         <h3 class="text-center fw-bold">Potencialize o alcance do seu comércio.</h3>
                         <p class="pt-3 text-justify">Amplie o alcande dos seus produtos e serviços com o <strong>DIVULGA
-                                ACEDA!</strong> Nosso programa é projetado para promover o comércio local de
+                                aceda!</strong> Nosso programa é projetado para promover o comércio local de
                             Perus/Anhanguera, levando suas
                             ofertas a mais clientes na região.
                         <h3 class="text-center fw-bold pb-2">Como funciona?</h3>
@@ -104,7 +104,7 @@
                             </li>
                             <li>Aprovação: Enviamos o material para sua análise e aprovação;</li>
                             <li>Publicação: Após aprovação, publicamos nos stories de nossas redes sociais e nos grupos
-                                que a ACEDA participa;</li>
+                                que a aceda participa;</li>
                         </ul>
                     </div>
                 </div>
@@ -258,7 +258,7 @@
 
     <!-- BOTÃO WHATSAPP DA ACEDA -->
     <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996">
-        <div class="rwb-tooltip">Fale com a ACEDA</div>
+        <div class="rwb-tooltip">Fale com a aceda</div>
         <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
     </a>
 

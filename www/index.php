@@ -34,7 +34,7 @@ $dadosblog = mysqli_query($conn, $queryblog);
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
 	<script src="./assets/js/scrip-cookies.js"></script>
-	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
 	<link rel="stylesheet" href="./assets/css/estilo.css/fontes.css">
 	<link rel="stylesheet" href="./assets/css/estilo.css/style.css">
 	<style>
@@ -167,8 +167,8 @@ $dadosblog = mysqli_query($conn, $queryblog);
 							<h5 class="card-title">
 							<?php echo $linhaCurso["nome_curso"]; ?>
 							</h5>
-							<p class="card-text text-muted text-truncate" data-bs-max-chars="20">
-							<?php echo nl2br($linhaCurso["descricao_curso"]); ?>
+							<p class="card-text text-muted">
+							<?php echo $linhaCurso["descricao_curso"]; ?>
 							</p>
 							<a href="./page-curso.php?id=<?php echo $linhaCurso["id"]; ?>" class="btn btn-primary rounded-pill text-white">Ver Curso</a>
 						</div>
@@ -197,39 +197,35 @@ $dadosblog = mysqli_query($conn, $queryblog);
 	</div>
 		
 	<!-- Blog -->
+	 
 	<section>
 		<div class="container-fluid">
-			<div class="row row-cols-1 row-cols-md-2 g-4">
-				<?php
-				    if ($dadosblog) {
-						while ($linhablog = mysqli_fetch_assoc($dadosblog)) {
-					?>
-						<div class="col">
-							<div class="card border rounded overflow-hidden shadow-sm h-100">
-								<div class="row g-0">
-									<div class="d-flex align-items-center">
-										<img src="<?php echo $linhablog["imagem"]; ?>" class="img-fluid" alt="Imagem do Blog">
-									</div>
-									<div class="col-md-6">
-										<div class="card-body p-1">
-											<h4 class="card-title text-primary mb-2"><?php echo $linhablog["titulo"]; ?></h4>
-											<span class="card-text text-secondary rounded-pill bg-warning mb-2 p-1 mt-2"><?php echo $linhablog["categoria"]; ?></span>
-											<p class="card-text mt-1">
-												<?php echo $linhablog["descricao"];?>
-											</p>
-											<a href="./post-blog.php?id=<?php echo $linhablog["id"]; ?>" class="btn btn-primary rounded-pill text-white">Ler Mais</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-				<?php
-					}
-				}
+			<div class="row row-cols-1 row-cols-md-2 g-2">
+			<?php
+			if ($dadosblog) {
+				while ($linhablog = mysqli_fetch_assoc($dadosblog)) {
 				?>
+				<div class="col d-flex flex-column order-md-first">
+					<div class="card border-0">
+					<img src="<?php echo $linhablog["imagem"]; ?>" class="img-fluid" alt="Imagem do Blog">
+					<div class="card-body">
+						<h4 class="card-title text-primary mb-2"><?php echo $linhablog["titulo"]; ?></h4>
+						<span class="card-text text-secondary rounded-pill bg-warning mb-2 p-1 mt-2"><?php echo $linhablog["categoria"]; ?></span>
+						<p class="card-text mt-1">
+							<?php echo $linhablog["descricao"];?>
+						</p>
+						<a href="./post-blog.php?id=<?php echo $linhablog["id"]; ?>" class="btn btn-primary rounded-pill text-white">Ler Mais</a>
+						</div>
+					</div>
+				</div>
+				<?php
+				}
+			}
+			?>
 			</div>
 		</div>
 	</section>
+
 
 	<!-- Ultimas notícias do blog -->
 

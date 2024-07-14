@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empreenda Aceda</title>
+    <title>Empreenda aceda</title>
     <link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const alertBox = document.getElementById("alertBox");
@@ -51,7 +51,7 @@
         <div class="row">
             <div class="col">
                 <section class="container">
-                    <h2 class="text-center mb-3">Empreenda Aceda</h2>
+                    <h2 class="text-center mb-3">Empreenda aceda</h2>
                     <p>VAGAS: 20<br>
                     Endereço do evento: Av. Euclides da Cunha, 705 - Sol Nascente<br>
                     Dúvidas entre em contato através do telefone ou WhatsApp: 11958771996<br>

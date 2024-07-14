@@ -19,7 +19,7 @@ if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
     <link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -41,7 +41,7 @@ if((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))){
                     Relatórios
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="adm-empreenda.php" target="_blank">EmpreendAceda</a></li>
+                    <li><a class="dropdown-item" href="adm-empreenda.php" target="_blank">Empreenda Aceda</a></li>
                     <li><a class="dropdown-item" href="adm-solicitacoes.php" target="_blank">Solicitações</a></li>
                 </ul>
             </div>

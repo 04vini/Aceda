@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col d-flex flex-column">
       <div class="float-start">
-        <img class="img-fluid" src="./assets/img/brand-tagline-green@2x.png" alt="Aceda logo">
+        <img class="img-fluid" src="./assets/img/brand-tagline-green@2x.png" alt="aceda logo">
 
   <!-- Section: Text -->
   <div class="p-3">

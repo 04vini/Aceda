@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade ACEDA</title>
+    <title>Política de Privacidade aceda</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
     <style>
         body {
 			overflow-x: hidden;
@@ -25,7 +25,7 @@
 
 
     <div style="background-color:#2C4D97;">
-        <h1 class="container fw-bold text-white p-5">Política de Privacidade da ACEDA</h1>
+        <h1 class="container fw-bold text-white p-5">Política de Privacidade da aceda</h1>
     </div>
     
     <div class="container">
@@ -33,7 +33,7 @@
         <h3>Introdução</h3>
         <br>
         <p class="text-justify">
-            A ACEDA (Associação Comercial e Empresarial do Distrito Anhanguera), com sede na <strong>Av. Euclides da
+            A aceda (Associação Comercial e Empresarial do Distrito Anhanguera), com sede na <strong>Av. Euclides da
                 Cunha,
                 705 - Sol Nascente, São Paulo- SP 05281-000</strong>, inscrita no CNPJ sob o <strong>nº
                 10.518.350/0001-06</strong>, está comprometida em proteger a privacidade de seus usuários ("usuários" ou
@@ -197,7 +197,7 @@
     <br>
 
     <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996"> 
-        <div class="rwb-tooltip">Fale com a ACEDA</div> 
+        <div class="rwb-tooltip">Fale com a aceda</div> 
         <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
     </a>
     

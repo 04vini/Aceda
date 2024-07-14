@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Aceda</title>
+    <title>Blog - aceda</title>
     <!-- Bootstrap CSS -->
 	<link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
     <style>
         body {
 			overflow-x: hidden;
@@ -67,7 +67,7 @@
     
     <!-- footer -->
     <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996"> 
-            <div class="rwb-tooltip">Fale com a ACEDA</div> 
+            <div class="rwb-tooltip">Fale com a aceda</div> 
             <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
     </a>
 </body>

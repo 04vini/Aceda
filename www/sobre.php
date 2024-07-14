@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="../www/assets/css/estilo.css/fontes.css">
     <link rel="stylesheet" href="../www/assets/css/estilo.css/style.css">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
     <style>
         .rounded-custom {
             border-radius: 15px;
         }
     </style>
-    <title>ACEDA - Quem somos nós?</title>
+    <title>aceda - Quem somos nós?</title>
 </head>
 
 <body style="font-family: Outfit; overflow-x: hidden;">
@@ -29,7 +29,7 @@
     <section class="p-5" style="background-color:#2C4D97;">
         <div class="container-fluid">
             <h1 class="text-center text-white fw-bold">sobre a aceda</h1>
-            <p class="text-center text-white">A ACEDA é uma organização sem fins lucrativos que atua como
+            <p class="text-center text-white">A aceda é uma organização sem fins lucrativos que atua como
                 um catalisador
                 <br> de
                 desenvolvimento
@@ -59,8 +59,8 @@
                         quando se depararam com a fiscalização dos órgãos públicos em seus comércios, diante da
                         gravidade e fechamento de muitos estabelecimentos, surgiu a ideia de criar uma associação para
                         que os interesses do comércio da região tivessem VOZ e de forma organizada e unificada suas
-                        reivindicações chegassem aos órgãos pertinentes, assim nasceu a ACEDA (Associação Comercial e
-                        Empresarial do Distrito Anhanguera). <br><br> A ACEDA é responsável por organizar, integrar e
+                        reivindicações chegassem aos órgãos pertinentes, assim nasceu a aceda (Associação Comercial e
+                        Empresarial do Distrito Anhanguera). <br><br> A aceda é responsável por organizar, integrar e
                         mobilizar a comunidade, os empresários do comércio, indústria, serviços, finanças e
                         profissionais liberais através da manifestação de seus interesses. Esta união permite que os
                         seus interesses sejam ouvidos, respeitados e atendidos pelos órgãos públicos, sociedade e demais
@@ -136,7 +136,7 @@
                 <div class="card shadow-custom">
                     <img src="../www/assets/img/imagem-02.jpg" class="card-img-top">
                     <div class="card-body text-center">
-                        <h4 class="card-title">DRE - ACEDA</h4>
+                        <h4 class="card-title">DRE - aceda</h4>
                         <p class="card-text">Demonstração do Resultado do Exercício.</p>
                         <button class="btn btn-primary">
                             <a href="https://drive.google.com/drive/folders/1SQA2HhNh88g-lPmHSuKsDw_J38Tssn4W" class="mx-auto d-block text-decoration-none text-white" target="_blank">VEJA AQUI</a>
@@ -171,7 +171,7 @@
     <?php include_once "./template/footer.php" ?>
     <!-- /Footer -->
     <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996">
-        <div class="rwb-tooltip">Fale com a ACEDA</div>
+        <div class="rwb-tooltip">Fale com a aceda</div>
         <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
     </a>
     <script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>

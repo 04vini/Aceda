@@ -14,14 +14,14 @@
     <title>Relatório Solicitações - Administrador</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
 </head>
 <body>
 
         
         <div class="m-4">
             <div>
-                <h3 class="row justify-content-center mt-3 pt-1">Relatório Solicitações Aceda</h3>
+                <h3 class="row justify-content-center mt-3 pt-1">Relatório Solicitações aceda</h3>
             </div>
             <div class="row justify-content-end mb-2 pt-0 pb-2">
                 <a href="adm-solicitacoes-excel.php" class="btn btn-success text-white"><i class="bi bi-file-earmark-excel"> </i>Excel</a>

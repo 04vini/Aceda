@@ -6,7 +6,7 @@
     <title>Solicitações Reunião Aceda</title>
     <link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-    <link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48.png">
+	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const alertBox = document.getElementById("alertBox");
@@ -48,15 +48,15 @@
     <div class="row">
         <div class="col">
             <section class="container">
-                <h2 class="text-center mb-3">Solicitações Reunião Aceda</h2>
+                <h2 class="text-center mb-3">Solicitações Reunião aceda</h2>
                 <p>
-                    Traga sua demanda, solicitação e reivindicação para ACEDA.
+                    Traga sua demanda, solicitação e reivindicação para aceda.
                     <br>
                     Trabalhamos através de empenho e trabalho voluntário junto aos órgãos públicos na defesa dos interesses da comunidade e comércio do Distrito Anhanguera e região.
                     <br>
                     Participe das nossas reuniões mensais e acompanhe suas solicitações, toda primeira quarta-feira de cada mês as 19h, na Avenida Euclides da Cunha, 705 - Sol Nascente - São Paulo - SP.
                     <br>
-                    Entre em contato com a ACEDA por WhatsApp (11) 95877-1996
+                    Entre em contato com a aceda por WhatsApp (11) 95877-1996
                 </p>
                 <form method="POST" enctype="multipart/form-data" action="insert-solicitacoes.php">
                     <div class="mb-3">
@@ -109,7 +109,7 @@
                     <div class="form-check">
                         <p>
                             Termo de Autorização LGPD
-                            Informamos que os seus dados pessoais serão utilizados para o cumprimento de obrigações contratuais, legais e regulatórias do SEBRAE AQUI - ACEDA em razão de suas atividades, para a execução de seus Programas e prestação de serviços, para fomentar, desenvolver e melhorar soluções para empreendedores e pequenos negócios, para oferecer produtos e serviços que sejam do seu interesse, para realizar pesquisas com os clientes que foram atendidos entre o SEBRAE AQUI - ACEDA e para realizar a comunicação oficial pelo SEBRAE ou por seus prestadores de serviço, por telefone, e-mail, SMS, WhatsApp, etc. Caso você queira conhecer um pouco mais de como o SEBRAE trata os seus dados pessoais, você pode acessar o seu Portal em www.sebrae.com.br/lgpd, lá reunimos um conjunto de informações sobre como estamos atuando com os dados pessoais de nossos clientes, com foco em segurança e transparência. Para Ao prosseguir com seu cadastro, o senhor (a), concorda com nossa política de privacidade e autoriza o Sebrae a realizar o tratamento de seus dados pessoais, INCLUSIVE OS DADOS PESSOAIS SENSÍVEIS, ASSIM DEFINIDOS NO ART. 5, II DA LEI Nº 13.709 DE 2.018, OS QUAIS, ESCLARECEMOS, SÃO COLETADOS PARA FINS MERAMENTE ESTATÍSTICOS E DE ESTUDOS DE DESENVOLVIMENTO SOCIAL.
+                            Informamos que os seus dados pessoais serão utilizados para o cumprimento de obrigações contratuais, legais e regulatórias do SEBRAE AQUI - aceda em razão de suas atividades, para a execução de seus Programas e prestação de serviços, para fomentar, desenvolver e melhorar soluções para empreendedores e pequenos negócios, para oferecer produtos e serviços que sejam do seu interesse, para realizar pesquisas com os clientes que foram atendidos entre o SEBRAE AQUI - aceda e para realizar a comunicação oficial pelo SEBRAE ou por seus prestadores de serviço, por telefone, e-mail, SMS, WhatsApp, etc. Caso você queira conhecer um pouco mais de como o SEBRAE trata os seus dados pessoais, você pode acessar o seu Portal em www.sebrae.com.br/lgpd, lá reunimos um conjunto de informações sobre como estamos atuando com os dados pessoais de nossos clientes, com foco em segurança e transparência. Para Ao prosseguir com seu cadastro, o senhor (a), concorda com nossa política de privacidade e autoriza o Sebrae a realizar o tratamento de seus dados pessoais, INCLUSIVE OS DADOS PESSOAIS SENSÍVEIS, ASSIM DEFINIDOS NO ART. 5, II DA LEI Nº 13.709 DE 2.018, OS QUAIS, ESCLARECEMOS, SÃO COLETADOS PARA FINS MERAMENTE ESTATÍSTICOS E DE ESTUDOS DE DESENVOLVIMENTO SOCIAL.
                         </p>
                         <input class="form-check-input" type="radio" name="flexPrivacidade" id="flexPrivacidadeAcept" value="ACEITO">
                         <label class="form-check-label" for="flexPrivacidadeAcept">
@@ -133,7 +133,7 @@
     <?php include_once "./template/footer.php" ?>
     <!-- Footer --> 
     <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996"> 
-        <div class="rwb-tooltip">Fale com a ACEDA</div> 
+        <div class="rwb-tooltip">Fale com a aceda</div> 
         <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg"> 
     </a>
     <script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
