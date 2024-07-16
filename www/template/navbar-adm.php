@@ -31,15 +31,16 @@
 					</a>
 					<div class="dropdown-menu" aria-labelledby="menuDrop">
 					<a class="dropdown-item" href="./adm-home.php">Página inicial</a>
+					<a class="dropdown-item" href="./adm-config-cursos.php">Página Cursos</a>
+					<a class="dropdown-item" href="./adm-config-empreenda.php">Página Empreenda</a>
 					<a class="dropdown-item" href="./adm-usuarios.php">Usuários</a>
-					<a class="dropdown-item" href="./adm-config-cursos.php">Página cursos</a>
 					</div>
 				</li> 
 
-				<li class= "ps-5">
+				<li class= "ps-4">
 				<span class= "ps-5 ms-2"> <?php echo $_SESSION['nome'] . "&emsp;|" ; ?></span>
 
-				<a class="btn btn-danger rounded-pill ms-1 " href="sair.php">Sair</a>
+				<a class="btn btn-danger rounded-pill ms-1 text-white" href="sair.php">Sair</a>
 				</li>
 			</ul>
 		</div>

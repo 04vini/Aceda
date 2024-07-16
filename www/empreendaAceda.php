@@ -1,3 +1,12 @@
+<?php
+include "conexao.php";
+
+// Consulta para pegar os dados atuais
+$query = "SELECT * FROM tb_configempreenda";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,10 +21,8 @@
             const alertBox = document.getElementById("alertBox");
             if (alertBox) {
                 setTimeout(() => {
-                    alertBox.style.display = 'none'; // 5 Segundos
+                    alertBox.style.display = 'none';
                 }, 5000);
-            } else {
-                console.error("Elemento com ID 'alertBox' não encontrado");
             }
         });
     </script>
@@ -24,65 +31,27 @@
 <body style="font-family: Outfit;">
     <!-- NavBar -->
     <?php include_once "./template/navbar.php" ?>
-    <!-- NavBar -->
     
-    <!-- Hero -->
-    <!-- Aqui pode ser adicionado algum conteúdo hero, se necessário -->
-
     <!-- Mensagem de Alerta -->
-    <?php
-    // Exibe mensagem se houver
-    if (isset($_GET["mensagem"]) && !empty($_GET["mensagem"])) {
-    ?>
+    <?php if (isset($_GET["mensagem"]) && !empty($_GET["mensagem"])) { ?>
     <div id="alertBox" class="alert alert-warning text-center">
         <?php echo htmlspecialchars($_GET["mensagem"], ENT_QUOTES, 'UTF-8'); ?>
     </div>
     <?php } ?>
     
     <!-- Conteúdo Principal -->
-    
-        <div class="row">
-            <div class="col">
-                <img class="img-fluid img-thumbnail" src="./assets/img/Aceda imagens/Empreenda Aceda.png" alt="Menina Sorrindo">
-            </div>
+    <div class="row">
+        <div class="col">
+            <img class="img-fluid img-thumbnail" src="./assets/img/Aceda imagens/Empreenda Aceda.png" alt="Menina Sorrindo">
         </div>
-        <div class="container">    
-        <!-- Formulário de Inscrição -->
+    </div>
+    <div class="container">    
         <div class="row">
             <div class="col">
                 <section class="container">
                     <h2 class="text-center mb-3">Empreenda aceda</h2>
-                    <p>VAGAS: 20<br>
-                    Endereço do evento: Av. Euclides da Cunha, 705 - Sol Nascente<br>
-                    Dúvidas entre em contato através do telefone ou WhatsApp: 11958771996<br>
-                    Será disponibilizado para os comerciantes expositores:<br>
-                    Montagem e desmontagem do evento;<br>
-                    Tenda para exposição dos produtos 2M; <br>
-                    01 mesa de plástico tipo Buffet branca e 01 cadeira branca<br>
-                    Banheiro;<br>
-                    Água, Chá e café;<br>
-                    Música<br>
-                    Sorteios<br>
-                    Divulgação audiovisual (Vídeo em redes sociais, arte com data e local do evento).<br>
-                    Gravação de Vídeo antes para apresentação do seu negócio e durante o evento;<br>
-                    O vídeo deverá ser gravado preferencialmente em fundo branco pelo expositor e enviado. (Opcional que faz a diferença).<br>
-                    INVESTIMENTO:<br>
-                    01 dia de evento: R$80,00<br>
-                    02 dias de evento: R$120,00<br>
-                    💰 CONFIRMAÇÃO E PAGAMENTO:<br>
-                    A participação será confirmada após a inscrição e contribuição, você poderá realizar o pagamento presencialmente em dinheiro, cartão ou virtualmente através do PIX.<br>
-                    CHAVE PIX 11958771996, por favor nos envie o comprovante para o mesmo número, pois ele é celular e dessa forma confirmaremos sua participação.<br>
-                    Em caso de cancelamento nos informe com 72h antes do evento, após este período não reembolsaremos valores referente sua participação.<br>
-                    📌ATENÇÃO:<br>
-                    Caso você opte por dividir sua tenda, informe no formulário abaixo o nome dos dois negócios, redes sociais e envie as duas logomarcas.<br>
-                    DURANTE O EVENTO:<br>
-                    Solicitamos que os expositores cheguem com pelo menos uma hora de antecedência para organização do espaço.<br>
-                    Não será disponibilizado extensões, bancada adicional, plug, ganchos ou acessórios para o funcionamento de equipamentos eletroeletrônicos.<br>
-                    NÃO SERÁ PERMITIDO A VENDA DE RIFAS DURANTE O EVENTO.<br>
-                    OPCIONAL: DOE UM BRINDE PARA O NOSSO EVENTO E FAÇA SUA MARCA SER RECONHECIDA APÓS A FEIRA, TEM DADO SUPER CERTO E MOVIMENTA A COMUNIDADE TAMBÉM.<br>
-                    😊Será um prazer tê-lo conosco!!!😉</p>
+                    <p><?php echo nl2br(htmlspecialchars($row["text"], ENT_QUOTES, 'UTF-8')); ?></p>
                     
-                    <!-- Formulário de Inscrição -->
                     <form method="POST" enctype="multipart/form-data" action="insert-empreenda.php">
                         <div class="mb-3">
                             <label for="InputNome" class="form-label">Nome do Responsável</label>
@@ -110,15 +79,11 @@
                         <div class="form-check">
                             <p>Você possui logomarca? (Caso não possua será utilizado apenas o nome do seu negócio)</p>
                             <input class="form-check-input" type="radio" name="flexLogo" id="flexLogoS" value="SIM">
-                            <label class="form-check-label" for="flexLogoS">
-                                SIM
-                            </label>
+                            <label class="form-check-label" for="flexLogoS">SIM</label>
                         </div>
                         <div class="form-check mb-3">
                             <input class="form-check-input" type="radio" name="flexLogo" id="flexLogoN" value="NAO">
-                            <label class="form-check-label" for="flexLogoN">
-                                NÃO
-                            </label>
+                            <label class="form-check-label" for="flexLogoN">NÃO</label>
                         </div>
                         <div class="mb-3">
                             <label for="formLogo" class="form-label">Envie sua LogoMarca</label>
@@ -128,27 +93,21 @@
                             <p>Termo de Autorização LGPD</p>
                             <p>Informamos que os seus dados pessoais serão utilizados para o cumprimento de obrigações contratuais, legais e regulatórias do SEBRAE AQUI - ACEDA em razão de suas atividades, para a execução de seus Programas e prestação de serviços, para fomentar, desenvolver e melhorar soluções para empreendedores e pequenos negócios, para oferecer produtos e serviços que sejam do seu interesse, para realizar pesquisas com os clientes que foram atendidos entre o SEBRAE AQUI - ACEDA e para realizar a comunicação oficial pelo SEBRAE ou por seus prestadores de serviço, por telefone, e-mail, SMS, WhatsApp, etc. Caso você queira conhecer um pouco mais de como o SEBRAE trata os seus dados pessoais, você pode acessar o seu Portal em www.sebrae.com.br/lgpd, lá reunimos um conjunto de informações sobre como estamos atuando com os dados pessoais de nossos clientes, com foco em segurança e transparência. Para Ao prosseguir com seu cadastro, o senhor (a), concorda com nossa política de privacidade e autoriza o Sebrae a realizar o tratamento de seus dados pessoais, INCLUSIVE OS DADOS PESSOAIS SENSÍVEIS, ASSIM DEFINIDOS NO ART. 5, II DA LEI Nº 13.709 DE 2.018, OS QUAIS, ESCLARECEMOS, SÃO COLETADOS PARA FINS MERAMENTE ESTATÍSTICOS E DE ESTUDOS DE DESENVOLVIMENTO SOCIAL.</p>
                             <input class="form-check-input" type="radio" name="flexPrivacidade" id="flexPrivacidadeAcept" value="ACEITO">
-                            <label class="form-check-label" for="flexPrivacidadeAcept">
-                                ACEITO
-                            </label>
+                            <label class="form-check-label" for="flexPrivacidadeAcept">ACEITO</label>
                         </div>
                         <div class="form-check mb-3">
                             <input class="form-check-input" type="radio" name="flexPrivacidade" id="flexPrivacidadeNAcept" value="NAO ACEITO">
-                            <label class="form-check-label" for="flexPrivacidadeNAcept">
-                                NÃO ACEITO
-                            </label>
+                            <label class="form-check-label" for="flexPrivacidadeNAcept">NÃO ACEITO</label>
                         </div>
                         <button type="submit" class="btn btn-primary text-white">Enviar</button>
                     </form>
-                    <!-- Fim do Formulário de Inscrição -->
                 </section>
             </div>
         </div>
     </div>
     <!-- Footer -->
     <?php include_once "./template/footer.php" ?>
-    <!-- Footer -->  
-
+    
     <!-- Botão do WhatsApp -->
     <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511958771996"> 
         <div class="rwb-tooltip">Fale com a ACEDA</div> 

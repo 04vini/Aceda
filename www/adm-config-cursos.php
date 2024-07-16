@@ -28,49 +28,51 @@ if ((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))) {
 
 </head>
 <body>
-    <!-- NavBar -->
-    <?php include_once "./template/navbar-adm.php"?>
-    <!-- NavBar -->
-    <div class="container mt-5">
-        <h3 class="text-center m-3"><strong>Adicionar opção de Curso</strong></h3>
-        <form action="./insert-config-cursos.php" method="post">
-            <div class="form-group">
-                <label for="curso_label">Novo curso:</label>
-                <input type="text" name="curso_label" id="curso_label">
-                <br><br>
-            </div>
-            <button type="submit" class="btn btn-success rounded-pill text-white">Adicionar Curso</button>
-        </form>
+    <div class="bg-secondary bg-gradient">
+        <!-- NavBar -->
+        <?php include_once "./template/navbar-adm.php"?>
+        <!-- NavBar -->
+        <div class="m-5 p-5 border border-dark bg-white">
+            <h3 class="text-center m-3"><strong>Adicionar opção de Curso</strong></h3>
+            <form action="./insert-config-cursos.php" method="post">
+                <div class="form-group">
+                    <label for="curso_label">Novo curso:</label>
+                    <input type="text" name="curso_label" id="curso_label">
+                    <br><br>
+                </div>
+                <button type="submit" class="btn btn-success rounded-pill text-white">Adicionar Curso</button>
+            </form>
 
-        <hr>
+            <hr>
 
-        <h3 class="text-center m-3"><strong>Cursos disponíveis no site</strong></h3>
-        <ul class="list-group">
-            <?php
-            include "conexao.php";
-            
-            // Consulta para obter os cursos
-            $sql = "SELECT * FROM tb_configcursos";
-            $result = $conn->query($sql);
+            <h3 class="text-center m-3"><strong>Cursos disponíveis no site</strong></h3>
+            <ul class="list-group">
+                <?php
+                include "conexao.php";
+                
+                // Consulta para obter os cursos
+                $sql = "SELECT * FROM tb_configcursos";
+                $result = $conn->query($sql);
 
-            // Exibir os cursos como itens de lista
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo '<li class="list-group-item d-flex justify-content-between align-items-center">'
-                            . htmlspecialchars($row['curso']) . '
-                            <div>
-                                <a href="adm-update-config-cursos.php?id=' . $row['id'] . '" class="btn btn-sm btn-primary rounded-pill text-white mr-2">Editar</a>
-                                <a href="adm-delete-config-cursos.php?id=' . $row['id'] . '" class="btn btn-sm btn-danger rounded-pill text-white">Excluir</a>
-                            </div>
-                        </li>';
+                // Exibir os cursos como itens de lista
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<li class="list-group-item d-flex justify-content-between align-items-center">'
+                                . htmlspecialchars($row['curso']) . '
+                                <div>
+                                    <a href="adm-update-config-cursos.php?id=' . $row['id'] . '" class="btn btn-sm btn-primary rounded-pill text-white mr-2">Editar</a>
+                                    <a href="adm-delete-config-cursos.php?id=' . $row['id'] . '" class="btn btn-sm btn-danger rounded-pill text-white">Excluir</a>
+                                </div>
+                            </li>';
+                        }
+                    } else {
+                        echo '<li class="list-group-item">Nenhum curso encontrado</li>';
                     }
-                } else {
-                    echo '<li class="list-group-item">Nenhum curso encontrado</li>';
-                }
 
-            $conn->close();
-            ?>
-        </ul>
+                $conn->close();
+                ?>
+            </ul>
+        </div>
+        <br><br>
     </div>
-</body>
 </html>
