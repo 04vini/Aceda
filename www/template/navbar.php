@@ -9,7 +9,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link active" href="./sobre.php">Sobre Aceda</a>
+					<a class="nav-link active" href="./sobre.php">Sobre ACEDA</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="teste.php" id="menuDrop" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
