@@ -17,8 +17,9 @@
         $nomeCurso = isset($_POST['nome-curso']) ? mysqli_real_escape_string($conn, $_POST['nome-curso']) : NULL ;
         $descricaoCurso = isset($_POST['descricao-curso']) ? mysqli_real_escape_string($conn, $_POST['descricao-curso']) : NULL;
         $conteudoCurso = isset($_POST['conteudo-curso']) ? mysqli_real_escape_string($conn, $_POST['conteudo-curso']) : NULL;
+        $corCurso = isset($_POST['cor-curso']) ? mysqli_real_escape_string($conn, $_POST['cor-curso']) : NULL;
 
-        //Validação e tratamento da imagem para inserção no banco
+        // Validação e tratamento da imagem para inserção no banco
         $query = "SELECT imagem_curso FROM tb_curso_home WHERE id = ".$id;
         $res = mysqli_query($conn, $query);
         $dados = mysqli_fetch_array($res);
@@ -30,8 +31,8 @@
             move_uploaded_file($_FILES["imagem-curso"]["tmp_name"], $imagemCurso);
         }
 
-        //Query de atualização dos dados no banco
-        $query = "UPDATE tb_curso_home SET nome_curso='$nomeCurso', descricao_curso='$descricaoCurso', conteudo_curso='$conteudoCurso', imagem_curso='$imagemCurso' WHERE id= ".$id;
+        // Query de atualização dos dados no banco
+        $query = "UPDATE tb_curso_home SET nome_curso='$nomeCurso', descricao_curso='$descricaoCurso', conteudo_curso='$conteudoCurso', cor_titulo='$corCurso', imagem_curso='$imagemCurso' WHERE id= ".$id;
 
         $res = mysqli_query($conn, $query);
         header("Location: ./adm-home.php?mensagem=Curso editado com Sucesso!");
@@ -51,8 +52,9 @@
         $descricaoCurso = $dados["descricao_curso"];
         $conteudoCurso = $dados["conteudo_curso"];
         $imagemCurso = $dados["imagem_curso"];
+        $corCurso = isset($dados["cor_curso"]) ? $dados["cor_curso"] : '#000000';  // Defina um valor padrão se não estiver definido
 
-    }else {
+    } else {
         header("Location: ./adm-home.php?mensagem=Selecione um Curso para editar");
         exit();
     }
@@ -70,7 +72,7 @@
 </head>
 <body>
     <div>
-        <div class="col-md-4 p-2 m-5">
+        <div class="col-md-8 p-2 m-5">
             <form class="card" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label m-2" for="nome-curso">Nome</label>
@@ -79,8 +81,11 @@
                     <label class="form-label m-2" for="descricao-curso">Descrição</label>
                     <textarea rows="4" class="form-control" name="descricao-curso" id="descricao-curso" required><?php echo htmlspecialchars($descricaoCurso); ?></textarea>
 
-                    <label class="form-label m-2" for="conteudo-curso">Conteudo</label>
+                    <label class="form-label m-2" for="conteudo-curso">Conteúdo</label>
                     <textarea rows="7" class="form-control" name="conteudo-curso" id="conteudo-curso" required><?php echo htmlspecialchars($conteudoCurso); ?></textarea>
+
+                    <label class="form-label m-2" for="cor-curso">Cor do Título</label>
+                    <input type="color" name="cor-curso" id="cor-curso" class="form-control form-control-sm" value="<?php echo htmlspecialchars($corCurso); ?>">
 
                     <label class="form-label m-2">Imagem</label>
                     <input type="file" name="imagem-curso" accept="image/*" class="form-control form-control-sm" />
