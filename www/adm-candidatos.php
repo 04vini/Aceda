@@ -60,6 +60,7 @@
                                 <th scope="col">Estado</th>
                                 <th scope="col">Cidade</th>
                                 <th scope="col">Linkedin</th>
+                                <th scope="col">Currículo</th>
                                 <th scope="col">Aceite</th>
                                 <th scope="col">Data do Registro</th>
                             </tr>
@@ -92,9 +93,24 @@
                                 echo '<td>' . $linha["estado"] . '</td>';
                                 echo '<td>' . $linha["cidade"] . '</td>';
                                 echo '<td>';
-                                if (!empty($linha["linkedin"])) {
-                                    echo '<a href="' . $linha["linkedin"] . '" target="_blank">Linkedin</a>';
-                                }
+                                    if (!empty($linha["linkedin"])) {
+                                        echo '<a href="' . $linha["linkedin"] . '" target="_blank">Linkedin</a>';
+                                    }
+                                echo '</td>';
+                                echo '<td>';
+                                    if (!empty($linha["anexo"])) {
+                                        // Supondo que o caminho armazenado no banco de dados é relativo ao diretório onde o script está sendo executado
+                                        $caminhoArquivo = $linha["anexo"];
+                                        
+                                        // Verifica se o arquivo realmente existe
+                                        if (file_exists($caminhoArquivo)) {
+                                            echo '<a href="' . $caminhoArquivo . '" download>Download</a>';
+                                        } else {
+                                            echo 'Arquivo não encontrado';
+                                        }
+                                    } else {
+                                        echo '';
+                                    }
                                 echo '</td>';
                                 echo '<td>' . $linha["aceite"] . '</td>';
                                 echo '<td>' . $registroFormatado . '</td>';

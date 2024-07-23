@@ -48,14 +48,27 @@
     <section class="container">
         <form method="POST" enctype="multipart/form-data" action="insert-bancodevagas.php">
             <div class="mb-3">
+                <span class="text-danger"><small>*</small></span>
                 <label for="InputNome" class="form-label">Nome Completo</label>
                 <input type="text" class="form-control" id="InputNome" name="InputNome">
             </div>
             <div class="mb-3">
+                <span class="text-danger"><small>*</small></span>
                 <label for="InputDataNasc" class="form-label">Data de nascimento</label>
                 <input type="date" class="form-control" id="InputDataNasc" name="InputDataNasc">
             </div>
+            <div class="mb-3">
+                <span class="text-danger"><small>*</small></span>
+                <label for="InputEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="InputEmail" name="InputEmail" aria-describedby="emailInfo" required>
+                <div id="emailInfo" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
+            </div>
             
+            <div class="mb-3">
+                <label for="InputCurriculo" class="form-label">Currículo</label>
+                <input type="file" class="form-control" id="InputCurriculo" name="InputCurriculo" accept=".pdf,.doc,.docx" required>
+            </div>
+
             <p>Sexo</p>
             <select class="form-select mb-3" name="sexo">
                 <option value="" default>-- Selecione --</option>
@@ -65,11 +78,6 @@
                 <option value="naoinformar">Prefiro Não informar</option>
             </select>
 
-            <div class="mb-3">
-                <label for="InputEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="InputEmail" name="InputEmail" aria-describedby="emailInfo">
-                <div id="emailInfo" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
-            </div>
             <div class="mb-3">
                 <label for="InputPO" class="form-label">País de origem</label>
                 <input type="text" class="form-control" id="InputPO" name="InputPO">
