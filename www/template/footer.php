@@ -20,6 +20,9 @@
           <li class="list-group-item">
             ACEDA - Associação Comercial e Empresarial do Distrito Anhanguera.
           </li>
+          <li class="list-group-item">
+            CNPJ: 105183500001-06
+          </li>
           <br>
           <li class="list-group-item">
             Endereço: Sol Nascente - Cursos e Treinamento - Av. Euclides da Cunha, 705 - Res. Sol Nascente, São Paulo - SP, 05281-070
