@@ -20,6 +20,8 @@ if (isset($_POST) && !empty($_POST)) {
     $conteudo = isset($_POST['text-post']) ? $_POST['text-post'] : NULL;
     $categoria = isset($_POST['categoria-post']) ? $_POST['categoria-post'] : NULL;
     $autor = isset($_POST['autor-post']) ? $_POST['autor-post'] : NULL;
+    $video = isset($_POST['video-post']) ? $_POST['video-post'] : NULL;
+
 
     date_default_timezone_set('America/Sao_Paulo');
     $registro = date("Y-m-d H:i:s");
@@ -43,7 +45,7 @@ if (isset($_POST) && !empty($_POST)) {
     $status = $linha_select_status['status'];
 
     // Query de atualização dos dados no banco
-    $query = "UPDATE tb_blog SET titulo='$titulo', descricao='$descricao', conteudo='$conteudo', categoria='$categoria', autor='$autor', imagem='$imagem', registro='$registro', status='$status' WHERE id= ".$id;
+    $query = "UPDATE tb_blog SET titulo='$titulo', descricao='$descricao', conteudo='$conteudo', categoria='$categoria', autor='$autor', video = '$video',imagem='$imagem', registro='$registro', status='$status' WHERE id= ".$id;
 
     $res = mysqli_query($conn, $query);
     if ($res) {
@@ -69,6 +71,7 @@ if (isset($_POST) && !empty($_POST)) {
         $categoria = $dados["categoria"];
         $autor = $dados["autor"];
         $imagem = $dados["imagem"];
+        $video = $dados["video"];
         $registro = $dados["registro"];
     } else {
         header("Location: ./adm-blog.php?mensagem=Erro ao selecionar o post para edição.");
@@ -124,6 +127,9 @@ if (isset($_POST) && !empty($_POST)) {
 
                     <label class="form-label m-2" for="autor-post">Autor</label>
                     <input type="text" name="autor-post" id="autor-post" required class="form-control" value="<?php echo $autor;?>" />
+
+                    <label class="form-label m-2" for="video-post">Video</label>
+                    <input type="text" name="video-post" id="video-post" required class="form-control" value="<?php echo $video;?>" />
 
                     <label class="form-label m-2">Selecione nova Imagem</label>
                     <input type="file" name="imagem" accept="image/*" class="form-control form-control-sm" />

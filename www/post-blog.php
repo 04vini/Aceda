@@ -82,6 +82,9 @@ if ($linha && isset($linha["registro"])) {
         <br>
         <div class="m-4 p-2 bg-white rounded-5">
             <div class="row">
+                <?php if ($linha["video"]): ?>
+                    <iframe width="560" height="315" src="<?php echo $linha["video"];?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <?php endif; ?>
                 <div>
                     <img src="<?php echo $linha["imagem"];?>" class="img-fluid" alt="Responsive image">
                 </div>

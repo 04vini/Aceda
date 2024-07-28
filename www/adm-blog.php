@@ -145,6 +145,10 @@
                                             <textarea class="form-control" name="text-post" id="text-post" required maxlength="5000"></textarea>
                                             <p class="span text-danger text-end"><small>*Post completo, Limite de 5000 Caracteres</small></p>
                                             
+                                            <label class="form-label pt-1" for="video-post">Vídeo post</label>
+                                            <textarea class="form-control" name="video-post" id="video-post" required maxlength="5000"></textarea>
+                                            <p class="span text-danger text-end"><small>*Video do post</small></p>
+
                                             <label class="form-label pt-1" for="imagem">Selecione a Imagem</label>
                                             <input type="file" name="imagem" accept="image/*" class="form-control form-control-sm mb-2" />
                                             <p class="span text-danger text-end"><small>*Tamanho ideal de imagem 300x300</small></p>
@@ -196,6 +200,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Imagem</th>
+                                    <th>Video</th>
                                     <th>Título</th>
                                     <th>Descrição</th>
                                     <th>Conteúdo</th>
@@ -216,6 +221,7 @@
                             
                                         echo '<tr>';
                                         echo '<td>' . $linha["id"] . '</td>';
+                                        echo '<td>' . $linha["video"];
                                         echo '<td><img src="' . $linha["imagem"] . '" width="120" height="120" /></td>';
                                         echo '<td>' . $linha["titulo"] . '</td>';
                                         echo '<td>' . $linha["descricao"] . '</td>';

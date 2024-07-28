@@ -21,6 +21,8 @@
     $categoria = isset($_POST['categoria-post']) ? $_POST['categoria-post'] : NULL;
 
     $autor = isset($_POST['autor-post']) ? $_POST['autor-post'] : NULL;
+    
+    $video = isset($_POST['video-post']) ? $_POST['video-post'] : NULL;
 
     date_default_timezone_set('America/Sao_Paulo');
     $registro = date("Y-m-d H:i:s");
@@ -33,7 +35,7 @@
     };
 
     //Query de inserçao dos dados no banco
-    $query = "INSERT INTO tb_blog (titulo, descricao, conteudo, categoria, autor, imagem, registro) VALUES ( '$titulo', '$descricao', '$conteudo', '$categoria', '$autor', '$imagem', '$registro')";
+    $query = "INSERT INTO tb_blog (titulo, descricao, conteudo, categoria, autor, video, imagem, registro) VALUES ( '$titulo', '$descricao', '$conteudo', '$categoria', '$autor', '$video', '$imagem', '$registro')";
     $res = mysqli_query($conn, $query);
 
     header("Location: ./adm-blog.php?mensagem=Incluído com sucesso");
