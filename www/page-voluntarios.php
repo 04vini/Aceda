@@ -18,6 +18,7 @@
     <link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
 	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
+    
     <style>
         @keyframes slide-in {
             from {
@@ -62,6 +63,29 @@
     <!-- NavBar -->
     <?php include_once "./template/navbar.php"; ?>
     <!-- NavBar -->
+    <section class="p-5" style="background-color:#2C4D97;">
+        <div class="container-fluid">
+            <h1 class="text-center text-white fw-bold">Seja um Voluntário na ACEDA</h1>
+            <p class="text-center text-white">A ACEDA é uma organização que acredita no poder das pessoas. Somos feitos de gente que transforma gente. Nossa missão é criar um impacto positivo na comunidade e isso só é possível com a ajuda de voluntários dedicados como você.
+
+Se você está procurando uma oportunidade para fazer a diferença, venha se juntar a nós! Nossas contratações de voluntários são feitas através da plataforma ATADOS, uma rede social para o voluntariado.
+
+Junte-se a nós e seja parte de uma equipe que acredita no poder da transformação através da ação. Sua contribuição pode mudar vidas. Estamos ansiosos para trabalhar com você!
+            </p>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+            <img class="img-fluid w-25" src="assets/img/Aceda imagens/logo-amarelo-aceda.png" alt="logotipo da aceda em amarelo">
+        </div>
+        
+        <div class="text-center">
+            <button class="btn btn-primary">
+                <a href="https://www.atados.com.br/ong/aceda" class="mx-auto d-block text-decoration-none text-white" target="_blank">ATADOS</a>
+             </button>
+        </div>
+       
+        
+    </section>
+
     <div style="background-color: #A3C8D8;">
         <br>
         <?php
