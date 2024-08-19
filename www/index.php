@@ -121,7 +121,7 @@ $dadosblog = mysqli_query($conn, $queryblog);
 					?>
 					<div class="d-flex flex-column order-md-first">
 						<div class="card border-0">
-							<img class="img-fluid rounded-pill" src="<?php echo $rows["imagem_servico"]; ?>" alt="">
+							<img class="img-fluid rounded-pill w-50" src="<?php echo $rows["imagem_servico"]; ?>" alt="">
 							<div class="card-body">
 								<h5 class="card-title">
 								<?php echo $rows["nome"]; ?>
