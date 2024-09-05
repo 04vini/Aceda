@@ -37,7 +37,12 @@ if ((!isset($_SESSION['id'])) AND (!isset($_SESSION['nome']))) {
             <form action="./insert-config-cursos.php" method="post">
                 <div class="form-group">
                     <label for="curso_label">Novo curso:</label>
+                    <br>
                     <input type="text" name="curso_label" id="curso_label">
+                    <br><br>
+                    <label for="curso_label">Descrição do curso:</label>
+                    <br>
+                    <input type="text" name="curso_descricao" id="curso_descricao">
                     <br><br>
                 </div>
                 <button type="submit" class="btn btn-success rounded-pill text-white">Adicionar Curso</button>

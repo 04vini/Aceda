@@ -7,7 +7,8 @@
 	<link rel="icon" type="image/x-icon" href="./assets/img/favicons/android-icon-48x48favicon.png">
     <link href="./assets/css/main.min.css?t=1712110939880" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-    <script>
+   
+   <script>
         document.addEventListener("DOMContentLoaded", function() {
             const alertBox = document.getElementById("alertBox");
             if (alertBox) {
@@ -71,22 +72,55 @@ Preencha nosso formulário rápido e sem compromisso e descubra um universo de o
             </div>
             <p>Tema do Curso de Interesse.</p>
             
+
             <?php
                 include "conexao.php";
                 $sql = "SELECT * FROM tb_configcursos";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
-                    echo '<select class="form-control">';
-                    echo '<option value="">Selecione um curso</option>';
+                    echo '<div class="form-group">';
+                    $modalId = 0; // Inicializar ID para modais
                     while ($row = $result->fetch_assoc()) {
-                        echo '<option value="' . $row['id'] . '">' . htmlspecialchars($row['curso']) . '</option>';
+                        $modalId++; // Incrementar ID para cada curso
+                        $curso = htmlspecialchars($row['curso']); // Sanitizar para evitar XSS
+                        $descricao = htmlspecialchars($row['descricao']); // Sanitizar para evitar XSS
+
+                        // Checkbox para o curso
+                        echo '<div class="form-check">';
+                        echo '<input class="form-check-input" type="checkbox" name="cursos[]" value="' . $curso . '">';
+                        echo '<label class="form-check-label">' . $curso . '</label>';
+                        
+                        // Botão para abrir o modal
+                        echo '<button type="button" class="btn btn-link" data-toggle="modal" data-target="#modal' . $modalId . '">Ver mais...</button>';
+                        
+                        // Modal para o curso
+                        echo '
+                        <div class="modal fade" id="modal' . $modalId . '" tabindex="-1" role="dialog" aria-labelledby="modalLabel' . $modalId . '" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalLabel' . $modalId . '">' . $curso . '</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Informações sobre o curso: ' . $descricao . '</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        ';
+                        echo '</div>'; // Fechar div form-check
                     }
-                    echo '</select>';
+                    echo '</div>'; // Fechar div form-group
                 } else {
                     echo '<p>Nenhum curso encontrado.</p>';
                 }
-
-            ?>
+                ?>
             <br>
             <div class="mb-3">
                 <label for="InputCPF" class="form-label">CPF</label>
@@ -142,5 +176,7 @@ ACEITO
     </a>
 
     <script src="./assets/js/main.min.js?t=1712110939880" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </body>
 </html>

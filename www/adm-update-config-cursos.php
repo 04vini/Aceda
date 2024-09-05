@@ -16,9 +16,9 @@
         
         $id = $_GET['id'];
         $curso = isset($_POST['nome-curso']) ? $_POST['nome-curso'] : NULL ;
-
+        $descricao = isset($_POST['descricao-curso']) ? $_POST['descricao-curso'] : NULL ;
         //Query de atualização dos dados no banco
-        $query = "UPDATE tb_configcursos SET curso='$curso' WHERE id= ".$id;
+        $query = "UPDATE tb_configcursos SET curso='$curso', descricao='$descricao' WHERE id= ".$id;
 
         $res = mysqli_query($conn, $query);
         header("Location: ./adm-config-cursos.php?mensagem=Curso editado com Sucesso!");
@@ -35,6 +35,8 @@
 
         $id = $dados["id"];
         $curso = $dados["curso"];
+        $descricao = $dados["descricao"];
+
 
 
     }else {
@@ -60,7 +62,10 @@
                 <div class="mb-3">
                     <label class="form-label m-2" for="nome-curso">Curso</label>
                     <input class="form-control" type="text" name="nome-curso" id="nome-curso" required value="<?php echo $curso ?>">
-
+                    <br>
+                    <label class="form-label m-2" for="descricao-curso">Descrição</label>
+                    <input class="form-control" type="text" name="descricao-curso" id="descricao-curso" required value="<?php echo $descricao ?>">
+                    
                     <button type="submit" class="btn btn-success mt-2">
                         Salvar edição
                     </button>

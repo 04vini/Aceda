@@ -12,9 +12,11 @@
     include "./conexao.php";
 
     $curso = isset($_POST['curso_label']) ? $_POST['curso_label'] : NULL ;
+    $descricao = isset($_POST['curso_descricao']) ? $_POST['curso_descricao'] : NULL ;
 
     //Query de inserçao dos dados no banco
-    $query = "INSERT INTO tb_configcursos (curso) VALUES ( '$curso')";
+    $query = "INSERT INTO tb_configcursos (curso, descricao) VALUES ( '$curso', '$descricao')";
+
     $res = mysqli_query($conn, $query);
 
     header("Location: ./adm-config-cursos.php?mensagem=Incluído Curso com sucesso");
