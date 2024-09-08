@@ -103,6 +103,43 @@
                 <input type="text" class="form-control" id="InputCid" name="InputCid" aria-describedby="cidInfo">
                 <div id="cidInfo" class="form-text">Caso possua empresa aberta.</div>
             </div>
+
+            <div>
+            <label class="form-check-label" for="InputComunicacao">
+                Aceita receber comunicações por quais meios?
+            </label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="comunicacao[]" value="telefone" id="InputComunicacaoTel">
+                <label class="form-check-label" for="InputComunicacaoTel">
+                    Telefone
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="comunicacao[]" value="sms" id="InputComunicacaoSms">
+                <label class="form-check-label" for="InputComunicacaoSms">
+                    SMS
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="comunicacao[]" value="email" id="InputComunicacaoEmail">
+                <label class="form-check-label" for="InputComunicacaoEmail">
+                    E-MAIL
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="comunicacao[]" value="correio" id="InputComunicacaoCorreio">
+                <label class="form-check-label" for="InputComunicacaoCorreio">
+                    CORREIO
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="comunicacao[]" value="whatsapp" id="InputComunicacaoWhatsApp">
+                <label class="form-check-label" for="InputComunicacaoWhatsApp">
+                    WHATSAPP
+                </label>
+            </div>
+        </div>
+
             <div class="mb-3">
                 <label for="InputLink" class="form-label">LinkedIn</label>
                 <input type="text" class="form-control" id="InputLink" name="InputLink" aria-describedby="linkInfo">

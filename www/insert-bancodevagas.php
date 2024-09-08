@@ -1,6 +1,11 @@
 <?php
 include "conexao.php";
 
+// Exibe erros para depuração
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Obtém os dados do formulário
 $nome = isset($_POST['InputNome']) ? $_POST['InputNome'] : '';
 $nascimento = isset($_POST['InputDataNasc']) ? $_POST['InputDataNasc'] : '';
@@ -15,11 +20,15 @@ $cidade = isset($_POST['InputCid']) ? $_POST['InputCid'] : '';
 $linkedin = isset($_POST['InputLink']) ? $_POST['InputLink'] : '';
 $aceite = isset($_POST['flexPrivacidade']) ? $_POST['flexPrivacidade'] : '';
 
+// Captura as opções selecionadas dos checkboxes
+$comunicacao = isset($_POST['comunicacao']) ? implode(',', $_POST['comunicacao']) : '';
+
 // Data e hora atual
 date_default_timezone_set('America/Sao_Paulo');
 $registro = date("Y-m-d H:i:s");
 
 // Verifica se um arquivo foi enviado
+$curriculoPath = '';
 if (isset($_FILES['InputCurriculo']) && $_FILES['InputCurriculo']['error'] === UPLOAD_ERR_OK) {
     $fileTmpPath = $_FILES['InputCurriculo']['tmp_name'];
     $fileName = $_FILES['InputCurriculo']['name'];
@@ -36,32 +45,34 @@ if (isset($_FILES['InputCurriculo']) && $_FILES['InputCurriculo']['error'] === U
         $uploadFileDir = './assets/uploads/';
         $dest_path = $uploadFileDir . $fileName;
 
-        if(move_uploaded_file($fileTmpPath, $dest_path)) {
-            $curriculoPath = $dest_path;
+        if (move_uploaded_file($fileTmpPath, $dest_path)) {
+            $curriculoPath = $fileName; // Apenas o nome do arquivo para armazenar no banco
         } else {
-            header("Location: ./bancodevagas.php?mensagem=Erro ao mover o arquivo para o diretório de upload");
-            exit();
+            die("Erro ao mover o arquivo para o diretório de upload");
         }
     } else {
-        header("Location: ./bancodevagas.php?mensagem=Tipo de arquivo não permitido");
-        exit();
+        die("Tipo de arquivo não permitido");
     }
 } else {
-    header("Location: ./bancodevagas.php?mensagem=Erro no upload do arquivo");
-    exit();
+    die("Erro no upload do arquivo");
 }
 
 // Prepara a query SQL (utilizando para segurança)
-$query = "INSERT INTO tb_curriculo (nome, nascimento, sexo, email, pais, cpf, telefone, fixo, estado, cidade, linkedin, anexo, aceite, registro) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$query = "INSERT INTO tb_curriculo (nome, nascimento, sexo, email, pais, cpf, telefone, fixo, estado, cidade, linkedin, comunicacao, anexo, aceite, registro) 
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($query);
-$stmt->bind_param("ssssssssssssss", $nome, $nascimento, $sexo, $email, $pais, $cpf, $telefone, $fixo, $estado, $cidade, $linkedin, $curriculoPath, $aceite, $registro);
+
+if ($stmt === false) {
+    die("Erro ao preparar a query: " . $conn->error);
+}
+
+$stmt->bind_param("sssssssssssssss", $nome, $nascimento, $sexo, $email, $pais, $cpf, $telefone, $fixo, $estado, $cidade, $linkedin, $comunicacao, $curriculoPath, $aceite, $registro);
+
 // Executa a query
 if ($stmt->execute()) {
     header("Location: ./bancodevagas.php?mensagem=Enviado com sucesso");
     exit();
 } else {
-    header("Location: ./bancodevagas.php?mensagem=Erro ao enviar dados");
-    exit();
+    die("Erro ao enviar dados: " . $stmt->error);
 }
 ?>
