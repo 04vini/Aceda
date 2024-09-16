@@ -4,7 +4,6 @@ include "conexao.php";
 // Obtém os dados do formulário
 $nome = isset($_POST['InputNome']) ? $_POST['InputNome'] : '';
 $email = isset($_POST['InputEmail']) ? $_POST['InputEmail'] : '';
-$curso = isset($_POST['curso']) ? $_POST['curso'] : '';
 $cpf = isset($_POST['InputCPF']) ? $_POST['InputCPF'] : '';
 $nascimento = isset($_POST['InputDataNasc']) ? $_POST['InputDataNasc'] : '';
 $endereco = isset($_POST['InputEndereco']) ? $_POST['InputEndereco'] : '';
@@ -18,17 +17,35 @@ $aceite = isset($_POST['flexPrivacidade']) ? $_POST['flexPrivacidade'] : '';
 date_default_timezone_set('America/Sao_Paulo');
 $registro = date("Y-m-d H:i:s");
 
-// Prepara a query SQL (utilizando para segurança)
-$query = "INSERT INTO tb_curso (nome, email, curso, cpf, nascimento, endereco, cep, telefone, cnpj, razaosocial, aceite, registro) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("ssssssssssss", $nome, $email, $curso, $cpf, $nascimento, $endereco, $cep, $telefone, $cnpj, $razaosocial, $aceite, $registro);
+// Verifica se pelo menos um curso foi selecionado
+if (isset($_POST['cursos']) && !empty($_POST['cursos'])) {
+    $cursos = $_POST['cursos'];
+    $cursos_concatenados = implode(', ', $cursos);
 
-// Executa a query
-if ($stmt->execute()) {
-    header("Location: ./cursos.php?mensagem=Enviado com sucesso");
-    exit();
+    // Prepara a query SQL (utilizando para segurança)
+    $query = "INSERT INTO tb_curso (nome, email, curso, cpf, nascimento, endereco, cep, telefone, cnpj, razaosocial, aceite, registro) 
+              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    if ($stmt = $conn->prepare($query)) {
+        $stmt->bind_param("ssssssssssss", $nome, $email, $cursos_concatenados, $cpf, $nascimento, $endereco, $cep, $telefone, $cnpj, $razaosocial, $aceite, $registro);
+
+        // Executa a query
+        if ($stmt->execute()) {
+            $_SESSION['msg'] = "<p style='color: green;'>Incluído Curso com sucesso</p>";
+            header("Location: ./cursos.php?mensagem=Enviado com sucesso");
+            exit();
+        } else {
+            $_SESSION['msg'] = "<p style='color: red;'>Erro ao incluir cursos: " . $stmt->error . "</p>";
+            header("Location: ./cursos.php?mensagem=Erro ao enviar dados");
+            exit();
+        }
+        $stmt->close();
+    } else {
+        $_SESSION['msg'] = "<p style='color: red;'>Erro ao preparar a query: " . $conn->error . "</p>";
+        header("Location: ./cursos.php?mensagem=Erro ao enviar dados");
+        exit();
+    }
 } else {
+    $_SESSION['msg'] = "<p style='color: red;'>Por favor, selecione pelo menos um curso.</p>";
     header("Location: ./cursos.php?mensagem=Erro ao enviar dados");
     exit();
 }
